@@ -11,6 +11,13 @@ import { Account } from 'app/core/user/account.model';
   styleUrls: ['home.scss']
 })
 export class HomeComponent implements OnInit, OnDestroy {
+
+  foods = [
+    {value: 'steak-0', viewValue: 'Steak'},
+    {value: 'pizza-1', viewValue: 'Pizza'},
+    {value: 'tacos-2', viewValue: 'Tacos'}
+  ];
+
   account: Account | null = null;
   authSubscription?: Subscription;
 

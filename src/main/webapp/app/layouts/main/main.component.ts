@@ -1,10 +1,10 @@
-import { Component, OnInit, RendererFactory2, Renderer2 } from '@angular/core';
-import { Title } from '@angular/platform-browser';
-import { Router, ActivatedRouteSnapshot, NavigationEnd, NavigationError } from '@angular/router';
-import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import {Component, OnInit, RendererFactory2, Renderer2} from '@angular/core';
+import {Title} from '@angular/platform-browser';
+import {Router, ActivatedRouteSnapshot, NavigationEnd, NavigationError} from '@angular/router';
+import {TranslateService, LangChangeEvent} from '@ngx-translate/core';
 
-import { AccountService } from 'app/core/auth/account.service';
-import { FindLanguageFromKeyPipe } from 'app/shared/language/find-language-from-key.pipe';
+import {AccountService} from 'app/core/auth/account.service';
+import {FindLanguageFromKeyPipe} from 'app/shared/language/find-language-from-key.pipe';
 
 @Component({
   selector: 'jhi-main',
