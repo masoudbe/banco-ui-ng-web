@@ -7,12 +7,16 @@ import { HomeComponent } from './home.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatSelectModule} from "@angular/material/select";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {FormlyModule} from "@ngx-formly/core";
+import {FormlyMaterialModule} from "@ngx-formly/material";
 
 @NgModule({
   imports: [BancoUiNgWebSharedModule, RouterModule.forChild([HOME_ROUTE]),
     MatFormFieldModule,
     MatSelectModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormlyModule.forRoot(),
+    FormlyMaterialModule
   ],
   declarations: [HomeComponent]
 })

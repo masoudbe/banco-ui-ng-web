@@ -1,8 +1,14 @@
+<div>
+    <form [formGroup]="contactForm">
+        <formly-form [(model)]="contact" [fields]="contactFields" [form]="contactForm"></formly-form>
+    </form>
+</div>
+
 <div class="grid">
     <header class="header">
         <i class="fas fa-bars header__menu"></i>
         <div class="header__search">
-            <input class="header__input" placeholder="Search..." />
+            <input class="header__input" placeholder="Search..."/>
         </div>
         <div class="header__avatar">
             <div class="dropdown">
@@ -328,7 +334,8 @@
                         </div>
                         <div class="card__detail">
                             <div class="card__source text-bold">National Institute of Science</div>
-                            <div class="card__description">Join the institute for an in-depth look at Stephen Hawking</div>
+                            <div class="card__description">Join the institute for an in-depth look at Stephen Hawking
+                            </div>
                             <div class="card__note">7:30pm, Carnegie Center for Science</div>
                         </div>
                     </div>
@@ -408,6 +415,8 @@
 
     <footer class="footer">
         <p><span class="footer__copyright">&copy;</span> 2018 MTH</p>
-        <p>Crafted with <i class="fas fa-heart footer__icon"></i> by <a href="https://www.linkedin.com/in/matt-holland/" target="_blank" class="footer__signature">Matt H</a></p>
+        <p>Crafted with <i class="fas fa-heart footer__icon"></i> by <a href="https://www.linkedin.com/in/matt-holland/"
+                                                                        target="_blank" class="footer__signature">Matt
+            H</a></p>
     </footer>
 </div>
