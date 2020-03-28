@@ -82,7 +82,10 @@ export class AccountService {
   }
 
   private fetch(): Observable<Account> {
-    return this.http.get<Account>(SERVER_API_URL + 'api/account');
+    const account = new Account(true, [],
+      "m@m.com", "64", "en", "64", "64", "");
+    return of(account);
+    // return this.http.get<Account>(SERVER_API_URL + 'api/account');
   }
 
   private navigateToStoredUrl(): void {

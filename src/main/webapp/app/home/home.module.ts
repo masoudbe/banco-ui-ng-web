@@ -9,6 +9,8 @@ import {MatSelectModule} from "@angular/material/select";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FormlyModule} from "@ngx-formly/core";
 import {FormlyMaterialModule} from "@ngx-formly/material";
+import {MatMenuModule} from "@angular/material/menu";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   imports: [BancoUiNgWebSharedModule, RouterModule.forChild([HOME_ROUTE]),
@@ -16,8 +18,11 @@ import {FormlyMaterialModule} from "@ngx-formly/material";
     MatSelectModule,
     BrowserAnimationsModule,
     FormlyModule.forRoot(),
-    FormlyMaterialModule
+    FormlyMaterialModule,
+    MatMenuModule,
+    MatButtonModule
   ],
+  exports: [MatMenuModule, MatButtonModule],
   declarations: [HomeComponent]
 })
 export class BancoUiNgWebHomeModule {}

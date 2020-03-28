@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import {Observable, of} from 'rxjs';
 import { map } from 'rxjs/operators';
 import { LocalStorageService, SessionStorageService } from 'ngx-webstorage';
 
@@ -8,7 +8,7 @@ import { SERVER_API_URL } from 'app/app.constants';
 import { Login } from 'app/core/login/login.model';
 
 type JwtToken = {
-  id_token: string;
+  idToken: string;
 };
 
 @Injectable({ providedIn: 'root' })
@@ -20,9 +20,13 @@ export class AuthServerProvider {
   }
 
   login(credentials: Login): Observable<void> {
-    return this.http
-      .post<JwtToken>(SERVER_API_URL + 'api/authenticate', credentials)
+    const jToken: JwtToken = {idToken: "64tw11219"};
+    const  c =
+      of<JwtToken>(jToken)
+      // this.http.post<JwtToken>(SERVER_API_URL + 'api/authenticate', credentials)
       .pipe(map(response => this.authenticateSuccess(response, credentials.rememberMe)));
+
+    return c;
   }
 
   logout(): Observable<void> {
@@ -34,7 +38,7 @@ export class AuthServerProvider {
   }
 
   private authenticateSuccess(response: JwtToken, rememberMe: boolean): void {
-    const jwt = response.id_token;
+    const jwt = response.idToken;
     if (rememberMe) {
       this.$localStorage.store('authenticationToken', jwt);
     } else {

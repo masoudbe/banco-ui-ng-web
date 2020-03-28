@@ -16,7 +16,7 @@ $color-alto: #D3D3D3;
 
 $height-header: 50px;
 $height-footer: 50px;
-$width-sidenav: 240px;
+$width-sidenav: 0px;
 
 @mixin profile-avatar {
   background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1609106/headshot.png");
@@ -198,191 +198,6 @@ a {
     visibility: visible;
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-.sidenav {
-  position: fixed; // Access sidenav at any scroll position; relatively positioned on medium + screens
-  grid-area: sidenav;
-  height: 100%;
-  overflow-y: auto;
-  background-color: $color-fiord;
-  color: $color-white;
-  width: $width-sidenav; // Will match grid area on medium + screens
-  transform: translateX(-245px);
-  transition: all .6s ease-in-out;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
-  z-index: 2; // Needs to sit above the hamburger menu icon
-
-  &__brand {
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding: 0 16px;
-    height: $height-header;
-    background-color: rgba(0, 0, 0, .15);
-
-    &-icon {
-      margin-top: 2px;
-      font-size: 14px;
-      color: $color-transparent;
-    }
-
-    &-close {
-      position: absolute;
-      right: 8px;
-      top: 8px;
-      visibility: visible;
-      color: $color-transparent;
-      cursor: pointer;
-    }
-
-    &-link {
-      font-size: 18px;
-      font-weight: bold;
-      color: $color-white;
-      margin: 0 15px;
-      letter-spacing: 1.5px;
-    }
-  }
-
-  &__profile {
-    display: flex;
-    align-items: center;
-    min-height: 90px;
-    background-color: rgba(255, 255, 255, .1);
-
-    &-avatar {
-      @include profile-avatar;
-      height: 64px;
-      width: 64px;
-      margin: 0 15px;
-    }
-
-    &-title {
-      font-size: 17px;
-      letter-spacing: 1px;
-    }
-  }
-
-  &__arrow {
-    position: absolute;
-    content: "";
-    width: 6px;
-    height: 6px;
-    top: 50%;
-    right: 20px;
-    border-left: 2px solid rgba(255,255,255,.5);
-    border-bottom: 2px solid rgba(255,255,255,.5);
-    transform: translateY(-50%) rotate(225deg);
-  }
-
-  &__sublist {
-    list-style-type: none;
-    margin: 0;
-    padding: 10px 0 0;
-  }
-
-  &--active {
-    transform: translateX(0);
-  }
-}
-
-.navList {
-  width: $width-sidenav;
-  padding: 0;
-  margin: 0;
-  background-color: $color-fiord;
-  list-style-type: none;
-
-  &__heading {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px 16px 3px;
-    color: $color-transparent;
-    text-transform: uppercase;
-    font-size: 15px;
-  }
-
-  &__subheading {
-    position: relative;
-    padding: 10px 30px;
-    color: #fff;
-    font-size: 16px;
-    text-transform: capitalize;
-
-    &-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      color: $color-transparent;
-      width: 12px; // Keep spacing consistent
-    }
-
-    &-title {
-      margin: 0 15px;
-    }
-
-    &:after {
-      position: absolute;
-      content: "";
-      height: 6px;
-      width: 6px;
-      top: 17px;
-      right: 25px;
-      border-left: 1px solid $color-transparent;
-      border-bottom: 1px solid $color-transparent;
-      transform: rotate(225deg);
-      transition: all .2s;
-    }
-
-    &:hover {
-      background-color: darken($color-fiord, 5%);
-      cursor: pointer;
-    }
-
-    &--open {
-      background-color: darken($color-fiord, 5%);
-
-      &:after {
-        transform: rotate(315deg);
-      }
-    }
-  }
-
-  .subList {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-    background-color: darken($color-fiord, 10%);
-    visibility: visible;
-    overflow: hidden;
-    max-height: 200px;
-    transition: all .4s ease-in-out;
-
-    &__item {
-      padding: 8px;
-      text-transform: capitalize;
-      padding: 8px 30px;
-      color: $color-alto;
-
-      &:first-child {
-        padding-top: 15px;
-      }
-
-      &:hover {
-        background-color: rgba(255, 255, 255, .1);
-        cursor: pointer;
-      }
-    }
-
-    &--hidden {
-      visibility: hidden;
-      max-height: 0;
-    }
   }
 }
 
@@ -773,7 +588,7 @@ a {
   grid-area: footer;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: stretch;
   padding: 0 16px;
   color: $color-abbey;
   background-color: $color-white;
@@ -798,7 +613,7 @@ a {
   // Break out to sidenav grid layout on medium + screens
   .grid {
     display: grid;
-    grid-template-columns: $width-sidenav calc(100% - 240px); // Charts responsiveness won't work with fr units
+    grid-template-columns: $width-sidenav calc(100% - 0%); // Charts responsiveness won't work with fr units
     grid-template-rows: $height-header 1fr $height-footer;
     grid-template-areas:
       'sidenav header'
