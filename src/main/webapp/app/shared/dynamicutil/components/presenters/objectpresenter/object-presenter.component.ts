@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 import {FormGroup} from "@angular/forms";
 import {FormlyFieldConfig, FormlyFormOptions} from "@ngx-formly/core";
 
@@ -75,7 +75,7 @@ export class ObjectPresenterComponent {
         },
       ],
     },
-    { template: '<hr />' },
+    {template: '<hr />'},
     {
       type: 'textarea',
       key: 'otherInput',
@@ -92,8 +92,7 @@ export class ObjectPresenterComponent {
     },
   ];
 
-  submit() {
-    alert(JSON.stringify(this.model));
-  }
+  submit() :void {
 
+  }
 }

@@ -10,7 +10,7 @@ import {ContactModel} from "app/home/ContactModel";
 
 
 @Component({
-  selector: 'jhi-home',
+  selector: 'bng-home',
   templateUrl: './home.component.html',
   styleUrls: ['home.scss']
 })

@@ -7,6 +7,7 @@ import { Authority } from 'app/shared/constants/authority.constants';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access-service';
 import {ObjectPresenterComponent} from "app/shared/dynamicutil/components/presenters/objectpresenter/object-presenter.component";
+import {PresenterviewerComponent} from "app/shared/dynamicutil/components/presenterviewer/presenterviewer.component";
 
 const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
 
@@ -27,8 +28,8 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
           loadChildren: () => import('./account/account.module').then(m => m.AccountModule)
         },
         {
-          path: 'objectpresenter',
-          component: ObjectPresenterComponent
+          path: 'presenterviewer',
+          component: PresenterviewerComponent
         },
         ...LAYOUT_ROUTES
       ],

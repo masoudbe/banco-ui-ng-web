@@ -4,10 +4,10 @@ import { FindLanguageFromKeyPipe } from './language/find-language-from-key.pipe'
 import { AlertComponent } from './alert/alert.component';
 import { AlertErrorComponent } from './alert/alert-error.component';
 import { LoginModalComponent } from './login/login.component';
-import { HasAnyAuthorityDirective } from './auth/has-any-authority.directive';
 import { ObjectPresenterComponent } from './dynamicutil/components/presenters/objectpresenter/object-presenter.component';
 import {FormlyModule} from "@ngx-formly/core";
 import {FormlyMaterialModule} from "@ngx-formly/material";
+import { PresenterviewerComponent } from './dynamicutil/components/presenterviewer/presenterviewer.component';
 
 @NgModule({
   imports: [
@@ -20,8 +20,8 @@ import {FormlyMaterialModule} from "@ngx-formly/material";
     AlertComponent,
     AlertErrorComponent,
     LoginModalComponent,
-    HasAnyAuthorityDirective,
-    ObjectPresenterComponent
+    ObjectPresenterComponent,
+    PresenterviewerComponent
   ],
   entryComponents: [LoginModalComponent],
   exports: [
@@ -30,7 +30,6 @@ import {FormlyMaterialModule} from "@ngx-formly/material";
     AlertComponent,
     AlertErrorComponent,
     LoginModalComponent,
-    HasAnyAuthorityDirective,
     ObjectPresenterComponent
   ]
 })

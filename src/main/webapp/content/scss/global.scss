@@ -129,7 +129,7 @@ Custom alerts for notification
       font-size: 10px;
     }
   }
-  .jhi-toast {
+  .bng-toast {
     position: fixed;
     width: 100%;
     &.left {
@@ -148,7 +148,7 @@ Custom alerts for notification
 }
 
 @media screen and (min-width: 480px) {
-  .alerts .jhi-toast {
+  .alerts .bng-toast {
     width: 50%;
   }
 }

@@ -6,7 +6,6 @@ export class FindLanguageFromKeyPipe implements PipeTransform {
     'ar-ly': { name: 'العربية', rtl: true },
     en: { name: 'English' },
     fa: { name: 'فارسی', rtl: true }
-    // jhipster-needle-i18n-language-key-pipe - JHipster will add/remove languages in this object
   };
 
   transform(lang: string): string {
