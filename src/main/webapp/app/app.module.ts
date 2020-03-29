@@ -25,7 +25,13 @@ import { ErrorComponent } from './layouts/error/error.component';
     BancoUiNgWebEntityModule,
     BancoUiNgWebAppRoutingModule
   ],
-  declarations: [MainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
+  declarations: [
+    MainComponent,
+    NavbarComponent,
+    ErrorComponent,
+    PageRibbonComponent,
+    ActiveMenuDirective,
+    FooterComponent],
   bootstrap: [MainComponent]
 })
 export class BancoUiNgWebAppModule {}
