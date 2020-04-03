@@ -19,6 +19,11 @@
         "ignoreRestSiblings": false
       }
     ],
-    "@typescript-eslint/no-non-null-assertion": "off"
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "no-console": "off",
+    "no-console": false,
+    "no-console": 0,
+    "no-debugger": "off",
+    "object-shorthand": "off"
   }
 }

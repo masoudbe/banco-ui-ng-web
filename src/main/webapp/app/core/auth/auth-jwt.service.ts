@@ -4,7 +4,7 @@ import {Observable, of} from 'rxjs';
 import { map } from 'rxjs/operators';
 import { LocalStorageService, SessionStorageService } from 'ngx-webstorage';
 
-import { SERVER_API_URL } from 'app/app.constants';
+// import { SERVER_API_URL } from 'app/app.constants';
 import { Login } from 'app/core/login/login.model';
 
 type JwtToken = {

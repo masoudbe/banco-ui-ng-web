@@ -3,5 +3,14 @@
     "target": "http://localhost:9999",
     "secure": false,
     "loglevel": "debug"
+  },
+  "/api": {
+    "target": "http://localhost:9999",
+    "secure": false,
+    "loglevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api": ""
+    }
   }
 }
