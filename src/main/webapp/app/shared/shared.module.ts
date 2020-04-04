@@ -10,6 +10,7 @@ import {FormlyMaterialModule} from "@ngx-formly/material";
 import {PresenterviewerComponent} from './dynamicutil/components/presenterviewer/presenterviewer.component';
 import {HttpClientModule} from "@angular/common/http";
 import {DynamicService} from "app/shared/dynamicutil/services/dynamic.service";
+import {MatTabsModule} from "@angular/material/tabs";
 
 export function minValidationMessage(err: any, field: FormlyFieldConfig): string {
   return `please enter vlaue bigger than ${err.min} you enter ${err.actual}`;
@@ -33,7 +34,8 @@ export function minValidationMessage(err: any, field: FormlyFieldConfig): string
           }
         ]
       }
-    )
+    ),
+    MatTabsModule
   ],
   declarations: [
     FindLanguageFromKeyPipe,

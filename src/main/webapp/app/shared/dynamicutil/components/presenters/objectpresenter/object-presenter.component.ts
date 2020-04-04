@@ -1,11 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {FormGroup} from "@angular/forms";
+import {FormArray, FormGroup} from "@angular/forms";
 import {FormlyFieldConfig, FormlyFormOptions} from "@ngx-formly/core";
 import {DynamicService} from "app/shared/dynamicutil/services/dynamic.service";
 import {noop} from "rxjs";
 import {map, startWith} from "rxjs/operators";
 import {isNull} from "app/shared/util/common-util";
 import {strict} from "assert";
+import {TabInfo} from "app/shared/dynamicutil/models/TabInfo";
 
 @Component({
   selector: 'bng-objectpresenter',
@@ -14,12 +15,19 @@ import {strict} from "assert";
 })
 export class ObjectPresenterComponent implements OnInit {
 
-  form = new FormGroup({});
-  model: any = {
-    cityName: ''
-  };
-  options: FormlyFormOptions = {};
+  // form = new FormGroup({});
+  model: any = {};
+  // options: FormlyFormOptions = {};
   // fields: FormlyFieldConfig[] = [];
+
+  tabs: TabInfo[] = [];
+
+  form = new FormArray(this.tabs.map(() => new FormGroup({})));
+  options = this.tabs.map(() => {
+    const op: FormlyFormOptions = {};
+    return op;
+  });
+
 
   fields: FormlyFieldConfig[] = [
     {
@@ -103,8 +111,8 @@ export class ObjectPresenterComponent implements OnInit {
                         }
                         const city = field.parent.fieldGroup.find(v => v.key === "cityName");
                         if (!isNull(city)) {
-                          // city.val
-                          this.dynamicService.execute<string>("getentitylist", "city&1")
+                          city.formControl.setValue("");
+                          this.dynamicService.execute<string>("getentitylist", "city&" + natControl.value)
                             .subscribe(res => city.templateOptions.options = JSON.parse(res))
                         }
                       }
@@ -188,6 +196,15 @@ export class ObjectPresenterComponent implements OnInit {
           templateOptions: {
             label: 'Active',
           },
+          hooks: {
+            onInit: field => {
+              const activeVal = field.formControl.valueChanges.subscribe(val => {
+                  const cType = field.parent.fieldGroup.find(v => v.key === "customerType");
+                  cType.templateOptions.required = val;
+                },
+                noop, noop)
+            }
+          }
         },
       ]
     },
@@ -203,14 +220,20 @@ export class ObjectPresenterComponent implements OnInit {
 
   ngOnInit(): void {
 
-    return;
+    const tabInfo: TabInfo = {
+      fields: this.fields,
+      label: "Common Info"
+    }
 
+    this.tabs.push(tabInfo);
+
+    return;
     this.dynamicService.execute<string>("getpresenterinfo", "legalcustomer")
       .subscribe(res => {
-        this.fields = JSON.parse(res);
-      }),
-      noop(),
-      noop()
+          this.fields = JSON.parse(res);
+        },
+        noop,
+        noop);
   }
 }
 

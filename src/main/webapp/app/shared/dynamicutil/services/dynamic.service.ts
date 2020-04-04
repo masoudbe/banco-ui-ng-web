@@ -13,7 +13,7 @@ export class DynamicService {
   }
 
   execute<T>(command: string, data: string): Observable<T> {
-
+    debugger;
     const actionInfo: ActionInfo =
       {command, data};
 
@@ -22,6 +22,8 @@ export class DynamicService {
         'Content-Type': 'application/json'
       })
     };
+
+
 
     return this.http.post<T>(SERVER_API_URL + 'execute', actionInfo, httpOptions)
   }
