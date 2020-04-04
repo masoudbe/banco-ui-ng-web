@@ -13,7 +13,6 @@ export class DynamicService {
   }
 
   execute<T>(command: string, data: string): Observable<T> {
-    debugger;
     const actionInfo: ActionInfo =
       {command, data};
 

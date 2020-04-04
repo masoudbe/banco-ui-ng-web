@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, RendererFactory2} from '@angular/core';
 import { Router } from '@angular/router';
 import { JhiLanguageService } from 'ng-jhipster';
 import { SessionStorageService } from 'ngx-webstorage';
@@ -9,6 +9,8 @@ import { AccountService } from 'app/core/auth/account.service';
 import { LoginModalService } from 'app/core/login/login-modal.service';
 import { LoginService } from 'app/core/login/login.service';
 import { ProfileService } from 'app/layouts/profiles/profile.service';
+import {DynamicService} from "app/shared/dynamicutil/services/dynamic.service";
+import {noop} from "rxjs";
 
 @Component({
   selector: 'bng-navbar',
@@ -21,6 +23,7 @@ export class NavbarComponent implements OnInit {
   languages = LANGUAGES;
   swaggerEnabled?: boolean;
   version: string;
+  subSystems: any[];
 
   constructor(
     private loginService: LoginService,
@@ -29,16 +32,21 @@ export class NavbarComponent implements OnInit {
     private accountService: AccountService,
     private loginModalService: LoginModalService,
     private profileService: ProfileService,
-    private router: Router
+    private router: Router,
+    private dynamicService: DynamicService
   ) {
     this.version = VERSION ? (VERSION.toLowerCase().startsWith('v') ? VERSION : 'v' + VERSION) : '';
   }
 
   ngOnInit(): void {
-    // this.profileService.getProfileInfo().subscribe(profileInfo => {
-    //   this.inProduction = profileInfo.inProduction;
-    //   this.swaggerEnabled = profileInfo.swaggerEnabled;
-    // });
+    this.dynamicService.execute<string>("getsubsystems", "")
+      .subscribe(val => {
+          console.log(val);
+          this.subSystems = JSON.parse(val);
+          console.log(this.subSystems);
+        }
+        , noop
+        , noop);
   }
 
   changeLanguage(languageKey: string): void {

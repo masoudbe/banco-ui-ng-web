@@ -4,10 +4,10 @@
     "browsehappy": "أنت تستخدم متصفح <strong>قديم</strong> . من فضلك <a href=\"http://browsehappy.com/?locale=en\">قم بتحديث متصفحك</a> لتحسين تجربتك.",
     "menu": {
       "home": "الصفحة الرئيسية",
-      "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
+      "tosan-needle-menu-add-element": "Tosan will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "الكيانات",
-        "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
+        "tosan-needle-menu-add-entry": "Tosan will add additional entities here (do not translate!)"
       },
       "account": {
         "main": "الحساب",
@@ -29,7 +29,7 @@
         "audits": "عمليات التدقيق",
         "apidocs": "API",
         "database": "قاعدة البيانات",
-        "jhipster-needle-menu-add-admin-element": "JHipster will add additional menu entries here (do not translate!)"
+        "tosan-needle-menu-add-admin-element": "Tosan will add additional menu entries here (do not translate!)"
       },
       "language": "اللغة"
     },
