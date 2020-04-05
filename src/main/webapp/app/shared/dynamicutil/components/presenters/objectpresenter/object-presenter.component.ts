@@ -249,6 +249,35 @@ export class ObjectPresenterComponent implements OnInit {
           ],
         }
       ]
+    },
+    {
+      label: 'Friend Data',
+      fields: [
+        {
+          fieldGroupClassName: 'row',
+          fieldGroup: [
+            {
+              className: 'col-6',
+              type: 'input',
+              key: 'friend1',
+              templateOptions: {
+                label: 'Friend 1'
+              },
+            },
+            {
+              className: 'col-6',
+              type: 'input',
+              key: 'friend2',
+              templateOptions: {
+                label: 'friend 2',
+              },
+              expressionProperties: {
+                'templateOptions.disabled': '!model.friend1',
+              },
+            }
+          ],
+        }
+      ]
     }
   ]
 
