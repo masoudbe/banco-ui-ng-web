@@ -39,14 +39,60 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.dynamicService.execute<string>("getsubsystems", "")
-      .subscribe(val => {
-          console.log(val);
-          this.subSystems = JSON.parse(val);
-          console.log(this.subSystems);
-        }
-        , noop
-        , noop);
+    const subSystems = '[\n' +
+      '  {\n' +
+      '    "Name": "BranchBackofficeModule",\n' +
+      '    "Order": 1,\n' +
+      '    "UserId": null,\n' +
+      '    "Type": 0,\n' +
+      '    "CurrentOrder": 0,\n' +
+      '    "Title": "خدمات کارت در شعبه",\n' +
+      '    "ID": 500,\n' +
+      '    "Version": 0,\n' +
+      '    "CreationDate": "2020-04-02T20:11:34.8895198+04:30",\n' +
+      '    "LastChange": "2020-04-02T20:11:34.8895198+04:30",\n' +
+      '    "Creator": "",\n' +
+      '    "LastUpdater": ""\n' +
+      '  },\n' +
+      '  {\n' +
+      '    "Name": "BoursarModule",\n' +
+      '    "Order": 1,\n' +
+      '    "UserId": null,\n' +
+      '    "Type": 0,\n' +
+      '    "CurrentOrder": 0,\n' +
+      '    "Title": "بورسار",\n' +
+      '    "LinkGroupImage": null,\n' +
+      '    "ID": 67,\n' +
+      '    "Version": 0,\n' +
+      '    "CreationDate": "2020-04-02T20:11:34.9051199+04:30",\n' +
+      '    "LastChange": "2020-04-02T20:11:34.9051199+04:30",\n' +
+      '    "Creator": "",\n' +
+      '    "LastUpdater": ""\n' +
+      '  },\n' +
+      '  {\n' +
+      '    "Name": "DsmModule",\n' +
+      '    "Order": 1,\n' +
+      '    "UserId": null,\n' +
+      '    "Type": 0,\n' +
+      '    "CurrentOrder": 0,\n' +
+      '    "Title": "سامانه مديريت امضاي ديجيتال",\n' +
+      '    "ID": 68,\n' +
+      '    "Version": 0,\n' +
+      '    "CreationDate": "2020-04-02T20:11:34.9051199+04:30",\n' +
+      '    "LastChange": "2020-04-02T20:11:34.9051199+04:30",\n' +
+      '    "Creator": "",\n' +
+      '    "LastUpdater": ""\n' +
+      '  },\n' +
+      ']';
+    this.subSystems = JSON.parse(subSystems);
+    // this.dynamicService.execute<string>("getsubsystems", "")
+    //   .subscribe(val => {
+    //       console.log(val);
+    //       this.subSystems = JSON.parse(val);
+    //       console.log(this.subSystems);
+    //     }
+    //     , noop
+    //     , noop);
   }
 
   changeLanguage(languageKey: string): void {

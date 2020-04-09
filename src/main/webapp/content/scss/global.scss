@@ -14,6 +14,59 @@ h4 {
   font-weight: 300;
 }
 
+.fill-height-or-more {
+  //display: -webkit-box;
+  //display: -webkit-flex;
+  //display: -moz-box;
+  //display: -ms-flexbox;
+  //display: flex;
+  //-webkit-box-orient: vertical;
+  //-webkit-box-direction: normal;
+  //-webkit-flex-direction: column;
+  //-moz-box-orient: vertical;
+  //-moz-box-direction: normal;
+  //-ms-flex-direction: column;
+  //flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  align-content: stretch;
+  height: 100%;
+  background-color: yellow;
+}
+
+.fill-height-or-more-child {
+  flex: 1;
+  align-content: center;
+  align-items: stretch;
+  justify-content: stretch;
+  background-color: green;
+  color: white;
+  //-webkit-box-flex: 1;
+  //-webkit-flex: 1;
+  //-moz-box-flex: 1;
+  //-ms-flex: 1;
+  //flex: 1;
+  //display: -webkit-box;
+  //display: -webkit-flex;
+  //display: -moz-box;
+  //display: -ms-flexbox;
+  //display: flex;
+  //-webkit-box-pack: center;
+  //-webkit-justify-content: center;
+  //-moz-box-pack: center;
+  //-ms-flex-pack: center;
+  //justify-content: stretch;
+  //-webkit-box-orient: vertical;
+  //-webkit-box-direction: normal;
+  //-webkit-flex-direction: row;
+  //-moz-box-orient: vertical;
+  //-moz-box-direction: normal;
+  //-ms-flex-direction: row;
+  //flex-direction: row;
+}
+
 /* Increase contrast of links to get 100% on Lighthouse Accessability Audit. Override this color if you want to change the link color, or use a Bootswatch theme */
 a {
   color: #533f03;
@@ -71,8 +124,9 @@ Generic styles
 
 .jh-card {
   padding: 1.5%;
-  margin-top: 20px;
+  //margin-top: 20px;
   border: none;
+  background-color: #fff;
 }
 
 .error {
@@ -106,6 +160,10 @@ Generic styles
   border-top: 1px solid rgba(0, 0, 0, 0.125);
 }
 
+.footer p {
+  margin-bottom: 0px;
+}
+
 .hand,
 [jhisortby] {
   cursor: pointer;
@@ -117,6 +175,7 @@ Custom alerts for notification
 .alerts {
   .alert {
     text-overflow: ellipsis;
+
     pre {
       background: none;
       border: none;
@@ -125,22 +184,28 @@ Custom alerts for notification
       padding: 0;
       margin: 0;
     }
+
     .popover pre {
       font-size: 10px;
     }
   }
+
   .bng-toast {
     position: fixed;
     width: 100%;
+
     &.left {
       left: 5px;
     }
+
     &.right {
       right: 5px;
     }
+
     &.top {
       top: 55px;
     }
+
     &.bottom {
       bottom: 55px;
     }
@@ -167,6 +232,7 @@ entity detail page css
     dt {
       margin-bottom: 15px;
     }
+
     dd {
       border-bottom: 1px solid #eee;
       padding-left: 180px;
@@ -190,4 +256,16 @@ ui bootstrap tweaks
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.mat-tab-label {
+  font-size: 14px;
+}
+
+.btn {
+  font-size: 14px;
+}
+
+.row {
+  margin-right: 0px;
 }

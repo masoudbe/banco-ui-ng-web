@@ -1,0 +1,209 @@
+[
+  {
+    "label": "Common Data",
+    "fields": [
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-6",
+            "type": "input",
+            "key": "firstName",
+            "templateOptions": {
+              "label": "First Name",
+              "required": true
+            }
+          },
+          {
+            "className": "col-6",
+            "type": "input",
+            "key": "lastName",
+            "templateOptions": {
+              "label": "Last Name",
+              "required": true
+            },
+            "expressionProperties": {
+              "templateOptions.disabled": "!model.firstName"
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "yearofbirthday",
+            "templateOptions": {
+              "type": "number",
+              "label": "Year Of Birthday",
+              "max": 1500,
+              "min": 1300,
+              "pattern": "\\d{4}"
+            }
+          }
+        ]
+      },
+      {
+        "className": "section-label",
+        "template": "<hr /><div><strong>Address:</strong></div>"
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "nationalId",
+            "templateOptions": {
+              "label": "Nation",
+              "options": [
+                {
+                  "value": 1,
+                  "label": "iran"
+                },
+                {
+                  "value": 2,
+                  "label": "usa"
+                },
+                {
+                  "value": 3,
+                  "label": "france"
+                }
+              ]
+            },
+            "hooks": {}
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "zip",
+            "templateOptions": {
+              "type": "number",
+              "label": "Zip",
+              "max": 999999,
+              "min": 0,
+              "pattern": "\\d{5}"
+            },
+            "validation": {
+              "messages": {
+                "min": "Sorry, you have to enter bigger"
+              }
+            }
+          },
+          {
+            "className": "col-6",
+            "type": "input",
+            "key": "street",
+            "templateOptions": {
+              "label": "Street"
+            },
+            "hooks": {}
+          }
+        ]
+      },
+      {
+        "template": "<hr />"
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-2",
+            "type": "select",
+            "key": "customerType",
+            "templateOptions": {
+              "label": "Customer Type",
+              "options": [
+                {
+                  "value": 1,
+                  "label": "Real"
+                },
+                {
+                  "value": 2,
+                  "label": "Not Real"
+                }
+              ]
+            }
+          },
+          {
+            "type": "checkbox",
+            "key": "isActive",
+            "templateOptions": {
+              "label": "Active"
+            },
+            "hooks": {
+              "onInit": "field => {const activeVal = field.formControl.valueChanges.subscribe(val => {const cType = field.parent.fieldGroup.find(v => v.key === 'customerType');cType.templateOptions.required = val;},noop, noop)}"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Family Data",
+    "fields": [
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-6",
+            "type": "input",
+            "key": "fatherName",
+            "templateOptions": {
+              "label": "Father Name",
+              "required": true
+            }
+          },
+          {
+            "className": "col-6",
+            "type": "input",
+            "key": "motherName",
+            "templateOptions": {
+              "label": "Mother Name",
+              "required": true
+            },
+            "expressionProperties": {
+              "templateOptions.disabled": "!model.fatherName"
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "telephone",
+            "templateOptions": {
+              "type": "tel",
+              "label": "telephone number",
+              "pattern": "\\d{4}"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Friend Data",
+    "fields": [
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-6",
+            "type": "input",
+            "key": "friend1",
+            "templateOptions": {
+              "label": "Friend 1"
+            }
+          },
+          {
+            "className": "col-6",
+            "type": "input",
+            "key": "friend2",
+            "templateOptions": {
+              "label": "friend 2"
+            },
+            "expressionProperties": {
+              "templateOptions.disabled": "!model.friend1"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

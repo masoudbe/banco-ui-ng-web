@@ -29,123 +29,218 @@ func execute(w http.ResponseWriter, r *http.Request) {
     if (actionInfo.Command == "getpresenterinfo" && actionInfo.Data == "legalcustomer") {
         result = `[
   {
-    "fieldGroupClassName": "row",
-    "fieldGroup": [
+    "label": "Common Data",
+    "fields": [
       {
-        "className": "col-6",
-        "type": "input",
-        "key": "firstName",
-        "templateOptions": {
-          "label": "First Name"
-        },
-		"hooks": {
-			"onInit": "(field: FormlyFieldConfig) => { field.templateOptions.label = 'Hook Changed me'';}"
-		}
-      },
-      {
-        "className": "col-6",
-        "type": "input",
-        "key": "lastName",
-        "templateOptions": {
-          "label": "Last Name"
-        },
-        "expressionProperties": {
-          "templateOptions.disabled": "!model.firstName"
-        }
-      }
-    ]
-  },
-  {
-    "className": "section-label",
-    "template": "<hr /><div><strong>Address:</strong></div>"
-  },
-  {
-    "fieldGroupClassName": "row",
-    "fieldGroup": [
-      {
-        "className": "col-6",
-        "type": "input",
-        "key": "street",
-        "templateOptions": {
-          "label": "Street"
-        }
-      },
-      {
-        "className": "col-3",
-        "type": "input",
-        "key": "cityName",
-        "templateOptions": {
-          "label": "City"
-        }
-      },
-      {
-        "className": "col-3",
-        "type": "input",
-        "key": "zip",
-        "templateOptions": {
-          "type": "number",
-          "label": "Zip",
-          "max": 99999,
-          "min": 0,
-          "pattern": "\\d{5}"
-        }
-      },
-      {
-        "className": "col-3",
-        "type": "input",
-        "key": "yearofbirthday",
-        "templateOptions": {
-          "type": "number",
-          "label": "Year Of Birthday",
-          "max": 1500,
-          "min": 1300,
-          "pattern": "\\d{4}"
-        }
-      },
-      {
-        "className": "col-3",
-        "type": "select",
-        "key": "customerType",
-        "templateOptions": {
-          "label": "Customer Type",
-          "options": [
-            {
-              "value": 1,
-              "label": "Real"
-            },
-            {
-              "value": 2,
-              "label": "Not Real"
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-6",
+            "type": "input",
+            "key": "firstName",
+            "templateOptions": {
+              "label": "First Name",
+              "required": true
             }
-          ]
-        }
+          },
+          {
+            "className": "col-6",
+            "type": "input",
+            "key": "lastName",
+            "templateOptions": {
+              "label": "Last Name",
+              "required": true
+            },
+            "expressionProperties": {
+              "templateOptions.disabled": "!model.firstName"
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "yearofbirthday",
+            "templateOptions": {
+              "type": "number",
+              "label": "Year Of Birthday",
+              "max": 1500,
+              "min": 1300,
+              "pattern": "\\d{4}"
+            }
+          }
+        ]
       },
       {
-        "className": "col-3",
-        "type": "select",
-        "key": "nationalId",
-        "templateOptions": {
-          "label": "nationalId"
-        }
+        "className": "section-label",
+        "template": "<hr /><div><strong>Address:</strong></div>"
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "nationalId",
+            "templateOptions": {
+              "label": "Nation",
+              "options": [
+                {
+                  "value": 1,
+                  "label": "iran"
+                },
+                {
+                  "value": 2,
+                  "label": "usa"
+                },
+                {
+                  "value": 3,
+                  "label": "france"
+                }
+              ]
+            },
+            "hooks": {}
+          },
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "cityName",
+            "templateOptions": {
+              "label": "City",
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "zip",
+            "templateOptions": {
+              "type": "number",
+              "label": "Zip",
+              "max": 999999,
+              "min": 0,
+              "pattern": "\\d{5}"
+            },
+            "validation": {
+              "messages": {
+                "min": "Sorry, you have to enter bigger"
+              }
+            }
+          },
+          {
+            "className": "col-6",
+            "type": "input",
+            "key": "street",
+            "templateOptions": {
+              "label": "Street"
+            },
+            "hooks": {}
+          }
+        ]
+      },
+      {
+        "template": "<hr />"
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-2",
+            "type": "select",
+            "key": "customerType",
+            "templateOptions": {
+              "label": "Customer Type",
+              "options": [
+                {
+                  "value": 1,
+                  "label": "Real"
+                },
+                {
+                  "value": 2,
+                  "label": "Not Real"
+                }
+              ]
+            }
+          },
+          {
+            "type": "checkbox",
+            "key": "isActive",
+            "templateOptions": {
+              "label": "Active"
+            },
+            "hooks": {}
+          }
+        ]
       }
     ]
   },
   {
-    "template": "<hr />"
+    "label": "Family Data",
+    "fields": [
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-6",
+            "type": "input",
+            "key": "fatherName",
+            "templateOptions": {
+              "label": "Father Name",
+              "required": true
+            }
+          },
+          {
+            "className": "col-6",
+            "type": "input",
+            "key": "motherName",
+            "templateOptions": {
+              "label": "Mother Name",
+              "required": true
+            },
+            "expressionProperties": {
+              "templateOptions.disabled": "!model.fatherName"
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "telephone",
+            "templateOptions": {
+              "type": "tel",
+              "label": "telephone number",
+              "pattern": "\\d{4}"
+            }
+          }
+        ]
+      }
+    ]
   },
   {
-    "type": "textarea",
-    "key": "otherInput",
-    "templateOptions": {
-      "label": "Other Input"
-    }
-  },
-  {
-    "type": "checkbox",
-    "key": "otherToo",
-    "templateOptions": {
-      "label": "Other Checkbox"
-    }
+    "label": "Friend Data",
+    "fields": [
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-6",
+            "type": "input",
+            "key": "friend1",
+            "templateOptions": {
+              "label": "Friend 1"
+            }
+          },
+          {
+            "className": "col-6",
+            "type": "input",
+            "key": "friend2",
+            "templateOptions": {
+              "label": "friend 2"
+            },
+            "expressionProperties": {
+              "templateOptions.disabled": "!model.friend1"
+            }
+          }
+        ]
+      }
+    ]
   }
 ]`
     }
@@ -236,7 +331,6 @@ func execute(w http.ResponseWriter, r *http.Request) {
                 }
             }
         }
-
     }
     if (actionInfo.Command == "getsubsystems") {
         result = `[
@@ -1280,7 +1374,9 @@ func main() {
     //router.HandleFunc("/execute", execute).Methods("POST")
 
     http.HandleFunc("/execute", execute)
-    http.Handle("/", http.FileServer(http.Dir("D:/MyFiles/My Projects/BancoUINgWeb/src/main/webapp")))
+    http.Handle("/", http.FileServer(http.Dir("/bancong")))
+
+    fmt.Println("server is running at port 9999")
 
     http.ListenAndServe(":9999", nil)
 

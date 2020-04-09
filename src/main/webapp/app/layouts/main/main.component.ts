@@ -11,7 +11,7 @@ import {noop} from "rxjs";
 
 @Component({
   selector: 'bng-main',
-  templateUrl: './main.component.html'
+  templateUrl: './main.component.html',
 })
 export class MainComponent implements OnInit {
   private renderer: Renderer2;
