@@ -6,10 +6,10 @@ import { DEBUG_INFO_ENABLED } from 'app/app.constants';
 import { Authority } from 'app/shared/constants/authority.constants';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access-service';
-import {ObjectPresenterComponent} from "app/shared/dynamicutil/components/presenters/objectpresenter/object-presenter.component";
-import {PresenterviewerComponent} from "app/shared/dynamicutil/components/presenterviewer/presenterviewer.component";
+import {PresenterviewerComponent} from "app/dynamicutil/components/presenterviewer/presenterviewer.component";
+import {sidebarRoute} from "app/layouts/sidebar/sidebar.route";
 
-const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
+const LAYOUT_ROUTES = [navbarRoute, sidebarRoute, ...errorRoute];
 
 @NgModule({
   imports: [

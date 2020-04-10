@@ -14,16 +14,27 @@ import { ActiveMenuDirective } from './layouts/navbar/active-menu.directive';
 import { ErrorComponent } from './layouts/error/error.component';
 import {MatIconModule} from "@angular/material/icon";
 import {MatSidenavModule} from "@angular/material/sidenav";
+import { SidebarComponent } from './layouts/sidebar/sidebar.component';
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {FormsModule} from "@angular/forms";
+import {MatListModule} from "@angular/material/list";
 
 @NgModule({
   imports: [
     BrowserModule,
+    FormsModule,
     BancoUiNgWebSharedModule,
     BancoUiNgWebCoreModule,
     BancoUiNgWebHomeModule,
     BancoUiNgWebAppRoutingModule,
     MatIconModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatListModule
   ],
   declarations: [
     MainComponent,
@@ -31,7 +42,8 @@ import {MatSidenavModule} from "@angular/material/sidenav";
     ErrorComponent,
     PageRibbonComponent,
     ActiveMenuDirective,
-    FooterComponent],
+    FooterComponent,
+    SidebarComponent],
   bootstrap: [MainComponent]
 })
 export class BancoUiNgWebAppModule {}

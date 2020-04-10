@@ -5,7 +5,7 @@ import {TranslateService, LangChangeEvent} from '@ngx-translate/core';
 
 import {AccountService} from 'app/core/auth/account.service';
 import {FindLanguageFromKeyPipe} from 'app/shared/language/find-language-from-key.pipe';
-import {DynamicService} from "app/shared/dynamicutil/services/dynamic.service";
+import {DynamicService} from "app/dynamicutil/services/dynamic.service";
 import {strict} from "assert";
 import {noop} from "rxjs";
 

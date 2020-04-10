@@ -1,4 +1,8 @@
 <nav class="navbar navbar-dark navbar-expand-md bg-dark">
+    <a class="navbar-brand" style="margin-right: 10px">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">list</mat-icon>
+    </a>
+
     <a class="navbar-brand logo" routerLink="/" (click)="collapseNavbar()">
         <span class="logo-img"></span>
         <span class="navbar-title">Welcome to Banco</span> <span
@@ -11,85 +15,6 @@
         <fa-icon icon="bars"></fa-icon>
     </a>
 
-    <div style="background-color: white">
-        <mat-menu #subsystems="matMenu">
-            <button mat-menu-item routerLink="presenterviewer">Customer</button>
-            <button mat-menu-item>BranchBackofficeModule</button>
-            <button mat-menu-item>BoursarModule</button>
-            <button mat-menu-item>DsmModule</button>
-            <button mat-menu-item>MessagingModule</button>
-            <button mat-menu-item>CDModule</button>
-            <button mat-menu-item>CorporationCardModule</button>
-            <button mat-menu-item>ChakavakModule</button>
-            <button mat-menu-item>SepantaModule</button>
-            <button mat-menu-item>ProfitModule</button>
-            <button mat-menu-item>BancoCSModule</button>
-            <button mat-menu-item>LoanExModule</button>
-            <button mat-menu-item>BusinessFrameworkInfraModule</button>
-            <button mat-menu-item>FNTModule</button>
-            <button mat-menu-item>BatchMonitoringModule</button>
-            <button mat-menu-item>CbiExModule</button>
-            <button mat-menu-item>DealingRoomModule</button>
-            <button mat-menu-item>RtgsModule</button>
-            <button mat-menu-item>داده کاوان</button>
-            <button mat-menu-item>VostroModule</button>
-            <button mat-menu-item>ترخیص کالا</button>
-            <button mat-menu-item>CurrencyExchangeModule</button>
-            <button mat-menu-item>ACHModule</button>
-            <button mat-menu-item>WorkbenchModule</button>
-            <button mat-menu-item>BI</button>
-            <button mat-menu-item>CreditModule</button>
-            <button mat-menu-item>clearancemodule</button>
-            <button mat-menu-item>SecurityModule</button>
-            <button mat-menu-item>FundTransferModule</button>
-            <button mat-menu-item>InternalLCModule</button>
-            <button mat-menu-item>FeeProcessingModule</button>
-            <button mat-menu-item>InfrastructureModule</button>
-            <button mat-menu-item>OrgFundamentalModule</button>
-            <button mat-menu-item>GLModule</button>
-            <button mat-menu-item>GuaranteeModule</button>
-            <button mat-menu-item>LoanModule</button>
-            <button mat-menu-item>DepositModule</button>
-            <button mat-menu-item>NostroModule</button>
-            <button mat-menu-item>ClearingHouseModule</button>
-            <button mat-menu-item>CashModule</button>
-            <button mat-menu-item>LCModule</button>
-            <button mat-menu-item>InquiryModule</button>
-            <button mat-menu-item>PaymentMonitoringModule</button>
-            <button mat-menu-item>Exchange</button>
-            <button mat-menu-item>Swift</button>
-            <button mat-menu-item>Gateway</button>
-            <button mat-menu-item>BranchAutomationModule</button>
-            <button mat-menu-item>AAServerModule</button>
-            <button mat-menu-item>ChaparModule</button>
-            <button mat-menu-item>SecuritiesBondsModule</button>
-            <button mat-menu-item>ChannelManagerModule</button>
-            <button mat-menu-item>Report</button>
-            <button mat-menu-item>CreditLineModule</button>
-            <button mat-menu-item>TFFundamental</button>
-            <button mat-menu-item>CentrlBankReportModule</button>
-            <button mat-menu-item>Treasury</button>
-            <button mat-menu-item>CollectionsModule</button>
-            <button mat-menu-item>CollateralModule</button>
-            <button mat-menu-item>InterBankChequeModule</button>
-            <button mat-menu-item>BCCModule</button>
-            <button mat-menu-item>ChequeModule</button>
-            <button mat-menu-item>PIB</button>
-            <button mat-menu-item>SafirModule</button>
-            <button mat-menu-item>TradeModule</button>
-            <button mat-menu-item>InsuranceAssistantModule</button>
-            <button mat-menu-item>shopping</button>
-            <button mat-menu-item>SimaModule</button>
-            <button mat-menu-item>ThirdPartyModule</button>
-            <button mat-menu-item>Favorite</button>
-            <button mat-menu-item>MostRecentlyUsed</button>
-            <button mat-menu-item>Toolbar</button>
-        </mat-menu>
-
-        <button class="nav-link" [matMenuTriggerFor]="subsystems">
-            <mat-icon>account_balance</mat-icon>
-        </button>
-    </div>
     <div class="navbar-collapse collapse" id="navbarResponsive" [ngbCollapse]="isNavbarCollapsed"
          [ngSwitch]="isAuthenticated()">
         <ul class="navbar-nav ml-auto">

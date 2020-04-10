@@ -1,0 +1,22 @@
+<form>
+    <mat-form-field>
+        <input type="text"
+               #filterTxt
+               placeholder="Select Module"
+               aria-label="Number"
+               matInput
+               [formControl]="filterTextControl"
+               [matAutocomplete]="auto"/>
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)='subSystemSelected($event.option.value)'>
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option.Name">
+                {{option.Name}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+
+    <mat-action-list>
+        <button style="font-size: 14px;width: 40px" *ngFor="let c of commands" mat-list-item>{{filterTxt.value + c.Name}}</button>
+    </mat-action-list>
+</form>
+
+
