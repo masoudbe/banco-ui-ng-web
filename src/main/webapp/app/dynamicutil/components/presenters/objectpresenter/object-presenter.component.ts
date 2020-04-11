@@ -350,10 +350,10 @@ export class ObjectPresenterComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.httpClient.get("assets/subsystems.json").subscribe(data =>{
+    this.httpClient.get("assets/customerop.json").subscribe(data =>{
       console.log(data);
       this.tabs = data;
-    })
+    }, err => console.log('******************' + err), noop)
 
     // const c = JSON.stringify(this.tabs);
     // console.log(c);

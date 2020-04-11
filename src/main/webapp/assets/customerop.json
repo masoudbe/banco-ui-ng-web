@@ -128,9 +128,7 @@
             "templateOptions": {
               "label": "Active"
             },
-            "hooks": {
-              "onInit": "field => {const activeVal = field.formControl.valueChanges.subscribe(val => {const cType = field.parent.fieldGroup.find(v => v.key === 'customerType');cType.templateOptions.required = val;},noop, noop)}"
-            }
+            "hooks": {}
           }
         ]
       }
