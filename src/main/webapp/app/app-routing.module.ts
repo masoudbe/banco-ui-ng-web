@@ -6,7 +6,7 @@ import { DEBUG_INFO_ENABLED } from 'app/app.constants';
 import { Authority } from 'app/shared/constants/authority.constants';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access-service';
-import {PresenterviewerComponent} from "app/dynamicutil/components/presenterviewer/presenterviewer.component";
+import {PresenterViewerForm} from "app/dynamicutil/components/presenterviewer/presenter-viewer-form.component";
 import {sidebarRoute} from "app/layouts/sidebar/sidebar.route";
 
 const LAYOUT_ROUTES = [navbarRoute, sidebarRoute, ...errorRoute];
@@ -29,7 +29,7 @@ const LAYOUT_ROUTES = [navbarRoute, sidebarRoute, ...errorRoute];
         },
         {
           path: 'presenterviewer',
-          component: PresenterviewerComponent
+          component: PresenterViewerForm
         },
         ...LAYOUT_ROUTES
       ],

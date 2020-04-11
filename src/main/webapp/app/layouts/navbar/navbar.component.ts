@@ -10,6 +10,7 @@ import {LoginModalService} from 'app/core/login/login-modal.service';
 import {LoginService} from 'app/core/login/login.service';
 import {ProfileService} from 'app/layouts/profiles/profile.service';
 import {DynamicService} from "app/dynamicutil/services/dynamic.service";
+import {StoreService} from "app/dynamicutil/services/store.service";
 
 @Component({
   selector: 'bng-navbar',
@@ -32,7 +33,8 @@ export class NavbarComponent {
     private loginModalService: LoginModalService,
     private profileService: ProfileService,
     private router: Router,
-    private dynamicService: DynamicService
+    private dynamicService: DynamicService,
+    private storeService: StoreService
   ) {
     this.version = VERSION ? (VERSION.toLowerCase().startsWith('v') ? VERSION : 'v' + VERSION) : '';
   }
@@ -66,5 +68,9 @@ export class NavbarComponent {
 
   getImageUrl(): string {
     return this.isAuthenticated() ? this.accountService.getImageUrl() : '';
+  }
+
+  showHideSideBar(): void {
+    this.storeService.toggleSideBar();
   }
 }

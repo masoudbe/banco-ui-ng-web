@@ -24,6 +24,12 @@
     "no-console": false,
     "no-console": 0,
     "no-debugger": "off",
-    "object-shorthand": "off"
+    "object-shorthand": "off",
+    "@typescript-eslint/no-misused-promises": [
+      "error",
+      {
+        "checksVoidReturn": false
+      }
+    ]
   }
 }

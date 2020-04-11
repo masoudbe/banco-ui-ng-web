@@ -1,4 +1,12 @@
-import {Component, OnInit, RendererFactory2, Renderer2} from '@angular/core';
+import {
+  Component,
+  OnInit,
+  RendererFactory2,
+  Renderer2,
+  ViewChild,
+  AfterViewInit,
+  AfterContentInit, AfterContentChecked
+} from '@angular/core';
 import {Title} from '@angular/platform-browser';
 import {Router, ActivatedRouteSnapshot, NavigationEnd, NavigationError} from '@angular/router';
 import {TranslateService, LangChangeEvent} from '@ngx-translate/core';
@@ -8,6 +16,8 @@ import {FindLanguageFromKeyPipe} from 'app/shared/language/find-language-from-ke
 import {DynamicService} from "app/dynamicutil/services/dynamic.service";
 import {strict} from "assert";
 import {noop} from "rxjs";
+import {StoreService} from "app/dynamicutil/services/store.service";
+import {MatSidenav, MatSidenavContainer} from "@angular/material/sidenav";
 
 @Component({
   selector: 'bng-main',
@@ -16,13 +26,15 @@ import {noop} from "rxjs";
 export class MainComponent implements OnInit {
   private renderer: Renderer2;
 
+  @ViewChild('sidenav', {static: true}) sidenav: MatSidenav;
   constructor(
     private accountService: AccountService,
     private titleService: Title,
     private router: Router,
     private findLanguageFromKeyPipe: FindLanguageFromKeyPipe,
     private translateService: TranslateService,
-    rootRenderer: RendererFactory2
+    rootRenderer: RendererFactory2,
+    private storeService: StoreService
   ) {
     this.renderer = rootRenderer.createRenderer(document.querySelector('html'), null);
   }
@@ -47,6 +59,13 @@ export class MainComponent implements OnInit {
 
       this.updatePageDirection();
     });
+
+
+    this.storeService.toggleSideBar$.subscribe(val => this.toggleSideBar())
+  }
+
+  private toggleSideBar(): void {
+    this.sidenav.opened = !this.sidenav.opened;
   }
 
   private getPageTitle(routeSnapshot: ActivatedRouteSnapshot): string {

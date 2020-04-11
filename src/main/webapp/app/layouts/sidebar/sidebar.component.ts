@@ -4,6 +4,7 @@ import {noop, Observable} from "rxjs";
 import {FormControl} from "@angular/forms";
 import {DynamicService} from "app/dynamicutil/services/dynamic.service";
 import * as CS from "app/dynamicutil/models/Constants";
+import {StoreService} from "app/dynamicutil/services/store.service";
 
 export interface SystemCode {
   ID: string;
@@ -23,9 +24,7 @@ export class SidebarComponent implements OnInit {
   commands: SystemCode[] = [];
   filteredOptions: Observable<SystemCode[]>;
 
-  typesOfShoes: string[] = ['Boots', 'Clogs', 'Loafers', 'Moccasins', 'Sneakers'];
-
-  constructor(private dynamicService: DynamicService) {
+  constructor(private dynamicService: DynamicService, private storeService: StoreService) {
 
   }
 
@@ -48,6 +47,8 @@ export class SidebarComponent implements OnInit {
         startWith(''),
         map(value => this._filter(value))
       );
+
+    this.storeService.toggleSideBar$.subscribe()
   }
 
   private _filter(value: string): SystemCode[] {
@@ -69,5 +70,9 @@ export class SidebarComponent implements OnInit {
       .subscribe(val => {
         this.commands = val;
       }, noop, noop);
+  }
+
+  addPresenter(presenterName: string): void {
+    this.storeService.addPresenter(presenterName);
   }
 }

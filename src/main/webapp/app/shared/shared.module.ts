@@ -7,7 +7,7 @@ import {LoginModalComponent} from './login/login.component';
 import {ObjectPresenterComponent} from '../dynamicutil/components/presenters/objectpresenter/object-presenter.component';
 import {FormlyFieldConfig, FormlyModule} from "@ngx-formly/core";
 import {FormlyMaterialModule} from "@ngx-formly/material";
-import {PresenterviewerComponent} from '../dynamicutil/components/presenterviewer/presenterviewer.component';
+import {PresenterViewerForm} from '../dynamicutil/components/presenterviewer/presenter-viewer-form.component';
 import {HttpClientModule} from "@angular/common/http";
 import {DynamicService} from "app/dynamicutil/services/dynamic.service";
 import {MatTabsModule} from "@angular/material/tabs";
@@ -43,7 +43,7 @@ export function minValidationMessage(err: any, field: FormlyFieldConfig): string
     AlertErrorComponent,
     LoginModalComponent,
     ObjectPresenterComponent,
-    PresenterviewerComponent
+    PresenterViewerForm
   ],
   entryComponents: [LoginModalComponent],
   exports: [
@@ -52,7 +52,8 @@ export function minValidationMessage(err: any, field: FormlyFieldConfig): string
     AlertComponent,
     AlertErrorComponent,
     LoginModalComponent,
-    ObjectPresenterComponent
+    ObjectPresenterComponent,
+    PresenterViewerForm
   ],
   providers: [
     DynamicService
