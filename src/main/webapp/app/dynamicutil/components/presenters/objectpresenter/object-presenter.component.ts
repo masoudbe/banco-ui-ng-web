@@ -379,7 +379,7 @@ export class ObjectPresenterComponent implements OnInit {
             map(res => res.toString())
           ).subscribe((val: string) => {
             if (!isNull(field.parent)) {
-              const zip = field.parent.fieldGroup.find(v => v.key === "zip");
+              const zip = field.parent.fieldGroup.find((v: FormlyFieldConfig) => v.key === "zip");
               zip.templateOptions.pattern = '\\d{5}';
               if (!isNull(zip) && val === "2") {
                 zip.templateOptions.pattern = '\\d{6}';
