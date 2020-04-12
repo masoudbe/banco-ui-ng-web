@@ -6,7 +6,6 @@ import {noop} from "rxjs";
 import {map, startWith} from "rxjs/operators";
 import {isNull} from "app/shared/util/common-util";
 import {strict} from "assert";
-import {TabInfo} from "app/dynamicutil/models/TabInfo";
 import {HttpClient} from "@angular/common/http";
 
 @Component({
@@ -332,8 +331,7 @@ export class ObjectPresenterComponent implements OnInit {
   //   }
   // ]
 
-
-  form = new FormArray(this.tabs.map(() => new FormGroup({})));
+  formArray = new FormArray(this.tabs.map(() => new FormGroup({})));
   options = this.tabs.map(() => {
     const op: FormlyFormOptions = {};
     return op;
@@ -350,21 +348,107 @@ export class ObjectPresenterComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.httpClient.get("assets/customerop.json").subscribe(data =>{
-      console.log(data);
+    this.httpClient.get("assets/customerop.json").subscribe(data => {
       this.tabs = data;
-    }, err => console.log('******************' + err), noop)
+      const formConfigs: FormlyFieldConfig[] = this.tabs[0].fields;
 
-    // const c = JSON.stringify(this.tabs);
-    // console.log(c);
-    // return;
-    // this.dynamicService.execute<string>("getpresenterinfo", "legalcustomer")
-    //   .subscribe(res => {
-    //       this.fields = JSON.parse(res);
-    //     },
-    //     noop,
-    //     noop);
+      for (let i = 0; i < formConfigs.length; i++) {
+        const fc = formConfigs[i];
+        if (!isNull(fc.fieldGroup)) {
+          const nationFd = fc.fieldGroup.find(v => v.key === "nationalId");
+          if (!isNull(nationFd)) {
+            nationFd.hooks = {onInit: field => this.nationalIdInit(field)};
+          }
+
+          const isActiveFd = fc.fieldGroup.find(v => v.key === "isActive");
+          if (!isNull(isActiveFd)) {
+            isActiveFd.hooks = {onInit: field => this.isActiveOnInit(field)};
+          }
+        }
+      }
+    }, err => console.log(err), noop)
   }
+
+  nationalIdInit(field: any): void {
+    if (!isNull(field) && !isNull(field.templateOptions)) {
+      if (!isNull(field.form) && !isNull(field.form.get('nationalId'))) {
+        const natControl = field.form.get('nationalId');
+        if (natControl !== undefined && natControl !== null) {
+          natControl.valueChanges.pipe(
+            startWith(1),
+            map(res => res.toString())
+          ).subscribe((val: string) => {
+            if (!isNull(field.parent)) {
+              const zip = field.parent.fieldGroup.find(v => v.key === "zip");
+              zip.templateOptions.pattern = '\\d{5}';
+              if (!isNull(zip) && val === "2") {
+                zip.templateOptions.pattern = '\\d{6}';
+              }
+              const city = field.parent.fieldGroup.find((v: { key: string; }) => v.key === "cityName");
+              if (!isNull(city)) {
+                if (natControl.value === "14") {
+                  city.templateOptions.options = [
+                    {
+                      value: 1,
+                      label: 'tehran'
+                    },
+                    {
+                      value: 2,
+                      label: 'kerman'
+                    },
+                    {
+                      value: 3,
+                      label: 'mashhad'
+                    },
+                  ];
+                } else if (natControl.value === "24") {
+                  city.templateOptions.options = [
+                    {
+                      value: 1,
+                      label: 'Arizona'
+                    },
+                    {
+                      value: 2,
+                      label: 'California'
+                    },
+                    {
+                      value: 3,
+                      label: 'Hawaii'
+                    },
+                  ];
+                } else if (natControl.value === "34") {
+                  city.templateOptions.options = [
+                    {
+                      value: 1,
+                      label: 'Paris'
+                    },
+                    {
+                      "value": "2",
+                      "label": "Lion"
+                    },
+                    {
+                      value: '3',
+                      label: 'Metz'
+                    }
+                  ];
+                }
+              }
+            }
+
+          }, noop, noop)
+        }
+      }
+    }
+  }
+
+  isActiveOnInit(field: any): void {
+    const activeVal = field.formControl.valueChanges.subscribe((val: boolean) => {
+        const cType = field.parent.fieldGroup.find((v: FormlyFieldConfig) => v.key === "customerType");
+        cType.templateOptions.required = val;
+      },
+      noop, noop)
+  }
+
 }
 
 

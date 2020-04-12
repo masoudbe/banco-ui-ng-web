@@ -62,7 +62,7 @@ export class SidebarComponent implements OnInit {
       .pipe(
         map(data => {
           return data.map((element: { [x: string]: any; }) => {
-            const sc: SystemCode = {"ID": element["ID"], "Name": element["Name"], "Title": ''}
+            const sc: SystemCode = {"ID": element["ID"], "Name": value + "-" + element["Name"], "Title": ''}
             return sc;
           });
         })

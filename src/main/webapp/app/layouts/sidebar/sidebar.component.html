@@ -15,7 +15,7 @@
     </mat-form-field>
 
     <mat-action-list>
-        <button (click)="addPresenter(c.Name)" style="font-size: 14px;width: 40px" *ngFor="let c of commands" mat-list-item>{{filterTxt.value + c.Name}}</button>
+        <button (click)="addPresenter(c.Name)" style="font-size: 14px" *ngFor="let c of commands" mat-list-item>{{filterTxt.value + c.Name}}</button>
     </mat-action-list>
 </form>
 

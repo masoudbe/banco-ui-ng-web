@@ -1,13 +1,9 @@
 <mat-tab-group [selectedIndex]="selected.value"
                (selectedIndexChange)="selected.setValue($event)">
     <mat-tab *ngFor="let tab of tabs; let index = index" [label]="tab">
-        Contents for {{tab}} tab
+        <a (click)="removeTab(index)">
+            <span class="close-img"></span>
+        </a>
         <bng-objectpresenter></bng-objectpresenter>
-        <button mat-raised-button
-                class="example-delete-tab-button"
-                [disabled]="tabs.length === 1"
-                (click)="removeTab(index)">
-            Delete Tab
-        </button>
     </mat-tab>
 </mat-tab-group>
