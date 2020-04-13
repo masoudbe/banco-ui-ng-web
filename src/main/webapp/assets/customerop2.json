@@ -1,0 +1,1509 @@
+[
+  {
+    "label": "PrimaryInformation",
+    "fields": [
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "FirstName",
+            "templateOptions": {
+              "label": "FirstName",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "LatinFirstName",
+            "templateOptions": {
+              "label": "LatinFirstName",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "LastName",
+            "templateOptions": {
+              "label": "LastName",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "LatinLastName",
+            "templateOptions": {
+              "label": "LatinLastName",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "FatherName",
+            "templateOptions": {
+              "label": "FatherName",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "LatinFatherName",
+            "templateOptions": {
+              "label": "LatinFatherName",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "MotherName",
+            "templateOptions": {
+              "label": "MotherName",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "GrandFatherName",
+            "templateOptions": {
+              "label": "GrandFatherName",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "Gender",
+            "templateOptions": {
+              "label": "Gender",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "Male"
+                },
+                {
+                  "value": 1,
+                  "label": "Female"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "Title",
+            "templateOptions": {
+              "label": "Title",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "PassportSerial",
+            "templateOptions": {
+              "label": "PassportSerial",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "BirthCertificateId",
+            "templateOptions": {
+              "label": "BirthCertificateId",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "SelectiveSeries",
+            "templateOptions": {
+              "label": "SelectiveSeries",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "A"
+                },
+                {
+                  "value": 1,
+                  "label": "B"
+                },
+                {
+                  "value": 2,
+                  "label": "J"
+                },
+                {
+                  "value": 3,
+                  "label": "D"
+                },
+                {
+                  "value": 4,
+                  "label": "R"
+                },
+                {
+                  "value": 5,
+                  "label": "L"
+                },
+                {
+                  "value": 6,
+                  "label": "M"
+                },
+                {
+                  "value": 7,
+                  "label": "One"
+                },
+                {
+                  "value": 8,
+                  "label": "Two"
+                },
+                {
+                  "value": 9,
+                  "label": "Three"
+                },
+                {
+                  "value": 10,
+                  "label": "Four"
+                },
+                {
+                  "value": 11,
+                  "label": "Five"
+                },
+                {
+                  "value": 12,
+                  "label": "Six"
+                },
+                {
+                  "value": 13,
+                  "label": "Seven"
+                },
+                {
+                  "value": 14,
+                  "label": "Eight"
+                },
+                {
+                  "value": 15,
+                  "label": "Nine"
+                },
+                {
+                  "value": 16,
+                  "label": "Ten"
+                },
+                {
+                  "value": 17,
+                  "label": "Eleven"
+                },
+                {
+                  "value": 18,
+                  "label": "Twelve"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "EntrySeries",
+            "templateOptions": {
+              "label": "EntrySeries",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "checkbox",
+            "key": "IsAlmosanna",
+            "templateOptions": {
+              "label": "IsAlmosanna",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "BirthCertificateSerial",
+            "templateOptions": {
+              "label": "BirthCertificateSerial",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "SocialSecurityCode",
+            "templateOptions": {
+              "label": "SocialSecurityCode",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "BirthLocation",
+            "templateOptions": {
+              "label": "BirthLocation",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "datepicker",
+            "key": "CertificateIssueDate",
+            "templateOptions": {
+              "label": "CertificateIssueDate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "AreaCode",
+            "templateOptions": {
+              "label": "AreaCode",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "NationalIDCardSeries",
+            "templateOptions": {
+              "label": "NationalIDCardSeries",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "NationalIDCardSerial",
+            "templateOptions": {
+              "label": "NationalIDCardSerial",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "NationalIDCardType",
+            "templateOptions": {
+              "label": "NationalIDCardType",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "Normal"
+                },
+                {
+                  "value": 1,
+                  "label": "Smart"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "IdClassification",
+            "templateOptions": {
+              "label": "IdClassification",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "ResidentregistrationNo"
+                },
+                {
+                  "value": 1,
+                  "label": "ForeignerRegistrationNo"
+                },
+                {
+                  "value": 2,
+                  "label": "PassportNo"
+                },
+                {
+                  "value": 3,
+                  "label": "Driverlicense"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "PreCustomerNo",
+            "templateOptions": {
+              "label": "PreCustomerNo",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "CreatorBranch",
+            "templateOptions": {
+              "label": "CreatorBranch",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "CreatorUser",
+            "templateOptions": {
+              "label": "CreatorUser",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "CustomerNo",
+            "templateOptions": {
+              "label": "CustomerNo",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "ShahabCode",
+            "templateOptions": {
+              "label": "ShahabCode",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "datepicker",
+            "key": "BirthDate",
+            "templateOptions": {
+              "label": "BirthDate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "Nationality",
+            "templateOptions": {
+              "label": "Nationality",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "BusinessCode",
+            "templateOptions": {
+              "label": "BusinessCode",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "CertificateAreaCode",
+            "templateOptions": {
+              "label": "CertificateAreaCode",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "SettleType",
+            "templateOptions": {
+              "label": "SettleType",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "Resident"
+                },
+                {
+                  "value": 1,
+                  "label": "NoneResident"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "VitalStatus",
+            "templateOptions": {
+              "label": "VitalStatus",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "Dead"
+                },
+                {
+                  "value": 1,
+                  "label": "Alive"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "datepicker",
+            "key": "DeathDate",
+            "templateOptions": {
+              "label": "DeathDate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "checkbox",
+            "key": "ConsentInfo",
+            "templateOptions": {
+              "label": "ConsentInfo",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "datepicker",
+            "key": "ConsentDate",
+            "templateOptions": {
+              "label": "ConsentDate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "datepicker",
+            "key": "DateOfCdd",
+            "templateOptions": {
+              "label": "DateOfCdd",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "datepicker",
+            "key": "DateOfEdd",
+            "templateOptions": {
+              "label": "DateOfEdd",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "Description",
+            "templateOptions": {
+              "label": "Description",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "PurposeTransaction",
+            "templateOptions": {
+              "label": "PurposeTransaction",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "PaymentForGood"
+                },
+                {
+                  "value": 1,
+                  "label": "SuccessionDonation"
+                },
+                {
+                  "value": 2,
+                  "label": "LiabilitiesBorrowing"
+                },
+                {
+                  "value": 3,
+                  "label": "RealConcernedPerson"
+                },
+                {
+                  "value": 4,
+                  "label": "NotRealConcerned"
+                },
+                {
+                  "value": 5,
+                  "label": "WagesLivingExpenses"
+                },
+                {
+                  "value": 6,
+                  "label": "BusinessTransaction"
+                },
+                {
+                  "value": 7,
+                  "label": "SavingInvestment"
+                },
+                {
+                  "value": 8,
+                  "label": "TransferOfDonation"
+                },
+                {
+                  "value": 9,
+                  "label": "ExpensesStudyingAbroad"
+                },
+                {
+                  "value": 10,
+                  "label": "ForeignDeposit"
+                },
+                {
+                  "value": 11,
+                  "label": "Others"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "SecondaryInformation",
+    "fields": [
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "Notability",
+            "templateOptions": {
+              "label": "Notability",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "Religion",
+            "templateOptions": {
+              "label": "Religion",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "DegreeType",
+            "templateOptions": {
+              "label": "DegreeType",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "StudyMajor",
+            "templateOptions": {
+              "label": "StudyMajor",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "DisabilityType",
+            "templateOptions": {
+              "label": "DisabilityType",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "UNSPECIFIED"
+                },
+                {
+                  "value": 1,
+                  "label": "VISUAL"
+                },
+                {
+                  "value": 2,
+                  "label": "HEARING"
+                },
+                {
+                  "value": 3,
+                  "label": "SPEECH"
+                },
+                {
+                  "value": 4,
+                  "label": "MENTAL"
+                },
+                {
+                  "value": 5,
+                  "label": "PHYSICAL"
+                },
+                {
+                  "value": 6,
+                  "label": "WAR"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "PersonnelType",
+            "templateOptions": {
+              "label": "PersonnelType",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "UNSPECIFIED"
+                },
+                {
+                  "value": 1,
+                  "label": "Hired"
+                },
+                {
+                  "value": 2,
+                  "label": "FullTime"
+                },
+                {
+                  "value": 3,
+                  "label": "PartTime"
+                },
+                {
+                  "value": 4,
+                  "label": "Trial"
+                },
+                {
+                  "value": 5,
+                  "label": "Advisor"
+                },
+                {
+                  "value": 6,
+                  "label": "Company"
+                },
+                {
+                  "value": 7,
+                  "label": "Treaty"
+                },
+                {
+                  "value": 8,
+                  "label": "Temporary"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "PasdaryCode",
+            "templateOptions": {
+              "label": "PasdaryCode",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "MarriageStatus",
+            "templateOptions": {
+              "label": "MarriageStatus",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "Single"
+                },
+                {
+                  "value": 1,
+                  "label": "Married"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "datepicker",
+            "key": "MarriageDate",
+            "templateOptions": {
+              "label": "MarriageDate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "Family",
+            "templateOptions": {
+              "label": "Family",
+              "required": false,
+              "type": "number",
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "FamilyMemberCount",
+            "templateOptions": {
+              "label": "FamilyMemberCount",
+              "required": false,
+              "type": "number",
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "HabitancyType",
+            "templateOptions": {
+              "label": "HabitancyType",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "Ownership"
+                },
+                {
+                  "value": 1,
+                  "label": "Rental"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "JanbazyCode",
+            "templateOptions": {
+              "label": "JanbazyCode",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Default",
+    "fields": [
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "PlaceOfIssue",
+            "templateOptions": {
+              "label": "PlaceOfIssue",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Foreign",
+    "fields": [
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "HabitancyLicenseNumber",
+            "templateOptions": {
+              "label": "HabitancyLicenseNumber",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "datepicker",
+            "key": "HabitancyLicenseIssueDate",
+            "templateOptions": {
+              "label": "HabitancyLicenseIssueDate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "datepicker",
+            "key": "HabitancyLicenseExpireDate",
+            "templateOptions": {
+              "label": "HabitancyLicenseExpireDate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "SponsorCode",
+            "templateOptions": {
+              "label": "SponsorCode",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "SponsorName",
+            "templateOptions": {
+              "label": "SponsorName",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "SponsorTelNumber",
+            "templateOptions": {
+              "label": "SponsorTelNumber",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "SponsorAddress",
+            "templateOptions": {
+              "label": "SponsorAddress",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "PresenterOrganCode",
+            "templateOptions": {
+              "label": "PresenterOrganCode",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "NationalsIdentity",
+            "templateOptions": {
+              "label": "NationalsIdentity",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "IdCardType",
+            "templateOptions": {
+              "label": "IdCardType",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "ValidResidencePermit"
+                },
+                {
+                  "value": 1,
+                  "label": "SpecialIdentityCard"
+                },
+                {
+                  "value": 2,
+                  "label": "DefferedOutputCard"
+                },
+                {
+                  "value": 3,
+                  "label": "RefugeeBooklet"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "datepicker",
+            "key": "IdCardTypeDateFrom",
+            "templateOptions": {
+              "label": "IdCardTypeDateFrom",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "datepicker",
+            "key": "IdCardTypeDateTo",
+            "templateOptions": {
+              "label": "IdCardTypeDateTo",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "HouseHolderNumber",
+            "templateOptions": {
+              "label": "HouseHolderNumber",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "IdCardTypeNumber",
+            "templateOptions": {
+              "label": "IdCardTypeNumber",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "BusinessInformation",
+    "fields": [
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "BusinessCardNo",
+            "templateOptions": {
+              "label": "BusinessCardNo",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "datepicker",
+            "key": "BusinessCardRegisterationDate",
+            "templateOptions": {
+              "label": "BusinessCardRegisterationDate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "BusinessCardPlaceOfIssue",
+            "templateOptions": {
+              "label": "BusinessCardPlaceOfIssue",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "datepicker",
+            "key": "BusinessCardExpirationDate",
+            "templateOptions": {
+              "label": "BusinessCardExpirationDate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "BusinessId",
+            "templateOptions": {
+              "label": "BusinessId",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "IndustryId",
+            "templateOptions": {
+              "label": "IndustryId",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Addresses",
+    "fields": [
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "EmailAddress",
+            "templateOptions": {
+              "label": "EmailAddress",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "PhoneNumber",
+            "templateOptions": {
+              "label": "PhoneNumber",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "TelFaxNumber",
+            "templateOptions": {
+              "label": "TelFaxNumber",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "MobileNumber",
+            "templateOptions": {
+              "label": "MobileNumber",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "TelexNumber",
+            "templateOptions": {
+              "label": "TelexNumber",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "FaxNumber",
+            "templateOptions": {
+              "label": "FaxNumber",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "PostalCode",
+            "templateOptions": {
+              "label": "PostalCode",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "WebsiteAddress",
+            "templateOptions": {
+              "label": "WebsiteAddress",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Preview",
+    "fields": [
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "PreviewCustomerType",
+            "templateOptions": {
+              "label": "PreviewCustomerType",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "Real"
+                },
+                {
+                  "value": 1,
+                  "label": "Legal"
+                },
+                {
+                  "value": 2,
+                  "label": "Virtual"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "PreviewCustomerName",
+            "templateOptions": {
+              "label": "PreviewCustomerName",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "datepicker",
+            "key": "PreviewBirthDate",
+            "templateOptions": {
+              "label": "PreviewBirthDate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "PreviewNationality",
+            "templateOptions": {
+              "label": "PreviewNationality",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "PreviewCustomerNo",
+            "templateOptions": {
+              "label": "PreviewCustomerNo",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "NahabInformation",
+    "fields": [
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "NahabCustomerNo",
+            "templateOptions": {
+              "label": "NahabCustomerNo",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "ShahabNo",
+            "templateOptions": {
+              "label": "ShahabNo",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "datepicker",
+            "key": "LastModifyDate",
+            "templateOptions": {
+              "label": "LastModifyDate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "ErrorCode",
+            "templateOptions": {
+              "label": "ErrorCode",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "ErrorDescription",
+            "templateOptions": {
+              "label": "ErrorDescription",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

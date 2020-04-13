@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 
-import {BancoUiNgWebSharedModule} from 'app/shared/shared.module';
+import {BancoUiNgWebSharedModule, minValidationMessage} from 'app/shared/shared.module';
 import {HOME_ROUTE} from './home.route';
 import {HomeComponent} from './home.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
@@ -17,7 +17,20 @@ import {MatButtonModule} from "@angular/material/button";
     MatFormFieldModule,
     MatSelectModule,
     BrowserAnimationsModule,
-    FormlyModule.forRoot(),
+    FormlyModule.forRoot(
+      {
+        validationMessages: [
+          {
+            name: 'required',
+            message: 'please enter the value'
+          },
+          {
+            name: 'min',
+            message: minValidationMessage
+          }
+        ]
+      }
+    ),
     FormlyMaterialModule,
     MatMenuModule,
     MatButtonModule

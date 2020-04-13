@@ -11,6 +11,10 @@ import {PresenterViewerForm} from '../dynamicutil/components/presenterviewer/pre
 import {HttpClientModule} from "@angular/common/http";
 import {DynamicService} from "app/dynamicutil/services/dynamic.service";
 import {MatTabsModule} from "@angular/material/tabs";
+import {LookupComponent} from "app/dynamicutil/components/controls/lookup/lookup.component";
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
+import {MatInputModule} from "@angular/material/input";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 export function minValidationMessage(err: any, field: FormlyFieldConfig): string {
   return `please enter vlaue bigger than ${err.min} you enter ${err.actual}`;
@@ -19,10 +23,20 @@ export function minValidationMessage(err: any, field: FormlyFieldConfig): string
 @NgModule({
   imports: [
     BancoUiNgWebSharedLibsModule,
-    FormlyMaterialModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatTabsModule,
+    MatAutocompleteModule,
+    MatInputModule,
+    FormlyMaterialModule,
     FormlyModule.forRoot(
       {
+        types: [{
+          name: 'lookup',
+          component: LookupComponent,
+          wrappers: ['form-field'],
+        }],
         validationMessages: [
           {
             name: 'required',
@@ -34,8 +48,7 @@ export function minValidationMessage(err: any, field: FormlyFieldConfig): string
           }
         ]
       }
-    ),
-    MatTabsModule
+    )
   ],
   declarations: [
     FindLanguageFromKeyPipe,
@@ -43,7 +56,8 @@ export function minValidationMessage(err: any, field: FormlyFieldConfig): string
     AlertErrorComponent,
     LoginModalComponent,
     ObjectPresenterComponent,
-    PresenterViewerForm
+    PresenterViewerForm,
+    LookupComponent
   ],
   entryComponents: [LoginModalComponent],
   exports: [
@@ -53,7 +67,8 @@ export function minValidationMessage(err: any, field: FormlyFieldConfig): string
     AlertErrorComponent,
     LoginModalComponent,
     ObjectPresenterComponent,
-    PresenterViewerForm
+    PresenterViewerForm,
+    LookupComponent
   ],
   providers: [
     DynamicService

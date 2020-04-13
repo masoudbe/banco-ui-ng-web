@@ -32,6 +32,10 @@ export class DynamicService {
       return this.http.get<T>('assets/commands.json', httpOptions);
     }
 
+    if (actionInfo.command === "lookupfakedata") {
+      return this.http.get<T>('assets/lookupfakedata.json', httpOptions);
+    }
+
 
     return this.http.post<T>(SERVER_API_URL + 'execute', actionInfo, httpOptions)
   }

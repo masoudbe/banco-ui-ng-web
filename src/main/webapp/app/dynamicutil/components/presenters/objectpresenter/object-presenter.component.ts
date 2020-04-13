@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormArray, FormGroup} from "@angular/forms";
 import {FormlyFieldConfig, FormlyFormOptions} from "@ngx-formly/core";
 import {DynamicService} from "app/dynamicutil/services/dynamic.service";
@@ -19,6 +19,10 @@ export class ObjectPresenterComponent implements OnInit {
   model: any = {};
   // options: FormlyFormOptions = {};
   // fields: FormlyFieldConfig[] = [];
+
+  @Input()
+  index = 0;
+
   tabs: any = [];
 
   // tabs: TabInfo[] = [
@@ -348,7 +352,12 @@ export class ObjectPresenterComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.httpClient.get("assets/customerop.json").subscribe(data => {
+    let customerJson = "assets/customerop2.json";
+    if(this.index % 2 !== 0){
+      customerJson = "assets/customerop.json";
+    }
+
+    this.httpClient.get(customerJson).subscribe(data => {
       this.tabs = data;
       const formConfigs: FormlyFieldConfig[] = this.tabs[0].fields;
 
