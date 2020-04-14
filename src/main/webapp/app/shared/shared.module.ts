@@ -15,6 +15,7 @@ import {LookupComponent} from "app/dynamicutil/components/controls/lookup/lookup
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import {MatInputModule} from "@angular/material/input";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
 
 export function minValidationMessage(err: any, field: FormlyFieldConfig): string {
   return `please enter vlaue bigger than ${err.min} you enter ${err.actual}`;
@@ -48,7 +49,8 @@ export function minValidationMessage(err: any, field: FormlyFieldConfig): string
           }
         ]
       }
-    )
+    ),
+    MatButtonToggleModule
   ],
   declarations: [
     FindLanguageFromKeyPipe,

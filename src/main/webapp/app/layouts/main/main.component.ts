@@ -3,9 +3,7 @@ import {
   OnInit,
   RendererFactory2,
   Renderer2,
-  ViewChild,
-  AfterViewInit,
-  AfterContentInit, AfterContentChecked
+  ViewChild
 } from '@angular/core';
 import {Title} from '@angular/platform-browser';
 import {Router, ActivatedRouteSnapshot, NavigationEnd, NavigationError} from '@angular/router';
@@ -13,11 +11,8 @@ import {TranslateService, LangChangeEvent} from '@ngx-translate/core';
 
 import {AccountService} from 'app/core/auth/account.service';
 import {FindLanguageFromKeyPipe} from 'app/shared/language/find-language-from-key.pipe';
-import {DynamicService} from "app/dynamicutil/services/dynamic.service";
-import {strict} from "assert";
-import {noop} from "rxjs";
 import {StoreService} from "app/dynamicutil/services/store.service";
-import {MatSidenav, MatSidenavContainer} from "@angular/material/sidenav";
+import {MatSidenav} from "@angular/material/sidenav";
 
 @Component({
   selector: 'bng-main',
@@ -27,6 +22,7 @@ export class MainComponent implements OnInit {
   private renderer: Renderer2;
 
   @ViewChild('sidenav', {static: true}) sidenav: MatSidenav;
+
   constructor(
     private accountService: AccountService,
     private titleService: Title,

@@ -1,4 +1,7 @@
 <form [formGroup]="formArray" (ngSubmit)="submit()">
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+        <mat-button-toggle (click)="submit()" *ngFor="let cmd of commands" value="{{cmd.Name}}">{{cmd.Title}}</mat-button-toggle>
+    </mat-button-toggle-group>
     <mat-tab-group selectedIndex="3">
         <mat-tab *ngFor="let tab of tabs;let index = index;"
                  [label]="tab.label">
