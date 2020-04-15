@@ -45,24 +45,24 @@ export class LookupComponent extends FieldType implements OnInit, AfterViewInit 
   ngOnInit(): void {
     super.ngOnInit();
 
-    this.dynamicService.execute<any>("lookupfakedata", "")
-      .pipe(
-        map(data => {
-          return data.map((element: { [x: string]: any; }) => {
-            const sc: SystemCode = {"ID": element["ID"], "Name": element["Name"], "Title": element["Title"]}
-            return sc;
-          });
-        })
-      )
-      .subscribe(val => {
-        this.data = val;
-      }, noop, noop);
-
-    this.filteredOptions = this.formControl.valueChanges
-      .pipe(
-        startWith(''),
-        map(value => this._filter(value))
-      );
+    // this.dynamicService.execute<any>("lookupfakedata", "")
+    //   .pipe(
+    //     map(data => {
+    //       return data.map((element: { [x: string]: any; }) => {
+    //         const sc: SystemCode = {"ID": element["ID"], "Name": element["Name"], "Title": element["Title"]}
+    //         return sc;
+    //       });
+    //     })
+    //   )
+    //   .subscribe(val => {
+    //     this.data = val;
+    //   }, noop, noop);
+    //
+    // this.filteredOptions = this.formControl.valueChanges
+    //   .pipe(
+    //     startWith(''),
+    //     map(value => this._filter(value))
+    //   );
   }
 
   ngAfterViewInit(): void {

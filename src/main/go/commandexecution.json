@@ -1,0 +1,76 @@
+[
+  {
+    "ControlItems": [
+      {
+        "IsEnabled": true,
+        "IsVisible": true,
+        "IsRequired": false,
+        "Name": "NameProperty",
+        "Caption": "NameProperty",
+        "ControlType": 1,
+        "Container": null,
+        "Order": -1,
+        "ColumnSpan": -1
+      },
+      {
+        "IsEnabled": true,
+        "IsVisible": true,
+        "IsRequired": false,
+        "Name": "DescriptionProperty",
+        "Caption": "DescriptionProperty",
+        "ControlType": 1,
+        "Container": null,
+        "Order": -1,
+        "ColumnSpan": -1
+      }
+    ],
+    "Model": {
+      "NameProperty": null,
+      "DescriptionProperty": null,
+      "ObjectDefinitionDescription": null,
+      "ID": 0,
+      "Version": 0,
+      "CreationDate": "2020-04-14T11:35:53.722269+04:30",
+      "LastChange": "2020-04-14T11:35:53.722269+04:30",
+      "Creator": "",
+      "LastUpdater": ""
+    },
+    "UICommands": [
+      {
+        "Title": "",
+        "WebExecuter": false,
+        "Name": "CloneCommand",
+        "Description": "CloneCommand",
+        "Image": null
+      },
+      {
+        "Title": "Save",
+        "WebExecuter": false,
+        "Name": "SaveCommand",
+        "Description": "Save object",
+        "Image": null
+      },
+      {
+        "Title": "Save & New",
+        "WebExecuter": false,
+        "Name": "SaveAndNewCommand",
+        "Description": "Save object and Create a new instance of object",
+        "Image": null
+      },
+      {
+        "Title": "Close",
+        "WebExecuter": false,
+        "Name": "CloseCommand",
+        "Description": "Close current view",
+        "Image": null
+      },
+      {
+        "Title": "Save & Close",
+        "WebExecuter": false,
+        "Name": "SaveAndCloseCommand",
+        "Description": "Save object and Close current view",
+        "Image": null
+      }
+    ]
+  }
+]

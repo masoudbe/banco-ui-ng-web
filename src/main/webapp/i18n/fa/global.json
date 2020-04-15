@@ -1,6 +1,6 @@
 {
   "global": {
-    "title": "BancoUINgWeb",
+    "title": "Banco UI Web",
     "browsehappy": "شما از مرورگر <strong>قدیمی</strong> استفاده می‌کنید. لطفا <a href=\"http://browsehappy.com/?locale=en\">مرورگر خود را به روز کنید</a>",
     "menu": {
       "home": "خانه",
@@ -58,7 +58,8 @@
         }
       },
       "error": {
-        "dontmatch": "رمزعبور و تصدیق رمزعبور یکی نیستند!"
+        "dontmatch": "رمزعبور و تصدیق رمزعبور یکی نیستند!",
+        "presentersavedata": "آیا دو میلیون دلار به من بدهکار هستید؟"
       },
       "validate": {
         "newpassword": {

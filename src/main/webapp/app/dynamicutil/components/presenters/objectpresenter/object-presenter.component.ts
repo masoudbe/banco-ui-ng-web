@@ -16,6 +16,7 @@ import {
   UICommand
 } from "app/dynamicutil/models/BancoUIModels";
 import * as CS from "app/dynamicutil/models/Constants";
+import {JhiAlertService} from "ng-jhipster";
 
 @Component({
   selector: 'bng-objectpresenter',
@@ -42,12 +43,13 @@ export class ObjectPresenterComponent implements OnInit {
   });
 
 
-  constructor(private httpClient: HttpClient, private dynamicService: DynamicService) {
+  constructor(private httpClient: HttpClient, private dynamicService: DynamicService, private alertService: JhiAlertService) {
 
   }
 
   submit(): void {
     console.log(this.model);
+    const v = this.alertService.addAlert({type: 'danger', msg: 'global.messages.error.presentersavedata', timeout: 4000}, []);
   }
 
   ngOnInit(): void {
@@ -58,9 +60,16 @@ export class ObjectPresenterComponent implements OnInit {
 
     this.dynamicService.execute<any>(CS.GETPRESENTER, "?commandCode=" + this.commandCode).subscribe(
       data => {
+
+        let dataModify = data.toString();
+        dataModify = dataModify.replace('k_BackingField', '');
+        dataModify = dataModify.replace('<', '');
+        dataModify = dataModify.replace('>', '');
+
         console.log("GETPRESENTERGETPRESENTERGETPRESENTER", data);
-        const c = JSON.parse(data);
-        console.log("GETPRESENTERGETPRESENTERGETPRESENTER222", c);
+        console.log("GETPRESENTERGETPRESENTERGETPRESENTER22", dataModify);
+        const c = JSON.parse(dataModify);
+        console.log("GETPRESENTERGETPRESENTERGETPRESENTER33", c);
         const tab: Tab = {label: 'common', fields: []}
 
         let field: Field;

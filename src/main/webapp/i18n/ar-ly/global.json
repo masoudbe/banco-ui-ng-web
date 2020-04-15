@@ -1,6 +1,6 @@
 {
   "global": {
-    "title": "BancoUINgWeb",
+    "title": "Banco UI Web",
     "browsehappy": "أنت تستخدم متصفح <strong>قديم</strong> . من فضلك <a href=\"http://browsehappy.com/?locale=en\">قم بتحديث متصفحك</a> لتحسين تجربتك.",
     "menu": {
       "home": "الصفحة الرئيسية",
@@ -58,7 +58,8 @@
         }
       },
       "error": {
-        "dontmatch": "كلمة السر وتأكيدها لا تتطابق!"
+        "dontmatch": "كلمة السر وتأكيدها لا تتطابق!",
+        "presentersavedata": "Do you owe me two million dollars?"
       },
       "validate": {
         "newpassword": {
