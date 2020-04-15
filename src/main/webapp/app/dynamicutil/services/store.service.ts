@@ -20,10 +20,10 @@ export class StoreService {
     this.sidebarToggleSubject.next();
   }
 
-  addPresenter(presenterName: string): void {
+  addPresenter(commandCode: string): void {
     const prs = this.presentersSubject.getValue();
     const newPrs = prs.slice(0);
-    newPrs.push(presenterName);
+    newPrs.push(commandCode);
 
     this.presentersSubject.next(newPrs);
   }

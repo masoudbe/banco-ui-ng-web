@@ -5,6 +5,8 @@ import {FormControl} from "@angular/forms";
 import {DynamicService} from "app/dynamicutil/services/dynamic.service";
 import * as CS from "app/dynamicutil/models/Constants";
 import {StoreService} from "app/dynamicutil/services/store.service";
+import {CommandDefinition, RootObject} from "app/dynamicutil/models/BancoUIModels";
+import {isNull} from "app/shared/util/common-util";
 
 export interface SystemCode {
   ID: string;
@@ -21,8 +23,9 @@ export class SidebarComponent implements OnInit {
 
   filterTextControl = new FormControl();
   options: SystemCode[] = [];
-  commands: SystemCode[] = [];
   filteredOptions: Observable<SystemCode[]>;
+
+  commandDefinitions: CommandDefinition[] = [];
 
   constructor(private dynamicService: DynamicService, private storeService: StoreService) {
 
@@ -32,7 +35,10 @@ export class SidebarComponent implements OnInit {
     this.dynamicService.execute<any>(CS.GETSUBSYSTEMS, "")
       .pipe(
         map(data => {
-          return data.map((element: { [x: string]: any; }) => {
+          console.log("GETSUBSYSTEMSGETSUBSYSTEMSGETSUBSYSTEMS", data);
+          const c = JSON.parse(data);
+          console.log("GETSUBSYSTEMSGETSUBSYSTEMSGETSUBSYSTEMS222", c);
+          return c.map((element: { [x: string]: any; }) => {
             const sc: SystemCode = {"ID": element["ID"], "Name": element["Name"], "Title": element["Title"]}
             return sc;
           });
@@ -40,7 +46,7 @@ export class SidebarComponent implements OnInit {
       )
       .subscribe(val => {
         this.options = val;
-      }, noop, noop);
+      }, err => console.log(err), noop);
 
     this.filteredOptions = this.filterTextControl.valueChanges
       .pipe(
@@ -57,22 +63,35 @@ export class SidebarComponent implements OnInit {
     return this.options.filter(option => option.Name.toLowerCase().includes(filterValue));
   }
 
-  subSystemSelected(value: string): void {
-    this.dynamicService.execute<any>(CS.GETSUBSYSTEMCOMMANDS, "")
+  subSystemSelected(systemId: string): void {
+    this.dynamicService.execute<any>(CS.GETSUBSYSTEMCOMMANDS, "?CommandLinkGroupId=" + systemId)
       .pipe(
         map(data => {
-          return data.map((element: { [x: string]: any; }) => {
-            const sc: SystemCode = {"ID": element["ID"], "Name": value + "-" + element["Name"], "Title": ''}
-            return sc;
-          });
-        })
+            console.log("GETSUBSYSTEMCOMMANDSGETSUBSYSTEMCOMMANDS", data);
+            const c = JSON.parse(data);
+            console.log("GETSUBSYSTEMCOMMANDSGETSUBSYSTEMCOMMANDS22", c);
+            const commands: CommandDefinition[] = [];
+            for (let i = 0; i < c.length; i++) {
+              if (!isNull(c[i].CommandDefinition)) {
+                commands.push(c[i].CommandDefinition);
+              }
+              for (let j = 0; j < c[i].CommandLinkHierarchies.length; j++) {
+                if (!isNull(c[i].CommandLinkHierarchies[j].CommandDefinition)) {
+                  commands.push(c[i].CommandLinkHierarchies[j].CommandDefinition);
+                }
+              }
+            }
+            return commands;
+          }
+        )
       )
       .subscribe(val => {
-        this.commands = val;
+        this.commandDefinitions = [];
+        this.commandDefinitions = val;
       }, noop, noop);
   }
 
-  addPresenter(presenterName: string): void {
-    this.storeService.addPresenter(presenterName);
+  addPresenter(commandCode: string): void {
+    this.storeService.addPresenter(commandCode);
   }
 }

@@ -8,14 +8,14 @@
                [formControl]="filterTextControl"
                [matAutocomplete]="auto"/>
         <mat-autocomplete #auto="matAutocomplete" (optionSelected)='subSystemSelected($event.option.value)'>
-            <mat-option *ngFor="let option of filteredOptions | async" [value]="option.Name">
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option.ID">
                 {{option.Name}}
             </mat-option>
         </mat-autocomplete>
     </mat-form-field>
 
     <mat-action-list>
-        <button (click)="addPresenter(c.Name)" style="font-size: 14px" *ngFor="let c of commands" mat-list-item>{{filterTxt.value + c.Name}}</button>
+        <button (click)="addPresenter(c.Code)" style="font-size: 14px" *ngFor="let c of commandDefinitions" mat-list-item>{{c.Name}}-{{c.Code}}</button>
     </mat-action-list>
 </form>
 

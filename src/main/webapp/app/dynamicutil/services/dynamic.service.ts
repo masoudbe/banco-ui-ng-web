@@ -24,19 +24,19 @@ export class DynamicService {
       })
     };
 
-    if (actionInfo.command === CS.GETSUBSYSTEMS) {
-      return this.http.get<T>('assets/subsystems.json', httpOptions);
-    }
+    // if (actionInfo.command === CS.GETSUBSYSTEMS) {
+    //   return this.http.get<T>('assets/subsystems.json', httpOptions);
+    // }
 
-    if (actionInfo.command === CS.GETSUBSYSTEMCOMMANDS) {
-      return this.http.get<T>('assets/commands.json', httpOptions);
-    }
+    // if (actionInfo.command === CS.GETSUBSYSTEMCOMMANDS) {
+    //   return this.http.get<T>('assets/commands.json', httpOptions);
+    // }
 
-    if (actionInfo.command === "lookupfakedata") {
-      return this.http.get<T>('assets/lookupfakedata.json', httpOptions);
-    }
+    // if (actionInfo.command === "lookupfakedata") {
+    //   return this.http.get<T>('assets/lookupfakedata.json', httpOptions);
+    // }
 
 
-    return this.http.post<T>(SERVER_API_URL + 'execute', actionInfo, httpOptions)
+    return this.http.get<T>(SERVER_API_URL + 'api/' + actionInfo.command, httpOptions)
   }
 }

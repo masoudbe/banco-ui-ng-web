@@ -11,11 +11,11 @@ import {
   ControlItem,
   Field,
   FieldGroup,
-  RootObject,
   Tab,
   TemplateOptions,
   UICommand
 } from "app/dynamicutil/models/BancoUIModels";
+import * as CS from "app/dynamicutil/models/Constants";
 
 @Component({
   selector: 'bng-objectpresenter',
@@ -30,7 +30,7 @@ export class ObjectPresenterComponent implements OnInit {
   // fields: FormlyFieldConfig[] = [];
 
   @Input()
-  index = 0;
+  commandCode = "";
 
   tabs: Tab[] = [];
   commands: UICommand[] = [];
@@ -54,18 +54,18 @@ export class ObjectPresenterComponent implements OnInit {
 
     this.formArray.valueChanges.subscribe(console.log);
 
-    let customerJson = "assets/customerop2.json";
-    if (this.index % 2 !== 0) {
-      customerJson = "assets/customerop.json";
-    }
+    const customerJson = "assets/customerop2.json";
 
-    this.httpClient.get("assets/commands48.json").subscribe(
+    this.dynamicService.execute<any>(CS.GETPRESENTER, "?commandCode=" + this.commandCode).subscribe(
       data => {
+        console.log("GETPRESENTERGETPRESENTERGETPRESENTER", data);
+        const c = JSON.parse(data);
+        console.log("GETPRESENTERGETPRESENTERGETPRESENTER222", c);
         const tab: Tab = {label: 'common', fields: []}
 
         let field: Field;
 
-        const cis: ControlItem[] = data[0].ControlItems;
+        const cis: ControlItem[] = c[0].ControlItems;
 
         for (let i = 0; i < cis.length; i++) {
 
@@ -83,11 +83,11 @@ export class ObjectPresenterComponent implements OnInit {
           fg.templateOptions = templateOptions;
         }
 
-        this.commands = data[0].UICommands;
+        this.commands = c[0].UICommands;
 
         this.tabs.push(tab);
 
-        this.model = data[0].Model;
+        this.model = c[0].Model;
       }
     );
 

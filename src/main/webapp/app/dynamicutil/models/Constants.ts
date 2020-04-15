@@ -1,2 +1,3 @@
-export const GETSUBSYSTEMS = "getsubsystems";
-export const GETSUBSYSTEMCOMMANDS = "getsubsystemcommands";
+export const GETSUBSYSTEMS = "CommandLinkGroups";
+export const GETSUBSYSTEMCOMMANDS = "CommandLinks";
+export const GETPRESENTER = "commandexecution";
