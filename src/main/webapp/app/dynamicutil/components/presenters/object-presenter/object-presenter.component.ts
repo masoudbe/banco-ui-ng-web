@@ -19,7 +19,7 @@ import * as CS from "app/dynamicutil/models/Constants";
 import {JhiAlertService} from "ng-jhipster";
 
 @Component({
-  selector: 'bng-objectpresenter',
+  selector: 'bng-object-presenter',
   templateUrl: './object-presenter.component.html',
   styleUrls: ['./object-presenter.component.scss']
 })
@@ -41,7 +41,6 @@ export class ObjectPresenterComponent implements OnInit {
     const op: FormlyFormOptions = {};
     return op;
   });
-
 
   constructor(private httpClient: HttpClient, private dynamicService: DynamicService, private alertService: JhiAlertService) {
 

@@ -17,21 +17,6 @@ import {MatButtonModule} from "@angular/material/button";
     MatFormFieldModule,
     MatSelectModule,
     BrowserAnimationsModule,
-    FormlyModule.forRoot(
-      {
-        validationMessages: [
-          {
-            name: 'required',
-            message: 'please enter the value'
-          },
-          {
-            name: 'min',
-            message: minValidationMessage
-          }
-        ]
-      }
-    ),
-    FormlyMaterialModule,
     MatMenuModule,
     MatButtonModule
   ],

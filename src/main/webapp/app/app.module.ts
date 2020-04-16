@@ -24,6 +24,7 @@ import {MatNativeDateModule} from "@angular/material/core";
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {FormlyMatDatepickerModule} from '@ngx-formly/material/datepicker';
 import {FormlyModule} from "@ngx-formly/core";
+import {DynamicTableModule} from "material-dynamic-table";
 
 @NgModule({
   imports: [
@@ -43,7 +44,8 @@ import {FormlyModule} from "@ngx-formly/core";
     MatDatepickerModule,
     MatNativeDateModule,
     FormlyMatDatepickerModule,
-    FormlyModule
+    FormlyModule,
+    DynamicTableModule
   ],
   declarations: [
     MainComponent,
@@ -53,6 +55,7 @@ import {FormlyModule} from "@ngx-formly/core";
     ActiveMenuDirective,
     FooterComponent,
     SidebarComponent],
+
   bootstrap: [MainComponent]
 })
 export class BancoUiNgWebAppModule {
