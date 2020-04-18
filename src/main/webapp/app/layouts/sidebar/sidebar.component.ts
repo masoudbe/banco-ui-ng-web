@@ -37,15 +37,10 @@ export class SidebarComponent implements OnInit {
       .pipe(
         map(data => {
 
-          let dataModify = data.toString();
-          dataModify = dataModify.replace('k_BackingField', '');
-          dataModify = dataModify.replace('<', '');
-          dataModify = dataModify.replace('>', '');
-
-          console.log("GETSUBSYSTEMSGETSUBSYSTEMSGETSUBSYSTEMS", data);
-          console.log("GETSUBSYSTEMSGETSUBSYSTEMSGETSUBSYSTEMS22", dataModify);
-          const c = JSON.parse(dataModify);
-          console.log("GETSUBSYSTEMSGETSUBSYSTEMSGETSUBSYSTEMS33", c);
+          console.log("SUBSYSTEMSUBSYSTEMSUBSYSTEMSUBSYSTEM", data);
+          const c = data;
+          // const c = JSON.parse(data);
+          console.log("SUBSYSTEMSUBSYSTEMSUBSYSTEMSUBSYSTEM22", c);
           return c.map((element: { [x: string]: any; }) => {
             const sc: SystemCode = {"ID": element["ID"], "Name": element["Name"], "Title": element["Title"]}
             return sc;
@@ -76,16 +71,11 @@ export class SidebarComponent implements OnInit {
     this.dynamicService.execute<any>(CS.GETSUBSYSTEMCOMMANDS, "?CommandLinkGroupId=" + systemId)
       .pipe(
         map(data => {
-
-            let dataModify = data.toString();
-            dataModify = dataModify.replace('k_BackingField', '');
-            dataModify = dataModify.replace('<', '');
-            dataModify = dataModify.replace('>', '');
-
-            console.log("GETSUBSYSTEMCOMMANDSGETSUBSYSTEMCOMMANDS", data);
-            console.log("GETSUBSYSTEMCOMMANDSGETSUBSYSTEMCOMMANDS22", dataModify);
-            const c = JSON.parse(dataModify);
-            console.log("GETSUBSYSTEMCOMMANDSGETSUBSYSTEMCOMMANDS33", c);
+            console.log("SYSTEMIDSYSTEMIDSYSTEMIDSYSTEMIDSYSTEMID", systemId);
+            console.log("COMMANDSCOMMANDSCOMMANDSCOMMANDSCOMMANDS", data);
+            const c = data;
+            // const c = JSON.parse(data);
+            console.log("COMMANDSCOMMANDSCOMMANDSCOMMANDSCOMMANDS22", c);
             const commands: CommandDefinition[] = [];
             for (let i = 0; i < c.length; i++) {
               if (!isNull(c[i].CommandDefinition)) {
@@ -97,12 +87,17 @@ export class SidebarComponent implements OnInit {
                 }
               }
             }
+
+            if(systemId === "4"){
+              commands[1].Code = "30064";
+              commands[1].Name = "AddCurrencyDailyRate";
+            }
+
             return commands;
           }
         )
       )
       .subscribe(val => {
-        this.commandDefinitions = [];
         this.commandDefinitions = val;
       }, noop, noop);
   }

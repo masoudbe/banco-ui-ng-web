@@ -57,23 +57,19 @@ export class ObjectPresenterComponent implements OnInit {
 
     const customerJson = "assets/customerop2.json";
 
-    this.dynamicService.execute<any>(CS.GETPRESENTER, "?commandCode=" + this.commandCode).subscribe(
+    // this.dynamicService.execute<any>(CS.GETPRESENTER, "?commandCode=" + this.commandCode).subscribe(
+    this.dynamicService.execute<any>(CS.GETPRESENTER, "?commandCode=30064"/* + this.commandCode*/).subscribe(
       data => {
 
-        let dataModify = data.toString();
-        dataModify = dataModify.replace('k_BackingField', '');
-        dataModify = dataModify.replace('<', '');
-        dataModify = dataModify.replace('>', '');
-
         console.log("GETPRESENTERGETPRESENTERGETPRESENTER", data);
-        console.log("GETPRESENTERGETPRESENTERGETPRESENTER22", dataModify);
-        const c = JSON.parse(dataModify);
-        console.log("GETPRESENTERGETPRESENTERGETPRESENTER33", c);
+        const c = data;
+        // const c = JSON.parse(data);
+        console.log("GETPRESENTERGETPRESENTERGETPRESENTER22", c);
         const tab: Tab = {label: 'common', fields: []}
 
         let field: Field;
 
-        const cis: ControlItem[] = c[0].ControlItems;
+        const cis: ControlItem[] = c.ControlItems;
 
         for (let i = 0; i < cis.length; i++) {
 
@@ -91,11 +87,11 @@ export class ObjectPresenterComponent implements OnInit {
           fg.templateOptions = templateOptions;
         }
 
-        this.commands = c[0].UICommands;
+        this.commands = c.UICommands;
 
         this.tabs.push(tab);
 
-        this.model = c[0].Model;
+        this.model = c.Model;
       }
     );
 

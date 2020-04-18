@@ -37,6 +37,6 @@ export class DynamicService {
     // }
 
 
-    return this.http.get<T>(SERVER_API_URL + 'api/' + actionInfo.command, httpOptions)
+    return this.http.get<T>(SERVER_API_URL + 'api/' + command + data, httpOptions)
   }
 }
