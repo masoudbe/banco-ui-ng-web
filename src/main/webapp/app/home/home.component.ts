@@ -4,8 +4,6 @@ import {Subscription} from 'rxjs';
 import {LoginModalService} from 'app/core/login/login-modal.service';
 import {AccountService} from 'app/core/auth/account.service';
 import {Account} from 'app/core/user/account.model';
-import {FormGroup} from "@angular/forms";
-import {FormlyFieldConfig} from "@ngx-formly/core";
 
 @Component({
   selector: 'bng-home',

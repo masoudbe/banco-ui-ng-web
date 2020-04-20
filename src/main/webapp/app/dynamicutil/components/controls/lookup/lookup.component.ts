@@ -2,11 +2,9 @@ import {Component, ViewChild, OnInit, AfterViewInit} from '@angular/core';
 import {FieldType} from '@ngx-formly/material';
 import {MatInput} from '@angular/material/input';
 import {MatAutocompleteTrigger} from '@angular/material/autocomplete';
-import {noop, Observable, of} from 'rxjs';
-import {map, startWith, switchMap} from 'rxjs/operators';
+import {Observable} from 'rxjs';
 import {DynamicService} from "app/dynamicutil/services/dynamic.service";
 import {StoreService} from "app/dynamicutil/services/store.service";
-import * as CS from "app/dynamicutil/models/Constants";
 
 export interface SystemCode {
   ID: string;

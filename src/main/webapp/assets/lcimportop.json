@@ -1,0 +1,3525 @@
+[
+  {
+    "label": "Amounts",
+    "fields": [
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "Currency",
+            "templateOptions": {
+              "label": "Currency",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "RateExhangeType",
+            "templateOptions": {
+              "label": "RateExhangeType",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "checkbox",
+            "key": "MaximumCreditAmount",
+            "templateOptions": {
+              "label": "MaximumCreditAmount",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "DurationType",
+            "templateOptions": {
+              "label": "DurationType",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "MonthBase"
+                },
+                {
+                  "value": 1,
+                  "label": "DayBase"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "AdditionalAmountCoveredTemplate",
+            "templateOptions": {
+              "label": "AdditionalAmountCoveredTemplate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "Days",
+            "templateOptions": {
+              "label": "Days",
+              "required": false,
+              "type": "number",
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "RefinanceDays",
+            "templateOptions": {
+              "label": "RefinanceDays",
+              "required": false,
+              "type": "number",
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "LcAmount",
+            "templateOptions": {
+              "label": "LcAmount",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "RetentionType",
+            "templateOptions": {
+              "label": "RetentionType",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "NoRetetion"
+                },
+                {
+                  "value": 1,
+                  "label": "TotalCredit"
+                },
+                {
+                  "value": 2,
+                  "label": "GoodsAndShipment"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "RedClauseType",
+            "templateOptions": {
+              "label": "RedClauseType",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "NoRedClause"
+                },
+                {
+                  "value": 1,
+                  "label": "TotalCredit"
+                },
+                {
+                  "value": 2,
+                  "label": "GoodsAndShipment"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "LoanDto",
+            "templateOptions": {
+              "label": "LoanDto",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "LoanCurrency",
+            "templateOptions": {
+              "label": "LoanCurrency",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "Currency",
+            "templateOptions": {
+              "label": "Currency",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "RateExhangeType",
+            "templateOptions": {
+              "label": "RateExhangeType",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "checkbox",
+            "key": "MaximumCreditAmount",
+            "templateOptions": {
+              "label": "MaximumCreditAmount",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "DurationType",
+            "templateOptions": {
+              "label": "DurationType",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "MonthBase"
+                },
+                {
+                  "value": 1,
+                  "label": "DayBase"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "AdditionalAmountCoveredTemplate",
+            "templateOptions": {
+              "label": "AdditionalAmountCoveredTemplate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "Days",
+            "templateOptions": {
+              "label": "Days",
+              "required": false,
+              "type": "number",
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "RefinanceDays",
+            "templateOptions": {
+              "label": "RefinanceDays",
+              "required": false,
+              "type": "number",
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "LcAmount",
+            "templateOptions": {
+              "label": "LcAmount",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "RetentionType",
+            "templateOptions": {
+              "label": "RetentionType",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "NoRetetion"
+                },
+                {
+                  "value": 1,
+                  "label": "TotalCredit"
+                },
+                {
+                  "value": 2,
+                  "label": "GoodsAndShipment"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "RedClauseType",
+            "templateOptions": {
+              "label": "RedClauseType",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "NoRedClause"
+                },
+                {
+                  "value": 1,
+                  "label": "TotalCredit"
+                },
+                {
+                  "value": 2,
+                  "label": "GoodsAndShipment"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "LoanDto",
+            "templateOptions": {
+              "label": "LoanDto",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "LoanCurrency",
+            "templateOptions": {
+              "label": "LoanCurrency",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "General",
+    "fields": [
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "CBIRequestNumber",
+            "templateOptions": {
+              "label": "CBIRequestNumber",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "CBIRefrenceNumber",
+            "templateOptions": {
+              "label": "CBIRefrenceNumber",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "SupplyCurrencyType",
+            "templateOptions": {
+              "label": "SupplyCurrencyType",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "ApplicantCurrency"
+                },
+                {
+                  "value": 1,
+                  "label": "CentralBanksResources"
+                },
+                {
+                  "value": 2,
+                  "label": "IssuingBanksResources"
+                },
+                {
+                  "value": 3,
+                  "label": "ForeignReserveAccount"
+                },
+                {
+                  "value": 4,
+                  "label": "NationalDevelopmentAccount"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "UsedCurrencyResource",
+            "templateOptions": {
+              "label": "UsedCurrencyResource",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "checkbox",
+            "key": "HasGuarantee",
+            "templateOptions": {
+              "label": "HasGuarantee",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "LCRequest",
+            "templateOptions": {
+              "label": "LCRequest",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "checkbox",
+            "key": "GreenLicence",
+            "templateOptions": {
+              "label": "GreenLicence",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "datepicker",
+            "key": "ApproveDate",
+            "templateOptions": {
+              "label": "ApproveDate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "ApproveReferenceNumber",
+            "templateOptions": {
+              "label": "ApproveReferenceNumber",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "ReferenceNumber",
+            "templateOptions": {
+              "label": "ReferenceNumber",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "Title",
+            "templateOptions": {
+              "label": "Title",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "Type",
+            "templateOptions": {
+              "label": "Type",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "SubjectType",
+            "templateOptions": {
+              "label": "SubjectType",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "Goods"
+                },
+                {
+                  "value": 1,
+                  "label": "Services"
+                },
+                {
+                  "value": 2,
+                  "label": "Transport"
+                },
+                {
+                  "value": 3,
+                  "label": "All"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "PaymentTerm",
+            "templateOptions": {
+              "label": "PaymentTerm",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "Sight"
+                },
+                {
+                  "value": 1,
+                  "label": "Usance"
+                },
+                {
+                  "value": 2,
+                  "label": "Mixed"
+                },
+                {
+                  "value": 3,
+                  "label": "Refinance"
+                },
+                {
+                  "value": 4,
+                  "label": "Finance"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "Status",
+            "templateOptions": {
+              "label": "Status",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "Incomplete"
+                },
+                {
+                  "value": 1,
+                  "label": "Complete"
+                },
+                {
+                  "value": 2,
+                  "label": "Verified"
+                },
+                {
+                  "value": 3,
+                  "label": "VerifyRejected"
+                },
+                {
+                  "value": 4,
+                  "label": "Issued"
+                },
+                {
+                  "value": 5,
+                  "label": "IssueRejected"
+                },
+                {
+                  "value": 6,
+                  "label": "CancellationInProgress"
+                },
+                {
+                  "value": 7,
+                  "label": "Cancelled"
+                },
+                {
+                  "value": 8,
+                  "label": "AmendmentInProgress"
+                },
+                {
+                  "value": 9,
+                  "label": "SettledInProgress"
+                },
+                {
+                  "value": 10,
+                  "label": "Settled"
+                },
+                {
+                  "value": 11,
+                  "label": "Modified"
+                },
+                {
+                  "value": 12,
+                  "label": "AdjustInProgress"
+                },
+                {
+                  "value": 13,
+                  "label": "RetentionInProgress"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "Branch",
+            "templateOptions": {
+              "label": "Branch",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "Beneficiary",
+            "templateOptions": {
+              "label": "Beneficiary",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "BeneficiaryAccount",
+            "templateOptions": {
+              "label": "BeneficiaryAccount",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "BeneficiaryPersianName",
+            "templateOptions": {
+              "label": "BeneficiaryPersianName",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "BeneficiaryPersianFamily",
+            "templateOptions": {
+              "label": "BeneficiaryPersianFamily",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "BeneficiaryPersianAddress",
+            "templateOptions": {
+              "label": "BeneficiaryPersianAddress",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "BeneficiaryLatinName",
+            "templateOptions": {
+              "label": "BeneficiaryLatinName",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "BeneficiaryLatinFamily",
+            "templateOptions": {
+              "label": "BeneficiaryLatinFamily",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "BeneficiaryLatinAddress",
+            "templateOptions": {
+              "label": "BeneficiaryLatinAddress",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "BeneficiaryCountry",
+            "templateOptions": {
+              "label": "BeneficiaryCountry",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "datepicker",
+            "key": "IssuanceDate",
+            "templateOptions": {
+              "label": "IssuanceDate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "datepicker",
+            "key": "ExpiryDate",
+            "templateOptions": {
+              "label": "ExpiryDate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "datepicker",
+            "key": "EffectiveDate",
+            "templateOptions": {
+              "label": "EffectiveDate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "Location",
+            "templateOptions": {
+              "label": "Location",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "CreditLineRequest",
+            "templateOptions": {
+              "label": "CreditLineRequest",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "Description",
+            "templateOptions": {
+              "label": "Description",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "TFInterestFineTariffGroup",
+            "templateOptions": {
+              "label": "TFInterestFineTariffGroup",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "checkbox",
+            "key": "HavePartialShippment",
+            "templateOptions": {
+              "label": "HavePartialShippment",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "datepicker",
+            "key": "LastShipmentDate",
+            "templateOptions": {
+              "label": "LastShipmentDate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "CBIRequestNumber",
+            "templateOptions": {
+              "label": "CBIRequestNumber",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "CBIRefrenceNumber",
+            "templateOptions": {
+              "label": "CBIRefrenceNumber",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "SupplyCurrencyType",
+            "templateOptions": {
+              "label": "SupplyCurrencyType",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "ApplicantCurrency"
+                },
+                {
+                  "value": 1,
+                  "label": "CentralBanksResources"
+                },
+                {
+                  "value": 2,
+                  "label": "IssuingBanksResources"
+                },
+                {
+                  "value": 3,
+                  "label": "ForeignReserveAccount"
+                },
+                {
+                  "value": 4,
+                  "label": "NationalDevelopmentAccount"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "UsedCurrencyResource",
+            "templateOptions": {
+              "label": "UsedCurrencyResource",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "checkbox",
+            "key": "HasGuarantee",
+            "templateOptions": {
+              "label": "HasGuarantee",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "LCRequest",
+            "templateOptions": {
+              "label": "LCRequest",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "checkbox",
+            "key": "GreenLicence",
+            "templateOptions": {
+              "label": "GreenLicence",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "datepicker",
+            "key": "ApproveDate",
+            "templateOptions": {
+              "label": "ApproveDate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "ApproveReferenceNumber",
+            "templateOptions": {
+              "label": "ApproveReferenceNumber",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "ReferenceNumber",
+            "templateOptions": {
+              "label": "ReferenceNumber",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "Title",
+            "templateOptions": {
+              "label": "Title",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "Type",
+            "templateOptions": {
+              "label": "Type",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "SubjectType",
+            "templateOptions": {
+              "label": "SubjectType",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "Goods"
+                },
+                {
+                  "value": 1,
+                  "label": "Services"
+                },
+                {
+                  "value": 2,
+                  "label": "Transport"
+                },
+                {
+                  "value": 3,
+                  "label": "All"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "PaymentTerm",
+            "templateOptions": {
+              "label": "PaymentTerm",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "Sight"
+                },
+                {
+                  "value": 1,
+                  "label": "Usance"
+                },
+                {
+                  "value": 2,
+                  "label": "Mixed"
+                },
+                {
+                  "value": 3,
+                  "label": "Refinance"
+                },
+                {
+                  "value": 4,
+                  "label": "Finance"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "Status",
+            "templateOptions": {
+              "label": "Status",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "Incomplete"
+                },
+                {
+                  "value": 1,
+                  "label": "Complete"
+                },
+                {
+                  "value": 2,
+                  "label": "Verified"
+                },
+                {
+                  "value": 3,
+                  "label": "VerifyRejected"
+                },
+                {
+                  "value": 4,
+                  "label": "Issued"
+                },
+                {
+                  "value": 5,
+                  "label": "IssueRejected"
+                },
+                {
+                  "value": 6,
+                  "label": "CancellationInProgress"
+                },
+                {
+                  "value": 7,
+                  "label": "Cancelled"
+                },
+                {
+                  "value": 8,
+                  "label": "AmendmentInProgress"
+                },
+                {
+                  "value": 9,
+                  "label": "SettledInProgress"
+                },
+                {
+                  "value": 10,
+                  "label": "Settled"
+                },
+                {
+                  "value": 11,
+                  "label": "Modified"
+                },
+                {
+                  "value": 12,
+                  "label": "AdjustInProgress"
+                },
+                {
+                  "value": 13,
+                  "label": "RetentionInProgress"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "Branch",
+            "templateOptions": {
+              "label": "Branch",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "Beneficiary",
+            "templateOptions": {
+              "label": "Beneficiary",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "BeneficiaryAccount",
+            "templateOptions": {
+              "label": "BeneficiaryAccount",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "BeneficiaryPersianName",
+            "templateOptions": {
+              "label": "BeneficiaryPersianName",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "BeneficiaryPersianFamily",
+            "templateOptions": {
+              "label": "BeneficiaryPersianFamily",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "BeneficiaryPersianAddress",
+            "templateOptions": {
+              "label": "BeneficiaryPersianAddress",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "BeneficiaryLatinName",
+            "templateOptions": {
+              "label": "BeneficiaryLatinName",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "BeneficiaryLatinFamily",
+            "templateOptions": {
+              "label": "BeneficiaryLatinFamily",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "BeneficiaryLatinAddress",
+            "templateOptions": {
+              "label": "BeneficiaryLatinAddress",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "BeneficiaryCountry",
+            "templateOptions": {
+              "label": "BeneficiaryCountry",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "datepicker",
+            "key": "IssuanceDate",
+            "templateOptions": {
+              "label": "IssuanceDate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "datepicker",
+            "key": "ExpiryDate",
+            "templateOptions": {
+              "label": "ExpiryDate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "datepicker",
+            "key": "EffectiveDate",
+            "templateOptions": {
+              "label": "EffectiveDate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "Location",
+            "templateOptions": {
+              "label": "Location",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "CreditLineRequest",
+            "templateOptions": {
+              "label": "CreditLineRequest",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "Description",
+            "templateOptions": {
+              "label": "Description",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "TFInterestFineTariffGroup",
+            "templateOptions": {
+              "label": "TFInterestFineTariffGroup",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "checkbox",
+            "key": "HavePartialShippment",
+            "templateOptions": {
+              "label": "HavePartialShippment",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "datepicker",
+            "key": "LastShipmentDate",
+            "templateOptions": {
+              "label": "LastShipmentDate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Report28X",
+    "fields": [
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "LCImport28x",
+            "templateOptions": {
+              "label": "LCImport28x",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "LCImport28x",
+            "templateOptions": {
+              "label": "LCImport28x",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "ProformaInvoice",
+    "fields": [
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "LCProformaInvoice",
+            "templateOptions": {
+              "label": "LCProformaInvoice",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "LCProformaInvoice",
+            "templateOptions": {
+              "label": "LCProformaInvoice",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Margin",
+    "fields": [
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "MaxDownPaymentDeadLineMaturity",
+            "templateOptions": {
+              "label": "MaxDownPaymentDeadLineMaturity",
+              "required": false,
+              "type": "number",
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "MaxDownPaymentDeadLineMaturity",
+            "templateOptions": {
+              "label": "MaxDownPaymentDeadLineMaturity",
+              "required": false,
+              "type": "number",
+              "options": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "ShipmentAdditionalInfo",
+    "fields": [
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "checkbox",
+            "key": "HaveInspection",
+            "templateOptions": {
+              "label": "HaveInspection",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "InspectionDescription",
+            "templateOptions": {
+              "label": "InspectionDescription",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "TradeTerm",
+            "templateOptions": {
+              "label": "TradeTerm",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "PartialShipmentDescription",
+            "templateOptions": {
+              "label": "PartialShipmentDescription",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "checkbox",
+            "key": "HaveInspectionCompany",
+            "templateOptions": {
+              "label": "HaveInspectionCompany",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "InspectionCompany",
+            "templateOptions": {
+              "label": "InspectionCompany",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "InsuranceNumber",
+            "templateOptions": {
+              "label": "InsuranceNumber",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "InsuranceCompany",
+            "templateOptions": {
+              "label": "InsuranceCompany",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "datepicker",
+            "key": "InsuranceDate",
+            "templateOptions": {
+              "label": "InsuranceDate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "InsuranceClass",
+            "templateOptions": {
+              "label": "InsuranceClass",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "A"
+                },
+                {
+                  "value": 1,
+                  "label": "B"
+                },
+                {
+                  "value": 2,
+                  "label": "C"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "checkbox",
+            "key": "HaveTranShipment",
+            "templateOptions": {
+              "label": "HaveTranShipment",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "TranShipmentDescription",
+            "templateOptions": {
+              "label": "TranShipmentDescription",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "ShipmentType",
+            "templateOptions": {
+              "label": "ShipmentType",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "PlaceOfReceipt",
+            "templateOptions": {
+              "label": "PlaceOfReceipt",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "PlaceOfDelivery",
+            "templateOptions": {
+              "label": "PlaceOfDelivery",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "ShipmentToPort",
+            "templateOptions": {
+              "label": "ShipmentToPort",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "ShipmentFromPort",
+            "templateOptions": {
+              "label": "ShipmentFromPort",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "ShipmentPeriodTemplate",
+            "templateOptions": {
+              "label": "ShipmentPeriodTemplate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "checkbox",
+            "key": "HaveShipmentPeriod",
+            "templateOptions": {
+              "label": "HaveShipmentPeriod",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "checkbox",
+            "key": "HaveInspection",
+            "templateOptions": {
+              "label": "HaveInspection",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "InspectionDescription",
+            "templateOptions": {
+              "label": "InspectionDescription",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "TradeTerm",
+            "templateOptions": {
+              "label": "TradeTerm",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "PartialShipmentDescription",
+            "templateOptions": {
+              "label": "PartialShipmentDescription",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "checkbox",
+            "key": "HaveInspectionCompany",
+            "templateOptions": {
+              "label": "HaveInspectionCompany",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "InspectionCompany",
+            "templateOptions": {
+              "label": "InspectionCompany",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "InsuranceNumber",
+            "templateOptions": {
+              "label": "InsuranceNumber",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "InsuranceCompany",
+            "templateOptions": {
+              "label": "InsuranceCompany",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "datepicker",
+            "key": "InsuranceDate",
+            "templateOptions": {
+              "label": "InsuranceDate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "InsuranceClass",
+            "templateOptions": {
+              "label": "InsuranceClass",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "A"
+                },
+                {
+                  "value": 1,
+                  "label": "B"
+                },
+                {
+                  "value": 2,
+                  "label": "C"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "checkbox",
+            "key": "HaveTranShipment",
+            "templateOptions": {
+              "label": "HaveTranShipment",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "TranShipmentDescription",
+            "templateOptions": {
+              "label": "TranShipmentDescription",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "ShipmentType",
+            "templateOptions": {
+              "label": "ShipmentType",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "PlaceOfReceipt",
+            "templateOptions": {
+              "label": "PlaceOfReceipt",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "PlaceOfDelivery",
+            "templateOptions": {
+              "label": "PlaceOfDelivery",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "ShipmentToPort",
+            "templateOptions": {
+              "label": "ShipmentToPort",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "ShipmentFromPort",
+            "templateOptions": {
+              "label": "ShipmentFromPort",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "ShipmentPeriodTemplate",
+            "templateOptions": {
+              "label": "ShipmentPeriodTemplate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "checkbox",
+            "key": "HaveShipmentPeriod",
+            "templateOptions": {
+              "label": "HaveShipmentPeriod",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "PresentingBankInstructions",
+    "fields": [
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "LCPresentingBankInstruction",
+            "templateOptions": {
+              "label": "LCPresentingBankInstruction",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "LCPresentingBankInstruction",
+            "templateOptions": {
+              "label": "LCPresentingBankInstruction",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "BankToBankInformation",
+    "fields": [
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "LCBankToBankInformation",
+            "templateOptions": {
+              "label": "LCBankToBankInformation",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "LCBankToBankInformation",
+            "templateOptions": {
+              "label": "LCBankToBankInformation",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Properties",
+    "fields": [
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "ConfirmationInstruction",
+            "templateOptions": {
+              "label": "ConfirmationInstruction",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "Confirm"
+                },
+                {
+                  "value": 1,
+                  "label": "MayAdd"
+                },
+                {
+                  "value": 2,
+                  "label": "Without"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "LCApplicableRule",
+            "templateOptions": {
+              "label": "LCApplicableRule",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "EUCPLatestVersion"
+                },
+                {
+                  "value": 1,
+                  "label": "EUCPURRLatestVersion"
+                },
+                {
+                  "value": 2,
+                  "label": "ISPLatestVersion"
+                },
+                {
+                  "value": 3,
+                  "label": "OTHR"
+                },
+                {
+                  "value": 4,
+                  "label": "UCPLatestVersion"
+                },
+                {
+                  "value": 5,
+                  "label": "UCPURRLatestVersion"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "ReimbursingBankApplicableRule",
+            "templateOptions": {
+              "label": "ReimbursingBankApplicableRule",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "NOTURR"
+                },
+                {
+                  "value": 1,
+                  "label": "URRLATESTVERSION"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "LCApplicableRuleDescription",
+            "templateOptions": {
+              "label": "LCApplicableRuleDescription",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "checkbox",
+            "key": "Revolving",
+            "templateOptions": {
+              "label": "Revolving",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "checkbox",
+            "key": "BackToBack",
+            "templateOptions": {
+              "label": "BackToBack",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "checkbox",
+            "key": "HaveReimbursingBankChargesType",
+            "templateOptions": {
+              "label": "HaveReimbursingBankChargesType",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "ReimbursingBankAccountNumber",
+            "templateOptions": {
+              "label": "ReimbursingBankAccountNumber",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "BackToBackReferenceNumber",
+            "templateOptions": {
+              "label": "BackToBackReferenceNumber",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "ReimbursingBankChargeType",
+            "templateOptions": {
+              "label": "ReimbursingBankChargeType",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "ByIssuingBank"
+                },
+                {
+                  "value": 1,
+                  "label": "ByReimbursingBank"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "OtherCharge",
+            "templateOptions": {
+              "label": "OtherCharge",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "SenderToReceiverInformation",
+            "templateOptions": {
+              "label": "SenderToReceiverInformation",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "PresentationMethod",
+            "templateOptions": {
+              "label": "PresentationMethod",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "ByEmail"
+                },
+                {
+                  "value": 1,
+                  "label": "ByPaper"
+                },
+                {
+                  "value": 2,
+                  "label": "Both"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "PresentationEmailAddress",
+            "templateOptions": {
+              "label": "PresentationEmailAddress",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "PresentationPaperLocation",
+            "templateOptions": {
+              "label": "PresentationPaperLocation",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "PeriodForPresentation",
+            "templateOptions": {
+              "label": "PeriodForPresentation",
+              "required": false,
+              "type": "number",
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "FormOfDocumentaryCredit",
+            "templateOptions": {
+              "label": "FormOfDocumentaryCredit",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "Irrevocable"
+                },
+                {
+                  "value": 1,
+                  "label": "Revocable"
+                },
+                {
+                  "value": 2,
+                  "label": "Irrevocabletransferable"
+                },
+                {
+                  "value": 3,
+                  "label": "Revocabletransferable"
+                },
+                {
+                  "value": 4,
+                  "label": "Irrevocablestandby"
+                },
+                {
+                  "value": 5,
+                  "label": "Revocablestandby"
+                },
+                {
+                  "value": 6,
+                  "label": "Irrevoctransstandby"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "Advice",
+            "templateOptions": {
+              "label": "Advice",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "PaymentMethod",
+            "templateOptions": {
+              "label": "PaymentMethod",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "ByAcceptance"
+                },
+                {
+                  "value": 1,
+                  "label": "ByDefPayment"
+                },
+                {
+                  "value": 2,
+                  "label": "ByMixedPayment"
+                },
+                {
+                  "value": 3,
+                  "label": "ByNegotiation"
+                },
+                {
+                  "value": 4,
+                  "label": "ByPayment"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "MixedPaymentDetails",
+            "templateOptions": {
+              "label": "MixedPaymentDetails",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "DeferredPaymentDetails",
+            "templateOptions": {
+              "label": "DeferredPaymentDetails",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "ConfirmationInstruction",
+            "templateOptions": {
+              "label": "ConfirmationInstruction",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "Confirm"
+                },
+                {
+                  "value": 1,
+                  "label": "MayAdd"
+                },
+                {
+                  "value": 2,
+                  "label": "Without"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "LCApplicableRule",
+            "templateOptions": {
+              "label": "LCApplicableRule",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "EUCPLatestVersion"
+                },
+                {
+                  "value": 1,
+                  "label": "EUCPURRLatestVersion"
+                },
+                {
+                  "value": 2,
+                  "label": "ISPLatestVersion"
+                },
+                {
+                  "value": 3,
+                  "label": "OTHR"
+                },
+                {
+                  "value": 4,
+                  "label": "UCPLatestVersion"
+                },
+                {
+                  "value": 5,
+                  "label": "UCPURRLatestVersion"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "ReimbursingBankApplicableRule",
+            "templateOptions": {
+              "label": "ReimbursingBankApplicableRule",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "NOTURR"
+                },
+                {
+                  "value": 1,
+                  "label": "URRLATESTVERSION"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "LCApplicableRuleDescription",
+            "templateOptions": {
+              "label": "LCApplicableRuleDescription",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "checkbox",
+            "key": "Revolving",
+            "templateOptions": {
+              "label": "Revolving",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "checkbox",
+            "key": "BackToBack",
+            "templateOptions": {
+              "label": "BackToBack",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "checkbox",
+            "key": "HaveReimbursingBankChargesType",
+            "templateOptions": {
+              "label": "HaveReimbursingBankChargesType",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "ReimbursingBankAccountNumber",
+            "templateOptions": {
+              "label": "ReimbursingBankAccountNumber",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "BackToBackReferenceNumber",
+            "templateOptions": {
+              "label": "BackToBackReferenceNumber",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "ReimbursingBankChargeType",
+            "templateOptions": {
+              "label": "ReimbursingBankChargeType",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "ByIssuingBank"
+                },
+                {
+                  "value": 1,
+                  "label": "ByReimbursingBank"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "OtherCharge",
+            "templateOptions": {
+              "label": "OtherCharge",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "SenderToReceiverInformation",
+            "templateOptions": {
+              "label": "SenderToReceiverInformation",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "PresentationMethod",
+            "templateOptions": {
+              "label": "PresentationMethod",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "ByEmail"
+                },
+                {
+                  "value": 1,
+                  "label": "ByPaper"
+                },
+                {
+                  "value": 2,
+                  "label": "Both"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "PresentationEmailAddress",
+            "templateOptions": {
+              "label": "PresentationEmailAddress",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "PresentationPaperLocation",
+            "templateOptions": {
+              "label": "PresentationPaperLocation",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "PeriodForPresentation",
+            "templateOptions": {
+              "label": "PeriodForPresentation",
+              "required": false,
+              "type": "number",
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "FormOfDocumentaryCredit",
+            "templateOptions": {
+              "label": "FormOfDocumentaryCredit",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "Irrevocable"
+                },
+                {
+                  "value": 1,
+                  "label": "Revocable"
+                },
+                {
+                  "value": 2,
+                  "label": "Irrevocabletransferable"
+                },
+                {
+                  "value": 3,
+                  "label": "Revocabletransferable"
+                },
+                {
+                  "value": 4,
+                  "label": "Irrevocablestandby"
+                },
+                {
+                  "value": 5,
+                  "label": "Revocablestandby"
+                },
+                {
+                  "value": 6,
+                  "label": "Irrevoctransstandby"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "Advice",
+            "templateOptions": {
+              "label": "Advice",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "PaymentMethod",
+            "templateOptions": {
+              "label": "PaymentMethod",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "ByAcceptance"
+                },
+                {
+                  "value": 1,
+                  "label": "ByDefPayment"
+                },
+                {
+                  "value": 2,
+                  "label": "ByMixedPayment"
+                },
+                {
+                  "value": 3,
+                  "label": "ByNegotiation"
+                },
+                {
+                  "value": 4,
+                  "label": "ByPayment"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "MixedPaymentDetails",
+            "templateOptions": {
+              "label": "MixedPaymentDetails",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "DeferredPaymentDetails",
+            "templateOptions": {
+              "label": "DeferredPaymentDetails",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "AdditionalInformation",
+    "fields": [
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "checkbox",
+            "key": "PreAdvice",
+            "templateOptions": {
+              "label": "PreAdvice",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "PreAdviceNumber",
+            "templateOptions": {
+              "label": "PreAdviceNumber",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "datepicker",
+            "key": "PreAdviceDate",
+            "templateOptions": {
+              "label": "PreAdviceDate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "ProformaReferenceNumber",
+            "templateOptions": {
+              "label": "ProformaReferenceNumber",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "datepicker",
+            "key": "ProformaDate",
+            "templateOptions": {
+              "label": "ProformaDate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "datepicker",
+            "key": "ProformaExpiryDate",
+            "templateOptions": {
+              "label": "ProformaExpiryDate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "checkbox",
+            "key": "CambiumAsian",
+            "templateOptions": {
+              "label": "CambiumAsian",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "InsuranceType",
+            "templateOptions": {
+              "label": "InsuranceType",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "InsuranceBySeller"
+                },
+                {
+                  "value": 1,
+                  "label": "WithoutInsurance"
+                },
+                {
+                  "value": 2,
+                  "label": "Unlimited"
+                },
+                {
+                  "value": 3,
+                  "label": "InsuranceByBuyer"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "checkbox",
+            "key": "CambiumAsianEuro",
+            "templateOptions": {
+              "label": "CambiumAsianEuro",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "LCGuarantyType",
+            "templateOptions": {
+              "label": "LCGuarantyType",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "CenteralBank"
+                },
+                {
+                  "value": 1,
+                  "label": "MinistryOfEconomicAffairsAndFinance"
+                },
+                {
+                  "value": 2,
+                  "label": "GovernmentOrganizations"
+                },
+                {
+                  "value": 3,
+                  "label": "WithoutGuaranty"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "checkbox",
+            "key": "PreAdvice",
+            "templateOptions": {
+              "label": "PreAdvice",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "PreAdviceNumber",
+            "templateOptions": {
+              "label": "PreAdviceNumber",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "datepicker",
+            "key": "PreAdviceDate",
+            "templateOptions": {
+              "label": "PreAdviceDate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "ProformaReferenceNumber",
+            "templateOptions": {
+              "label": "ProformaReferenceNumber",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "datepicker",
+            "key": "ProformaDate",
+            "templateOptions": {
+              "label": "ProformaDate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "datepicker",
+            "key": "ProformaExpiryDate",
+            "templateOptions": {
+              "label": "ProformaExpiryDate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "checkbox",
+            "key": "CambiumAsian",
+            "templateOptions": {
+              "label": "CambiumAsian",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "InsuranceType",
+            "templateOptions": {
+              "label": "InsuranceType",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "InsuranceBySeller"
+                },
+                {
+                  "value": 1,
+                  "label": "WithoutInsurance"
+                },
+                {
+                  "value": 2,
+                  "label": "Unlimited"
+                },
+                {
+                  "value": 3,
+                  "label": "InsuranceByBuyer"
+                }
+              ]
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "checkbox",
+            "key": "CambiumAsianEuro",
+            "templateOptions": {
+              "label": "CambiumAsianEuro",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "LCGuarantyType",
+            "templateOptions": {
+              "label": "LCGuarantyType",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "CenteralBank"
+                },
+                {
+                  "value": 1,
+                  "label": "MinistryOfEconomicAffairsAndFinance"
+                },
+                {
+                  "value": 2,
+                  "label": "GovernmentOrganizations"
+                },
+                {
+                  "value": 3,
+                  "label": "WithoutGuaranty"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Default",
+    "fields": [
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "select",
+            "key": "ChargePayerType",
+            "templateOptions": {
+              "label": "ChargePayerType",
+              "required": false,
+              "type": null,
+              "options": [
+                {
+                  "value": 0,
+                  "label": "All_Bank_Charges_to_the_Account_of_Applicant"
+                },
+                {
+                  "value": 1,
+                  "label": "All_Bank_Charges_to_the_Account_of_Beneficiary"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "PayGet",
+    "fields": [
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "DetailCost",
+            "templateOptions": {
+              "label": "DetailCost",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "DetailCost",
+            "templateOptions": {
+              "label": "DetailCost",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "LCBranchList",
+    "fields": [
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "checkbox",
+            "key": "FreeNegotiable",
+            "templateOptions": {
+              "label": "FreeNegotiable",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "NegotiationCountry",
+            "templateOptions": {
+              "label": "NegotiationCountry",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "checkbox",
+            "key": "FreeNegotiable",
+            "templateOptions": {
+              "label": "FreeNegotiable",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "NegotiationCountry",
+            "templateOptions": {
+              "label": "NegotiationCountry",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Drawns",
+    "fields": [
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "DrawnOn",
+            "templateOptions": {
+              "label": "DrawnOn",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "DrawCondition",
+            "templateOptions": {
+              "label": "DrawCondition",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "DrawConditionTemplate",
+            "templateOptions": {
+              "label": "DrawConditionTemplate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "DrawnOn",
+            "templateOptions": {
+              "label": "DrawnOn",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      },
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "DrawCondition",
+            "templateOptions": {
+              "label": "DrawCondition",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "DrawConditionTemplate",
+            "templateOptions": {
+              "label": "DrawConditionTemplate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "AdditionalCondition",
+    "fields": [
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "LCAdditionalCondition",
+            "templateOptions": {
+              "label": "LCAdditionalCondition",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "LCAdditionalCondition",
+            "templateOptions": {
+              "label": "LCAdditionalCondition",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Documents",
+    "fields": [
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "DocumentDescription",
+            "templateOptions": {
+              "label": "DocumentDescription",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "LCDocumentTemplate",
+            "templateOptions": {
+              "label": "LCDocumentTemplate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "input",
+            "key": "DocumentDescription",
+            "templateOptions": {
+              "label": "DocumentDescription",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "LCDocumentTemplate",
+            "templateOptions": {
+              "label": "LCDocumentTemplate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "GoodsTab",
+    "fields": [
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "LCGoodTemplate",
+            "templateOptions": {
+              "label": "LCGoodTemplate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "lookup",
+            "key": "LCGoodTemplate",
+            "templateOptions": {
+              "label": "LCGoodTemplate",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Samtak",
+    "fields": [
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-3",
+            "type": "checkbox",
+            "key": "ClearWithMinDucument",
+            "templateOptions": {
+              "label": "ClearWithMinDucument",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          },
+          {
+            "className": "col-3",
+            "type": "checkbox",
+            "key": "ClearWithMinDucument",
+            "templateOptions": {
+              "label": "ClearWithMinDucument",
+              "required": false,
+              "type": null,
+              "options": []
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

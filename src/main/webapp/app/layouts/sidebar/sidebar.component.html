@@ -1,22 +1,17 @@
-<form>
-    <mat-form-field>
-        <input type="text"
-               #filterTxt
-               placeholder="Select Module"
-               aria-label="Number"
-               matInput
-               [formControl]="filterTextControl"
-               [matAutocomplete]="auto"/>
-        <mat-autocomplete #auto="matAutocomplete" (optionSelected)='subSystemSelected($event.option.value)'>
-            <mat-option *ngFor="let option of filteredOptions | async" [value]="option.ID">
-                {{option.Name}}
-            </mat-option>
-        </mat-autocomplete>
-    </mat-form-field>
-
-    <mat-action-list>
-        <button (click)="addPresenter(c.Code)" style="font-size: 14px" *ngFor="let c of commandDefinitions" mat-list-item>{{c.Name}}-{{c.Code}}</button>
-    </mat-action-list>
-</form>
+<mat-accordion class="example-headers-align">
+    <mat-expansion-panel *ngFor="let sys of systemDataArray;let i = index"
+                         [expanded]="step === i" (opened)="setStep(i)" hideToggle (afterExpand)="subSystemSelected(sys.ID, i)">
+        <mat-expansion-panel-header *ngIf="sys.Title !== '' && sys.Title !== null && sys.Title !== undefined">
+            <mat-panel-description>
+                {{sys.Title}}:{{sys.ID}}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <bng-command-tree #commandTree *ngIf="step === i"></bng-command-tree>
+    </mat-expansion-panel>
+</mat-accordion>
 
 
+<!--<mat-action-list>-->
+<!--    <button (click)="addPresenter(c.Code)" style="font-size: 14px" *ngFor="let c of commandDefinitions"-->
+<!--            mat-list-item>{{c.Name}}-{{c.Code}}</button>-->
+<!--</mat-action-list>-->

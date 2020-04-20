@@ -3,7 +3,6 @@ import {ActionInfo} from "app/dynamicutil/models/ActionInfo";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {SERVER_API_URL} from "app/app.constants";
-import * as CS from "app/dynamicutil/models/Constants";
 
 @Injectable({
   providedIn: 'root'

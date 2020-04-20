@@ -48,74 +48,109 @@ export class ObjectPresenterComponent implements OnInit {
 
   submit(): void {
     console.log(this.model);
-    const v = this.alertService.addAlert({type: 'danger', msg: 'global.messages.error.presentersavedata', timeout: 4000}, []);
+    const v = this.alertService.addAlert({
+      type: 'danger',
+      msg: 'global.messages.error.presentersavedata',
+      timeout: 4000
+    }, []);
   }
 
   ngOnInit(): void {
 
     this.formArray.valueChanges.subscribe(console.log);
 
-    const customerJson = "assets/customerop2.json";
+    if (this.commandCode === "10129") {
+      this.commandCode = "10118";
+    } else if (this.commandCode === "10009") {
+      this.commandCode = "10119";
+    } else if (this.commandCode === "30754") {
+      this.commandCode = "30064";
+    }
 
-    // this.dynamicService.execute<any>(CS.GETPRESENTER, "?commandCode=" + this.commandCode).subscribe(
-    this.dynamicService.execute<any>(CS.GETPRESENTER, "?commandCode=30064"/* + this.commandCode*/).subscribe(
-      data => {
+    if (this.commandCode === "117751") {
+      const lcImportJson = "assets/lcimportop.json";
+      this.httpClient.get<Tab[]>(lcImportJson).subscribe(data => {
+        this.tabs = data;
+        const formConfigs: FormlyFieldConfig[] = this.tabs[0].fields;
 
-        console.log("GETPRESENTERGETPRESENTERGETPRESENTER", data);
-        const c = data;
-        // const c = JSON.parse(data);
-        console.log("GETPRESENTERGETPRESENTERGETPRESENTER22", c);
-        const tab: Tab = {label: 'common', fields: []}
+        for (let i = 0; i < formConfigs.length; i++) {
+          const fc = formConfigs[i];
+          if (!isNull(fc.fieldGroup)) {
+            const nationFd = fc.fieldGroup.find(v => v.key === "nationalId");
+            if (!isNull(nationFd)) {
+              nationFd.hooks = {onInit: field => this.nationalIdInit(field)};
+            }
 
-        let field: Field;
-
-        const cis: ControlItem[] = c.ControlItems;
-
-        for (let i = 0; i < cis.length; i++) {
-
-          const ci: ControlItem = cis[i];
-
-          if (i % 2 === 0) {
-            field = {fieldGroupClassName: 'row', fieldGroup: []};
-            tab.fields.push(field);
-          }
-
-          const fg: FieldGroup = {key: ci.Name, className: 'col-3', type: 'input', templateOptions: undefined};
-          field.fieldGroup.push(fg);
-
-          const templateOptions: TemplateOptions = {type: '', label: ci.Caption, required: ci.IsRequired};
-          fg.templateOptions = templateOptions;
-        }
-
-        this.commands = c.UICommands;
-
-        this.tabs.push(tab);
-
-        this.model = c.Model;
-      }
-    );
-
-    return;
-
-    this.httpClient.get<Tab[]>(customerJson).subscribe(data => {
-      this.tabs = data;
-      const formConfigs: FormlyFieldConfig[] = this.tabs[0].fields;
-
-      for (let i = 0; i < formConfigs.length; i++) {
-        const fc = formConfigs[i];
-        if (!isNull(fc.fieldGroup)) {
-          const nationFd = fc.fieldGroup.find(v => v.key === "nationalId");
-          if (!isNull(nationFd)) {
-            nationFd.hooks = {onInit: field => this.nationalIdInit(field)};
-          }
-
-          const isActiveFd = fc.fieldGroup.find(v => v.key === "isActive");
-          if (!isNull(isActiveFd)) {
-            isActiveFd.hooks = {onInit: field => this.isActiveOnInit(field)};
+            const isActiveFd = fc.fieldGroup.find(v => v.key === "isActive");
+            if (!isNull(isActiveFd)) {
+              isActiveFd.hooks = {onInit: field => this.isActiveOnInit(field)};
+            }
           }
         }
+      }, err => console.log(err), noop);
+    } else if (this.commandCode !== "10118" && this.commandCode !== "10119") {
+      this.dynamicService.execute<any>(CS.GETPRESENTER, "?commandCode=" + this.commandCode).subscribe(
+        data => {
+
+          console.log("GETPRESENTERGETPRESENTERGETPRESENTER", data);
+          const c = data;
+          // const c = JSON.parse(data);
+          console.log("GETPRESENTERGETPRESENTERGETPRESENTER22", c);
+          const tab: Tab = {label: '', fields: []}
+
+          let field: Field;
+
+          // const cis: ControlItem[] = c[0].ControlItems;
+          const cis: ControlItem[] = c.ControlItems;
+
+          for (let i = 0; i < cis.length; i++) {
+
+            const ci: ControlItem = cis[i];
+
+            if (i % 2 === 0) {
+              field = {fieldGroupClassName: 'row', fieldGroup: []};
+              tab.fields.push(field);
+            }
+
+            const fg: FieldGroup = {key: ci.Name, className: 'col-3', type: 'input', templateOptions: undefined};
+            field.fieldGroup.push(fg);
+
+            const templateOptions: TemplateOptions = {type: '', label: ci.Caption, required: ci.IsRequired};
+            fg.templateOptions = templateOptions;
+          }
+
+          this.commands = c.UICommands;
+
+          this.tabs.push(tab);
+
+          this.model = c.Model;
+        }
+      );
+    } else {
+      let customerJson = "assets/customerop.json";
+      if (this.commandCode === "10118") {
+        customerJson = "assets/customerop2.json";
       }
-    }, err => console.log(err), noop)
+      this.httpClient.get<Tab[]>(customerJson).subscribe(data => {
+        this.tabs = data;
+        const formConfigs: FormlyFieldConfig[] = this.tabs[0].fields;
+
+        for (let i = 0; i < formConfigs.length; i++) {
+          const fc = formConfigs[i];
+          if (!isNull(fc.fieldGroup)) {
+            const nationFd = fc.fieldGroup.find(v => v.key === "nationalId");
+            if (!isNull(nationFd)) {
+              nationFd.hooks = {onInit: field => this.nationalIdInit(field)};
+            }
+
+            const isActiveFd = fc.fieldGroup.find(v => v.key === "isActive");
+            if (!isNull(isActiveFd)) {
+              isActiveFd.hooks = {onInit: field => this.isActiveOnInit(field)};
+            }
+          }
+        }
+      }, err => console.log(err), noop);
+    }
   }
 
   nationalIdInit(field: any): void {

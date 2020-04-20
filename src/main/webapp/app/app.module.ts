@@ -25,6 +25,9 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {FormlyMatDatepickerModule} from '@ngx-formly/material/datepicker';
 import {FormlyModule} from "@ngx-formly/core";
 import {DynamicTableModule} from "material-dynamic-table";
+import {MatExpansionModule} from "@angular/material/expansion";
+import { CommandTreeComponent } from './layouts/sidebar/command-tree/command-tree.component';
+import {MatTreeModule} from "@angular/material/tree";
 
 @NgModule({
   imports: [
@@ -45,7 +48,9 @@ import {DynamicTableModule} from "material-dynamic-table";
     MatNativeDateModule,
     FormlyMatDatepickerModule,
     FormlyModule,
-    DynamicTableModule
+    DynamicTableModule,
+    MatExpansionModule,
+    MatTreeModule
   ],
   declarations: [
     MainComponent,
@@ -54,7 +59,8 @@ import {DynamicTableModule} from "material-dynamic-table";
     PageRibbonComponent,
     ActiveMenuDirective,
     FooterComponent,
-    SidebarComponent],
+    SidebarComponent,
+    CommandTreeComponent],
 
   bootstrap: [MainComponent]
 })

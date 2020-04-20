@@ -1,15 +1,16 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {map, startWith} from "rxjs/operators";
 import {noop, Observable} from "rxjs";
 import {FormControl} from "@angular/forms";
 import {DynamicService} from "app/dynamicutil/services/dynamic.service";
 import * as CS from "app/dynamicutil/models/Constants";
 import {StoreService} from "app/dynamicutil/services/store.service";
-import {CommandDefinition, RootObject} from "app/dynamicutil/models/BancoUIModels";
+import {CommandDefinition} from "app/dynamicutil/models/BancoUIModels";
 import {isNull} from "app/shared/util/common-util";
 import {JhiAlertService} from "ng-jhipster";
+import {CommandTreeComponent} from "app/layouts/sidebar/command-tree/command-tree.component";
 
-export interface SystemCode {
+export interface SystemData {
   ID: string;
   Name: string;
   Title: string;
@@ -22,11 +23,10 @@ export interface SystemCode {
 })
 export class SidebarComponent implements OnInit {
 
-  filterTextControl = new FormControl();
-  options: SystemCode[] = [];
-  filteredOptions: Observable<SystemCode[]>;
+  step = 0;
+  systemDataArray: SystemData[] = [];
 
-  commandDefinitions: CommandDefinition[] = [];
+  @ViewChild('commandTree') commandTree: CommandTreeComponent;
 
   constructor(private dynamicService: DynamicService, private storeService: StoreService, private alertService: JhiAlertService) {
 
@@ -42,67 +42,39 @@ export class SidebarComponent implements OnInit {
           // const c = JSON.parse(data);
           console.log("SUBSYSTEMSUBSYSTEMSUBSYSTEMSUBSYSTEM22", c);
           return c.map((element: { [x: string]: any; }) => {
-            const sc: SystemCode = {"ID": element["ID"], "Name": element["Name"], "Title": element["Title"]}
+            const sc: SystemData = {"ID": element["ID"], "Name": element["Name"], "Title": element["Title"]}
             return sc;
           });
         })
       )
       .subscribe(val => {
-        this.options = val;
+        this.systemDataArray = val;
       }, err => console.log(err), noop);
-
-    this.filteredOptions = this.filterTextControl.valueChanges
-      .pipe(
-        startWith(''),
-        map(value => this._filter(value))
-      );
 
     this.storeService.toggleSideBar$.subscribe()
   }
 
-  private _filter(value: string): SystemCode[] {
-    const filterValue = value.toString().toLowerCase();
-
-    return this.options.filter(option => option.Name.toLowerCase().includes(filterValue));
-  }
-
-  subSystemSelected(systemId: string): void {
-
-    this.dynamicService.execute<any>(CS.GETSUBSYSTEMCOMMANDS, "?CommandLinkGroupId=" + systemId)
-      .pipe(
-        map(data => {
-            console.log("SYSTEMIDSYSTEMIDSYSTEMIDSYSTEMIDSYSTEMID", systemId);
-            console.log("COMMANDSCOMMANDSCOMMANDSCOMMANDSCOMMANDS", data);
-            const c = data;
-            // const c = JSON.parse(data);
-            console.log("COMMANDSCOMMANDSCOMMANDSCOMMANDSCOMMANDS22", c);
-            const commands: CommandDefinition[] = [];
-            for (let i = 0; i < c.length; i++) {
-              if (!isNull(c[i].CommandDefinition)) {
-                commands.push(c[i].CommandDefinition);
-              }
-              for (let j = 0; j < c[i].CommandLinkHierarchies.length; j++) {
-                if (!isNull(c[i].CommandLinkHierarchies[j].CommandDefinition)) {
-                  commands.push(c[i].CommandLinkHierarchies[j].CommandDefinition);
-                }
-              }
-            }
-
-            if(systemId === "4"){
-              commands[1].Code = "30064";
-              commands[1].Name = "AddCurrencyDailyRate";
-            }
-
-            return commands;
-          }
-        )
-      )
-      .subscribe(val => {
-        this.commandDefinitions = val;
-      }, noop, noop);
-  }
-
   addPresenter(commandCode: string): void {
     this.storeService.addPresenter(commandCode);
+  }
+
+  setStep(index: number): void {
+    this.step = index;
+  }
+
+  nextStep(): void {
+    this.step++;
+  }
+
+  prevStep(): void {
+    this.step--;
+  }
+
+  subSystemSelected(systemId: string, index: number): void {
+    if (index !== this.step) {
+      return;
+    }
+
+    this.commandTree.subSystemSelected(systemId);
   }
 }
