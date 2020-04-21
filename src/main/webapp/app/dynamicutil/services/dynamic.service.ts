@@ -1,5 +1,4 @@
 import {Injectable} from '@angular/core';
-import {ActionInfo} from "app/dynamicutil/models/ActionInfo";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {SERVER_API_URL} from "app/app.constants";
@@ -14,8 +13,6 @@ export class DynamicService {
   }
 
   execute<T>(command: string, data: string): Observable<T> {
-    const actionInfo: ActionInfo =
-      {command, data};
 
     const httpOptions = {
       headers: new HttpHeaders({

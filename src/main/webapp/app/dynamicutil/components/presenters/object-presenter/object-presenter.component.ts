@@ -5,7 +5,6 @@ import {DynamicService} from "app/dynamicutil/services/dynamic.service";
 import {noop} from "rxjs";
 import {map, startWith} from "rxjs/operators";
 import {isNull} from "app/shared/util/common-util";
-import {strict} from "assert";
 import {HttpClient} from "@angular/common/http";
 import {
   ControlItem,
@@ -93,6 +92,8 @@ export class ObjectPresenterComponent implements OnInit {
         data => {
 
           console.log("GETPRESENTERGETPRESENTERGETPRESENTER", data);
+
+          // HOMEDIFF
           const c = data;
           // const c = JSON.parse(data);
           console.log("GETPRESENTERGETPRESENTERGETPRESENTER22", c);
@@ -100,8 +101,9 @@ export class ObjectPresenterComponent implements OnInit {
 
           let field: Field;
 
-          // const cis: ControlItem[] = c[0].ControlItems;
+          // HOMEDIFF
           const cis: ControlItem[] = c.ControlItems;
+          // const cis: ControlItem[] = c.ControlItems;
 
           for (let i = 0; i < cis.length; i++) {
 
@@ -226,7 +228,7 @@ export class ObjectPresenterComponent implements OnInit {
   }
 
   isActiveOnInit(field: any): void {
-    const activeVal = field.formControl.valueChanges.subscribe((val: boolean) => {
+    field.formControl.valueChanges.subscribe((val: boolean) => {
         const cType = field.parent.fieldGroup.find((v: FormlyFieldConfig) => v.key === "customerType");
         cType.templateOptions.required = val;
       },

@@ -20,6 +20,7 @@
       }
     ],
     "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/member-ordering": "off",
     "no-console": "off",
     "no-console": false,
     "no-console": 0,

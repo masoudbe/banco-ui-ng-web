@@ -1,12 +1,9 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {map, startWith} from "rxjs/operators";
-import {noop, Observable} from "rxjs";
-import {FormControl} from "@angular/forms";
+import {map} from "rxjs/operators";
+import {noop} from "rxjs";
 import {DynamicService} from "app/dynamicutil/services/dynamic.service";
 import * as CS from "app/dynamicutil/models/Constants";
 import {StoreService} from "app/dynamicutil/services/store.service";
-import {CommandDefinition} from "app/dynamicutil/models/BancoUIModels";
-import {isNull} from "app/shared/util/common-util";
 import {JhiAlertService} from "ng-jhipster";
 import {CommandTreeComponent} from "app/layouts/sidebar/command-tree/command-tree.component";
 
@@ -23,6 +20,7 @@ export interface SystemData {
 })
 export class SidebarComponent implements OnInit {
 
+  loadSubSystems = false;
   step = 0;
   systemDataArray: SystemData[] = [];
 
@@ -33,11 +31,13 @@ export class SidebarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loadSubSystems = false;
     this.dynamicService.execute<any>(CS.GETSUBSYSTEMS, "")
       .pipe(
         map(data => {
 
           console.log("SUBSYSTEMSUBSYSTEMSUBSYSTEMSUBSYSTEM", data);
+          // HOMEDIFF
           const c = data;
           // const c = JSON.parse(data);
           console.log("SUBSYSTEMSUBSYSTEMSUBSYSTEMSUBSYSTEM22", c);
@@ -49,6 +49,7 @@ export class SidebarComponent implements OnInit {
       )
       .subscribe(val => {
         this.systemDataArray = val;
+        this.loadSubSystems = true;
       }, err => console.log(err), noop);
 
     this.storeService.toggleSideBar$.subscribe()
@@ -76,5 +77,9 @@ export class SidebarComponent implements OnInit {
     }
 
     this.commandTree.subSystemSelected(systemId);
+  }
+
+  addPresenterByCommand(commandTxt: HTMLInputElement): void {
+    this.addPresenter(commandTxt.value);
   }
 }

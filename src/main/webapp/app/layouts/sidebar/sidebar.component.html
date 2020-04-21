@@ -1,17 +1,15 @@
-<mat-accordion class="example-headers-align">
+<input matInput #commandTxt placeholder="کد کامند" style="width: 100%" (mouseleave)="addPresenterByCommand(commandTxt)" />
+<mat-accordion style="font-family: Tahoma;cursor: pointer" class="example-headers-align">
     <mat-expansion-panel *ngFor="let sys of systemDataArray;let i = index"
                          [expanded]="step === i" (opened)="setStep(i)" hideToggle (afterExpand)="subSystemSelected(sys.ID, i)">
-        <mat-expansion-panel-header *ngIf="sys.Title !== '' && sys.Title !== null && sys.Title !== undefined">
+        <mat-expansion-panel-header class="disable_ripple" *ngIf="sys.Title !== '' && sys.Title !== null && sys.Title !== undefined">
             <mat-panel-description>
-                {{sys.Title}}:{{sys.ID}}
+                {{sys.Title}}
             </mat-panel-description>
         </mat-expansion-panel-header>
         <bng-command-tree #commandTree *ngIf="step === i"></bng-command-tree>
     </mat-expansion-panel>
 </mat-accordion>
 
+<mat-spinner style="width: 40px;height: 40px" *ngIf="!loadSubSystems"></mat-spinner>
 
-<!--<mat-action-list>-->
-<!--    <button (click)="addPresenter(c.Code)" style="font-size: 14px" *ngFor="let c of commandDefinitions"-->
-<!--            mat-list-item>{{c.Name}}-{{c.Code}}</button>-->
-<!--</mat-action-list>-->

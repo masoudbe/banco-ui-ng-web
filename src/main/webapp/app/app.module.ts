@@ -28,6 +28,7 @@ import {DynamicTableModule} from "material-dynamic-table";
 import {MatExpansionModule} from "@angular/material/expansion";
 import { CommandTreeComponent } from './layouts/sidebar/command-tree/command-tree.component';
 import {MatTreeModule} from "@angular/material/tree";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 @NgModule({
   imports: [
@@ -50,7 +51,8 @@ import {MatTreeModule} from "@angular/material/tree";
     FormlyModule,
     DynamicTableModule,
     MatExpansionModule,
-    MatTreeModule
+    MatTreeModule,
+    MatProgressSpinnerModule
   ],
   declarations: [
     MainComponent,
