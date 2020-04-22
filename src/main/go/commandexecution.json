@@ -1,76 +1,204 @@
-[
-  {
-    "ControlItems": [
-      {
-        "IsEnabled": true,
-        "IsVisible": true,
-        "IsRequired": false,
-        "Name": "NameProperty",
-        "Caption": "NameProperty",
-        "ControlType": 1,
-        "Container": null,
-        "Order": -1,
-        "ColumnSpan": -1
-      },
-      {
-        "IsEnabled": true,
-        "IsVisible": true,
-        "IsRequired": false,
-        "Name": "DescriptionProperty",
-        "Caption": "DescriptionProperty",
-        "ControlType": 1,
-        "Container": null,
-        "Order": -1,
-        "ColumnSpan": -1
-      }
-    ],
-    "Model": {
-      "NameProperty": null,
-      "DescriptionProperty": null,
-      "ObjectDefinitionDescription": null,
-      "ID": 0,
-      "Version": 0,
-      "CreationDate": "2020-04-14T11:35:53.722269+04:30",
-      "LastChange": "2020-04-14T11:35:53.722269+04:30",
-      "Creator": "",
-      "LastUpdater": ""
+{
+  "ModelTypeQualifiedName": "Tosan.Core.OrgFundamental.Common.Entities.CurrencyDailyRate, Tosan.Core.OrgFundamental.Common, Version=3.23.7382.20783, Culture=neutral, PublicKeyToken=null",
+  "ControlItems": [
+    {
+      "IsEnabled": true,
+      "IsVisible": true,
+      "IsRequired": true,
+      "Name": "Currency",
+      "Caption": "ارز / سکه",
+      "ControlType": 1,
+      "Container": null,
+      "Order": -1,
+      "ColumnSpan": -1
     },
-    "UICommands": [
-      {
-        "Title": "",
-        "WebExecuter": false,
-        "Name": "CloneCommand",
-        "Description": "CloneCommand",
-        "Image": null
-      },
-      {
-        "Title": "Save",
-        "WebExecuter": false,
-        "Name": "SaveCommand",
-        "Description": "Save object",
-        "Image": null
-      },
-      {
-        "Title": "Save & New",
-        "WebExecuter": false,
-        "Name": "SaveAndNewCommand",
-        "Description": "Save object and Create a new instance of object",
-        "Image": null
-      },
-      {
-        "Title": "Close",
-        "WebExecuter": false,
-        "Name": "CloseCommand",
-        "Description": "Close current view",
-        "Image": null
-      },
-      {
-        "Title": "Save & Close",
-        "WebExecuter": false,
-        "Name": "SaveAndCloseCommand",
-        "Description": "Save object and Close current view",
-        "Image": null
-      }
-    ]
-  }
-]
+    {
+      "IsEnabled": true,
+      "IsVisible": false,
+      "IsRequired": false,
+      "Name": "SwiftCode",
+      "Caption": "نوع ارز",
+      "ControlType": 1,
+      "Container": null,
+      "Order": -1,
+      "ColumnSpan": -1
+    },
+    {
+      "IsEnabled": true,
+      "IsVisible": false,
+      "IsRequired": false,
+      "Name": "Coefficient",
+      "Caption": "ضریب",
+      "ControlType": 3,
+      "Container": null,
+      "Order": -1,
+      "ColumnSpan": -1
+    },
+    {
+      "IsEnabled": true,
+      "IsVisible": true,
+      "IsRequired": true,
+      "Name": "CurrencyRateType",
+      "Caption": "نوع نرخ ارز / سکه",
+      "ControlType": 1,
+      "Container": null,
+      "Order": -1,
+      "ColumnSpan": -1
+    },
+    {
+      "IsEnabled": true,
+      "IsVisible": false,
+      "IsRequired": false,
+      "Name": "Nature",
+      "Caption": "ماهیت",
+      "ControlType": 1,
+      "Container": null,
+      "Order": -1,
+      "ColumnSpan": -1
+    },
+    {
+      "IsEnabled": true,
+      "IsVisible": true,
+      "IsRequired": true,
+      "Name": "CoefficientConversionRate",
+      "Caption": "نرخ تسعیر با ضریب",
+      "ControlType": 3,
+      "Container": null,
+      "Order": -1,
+      "ColumnSpan": -1
+    },
+    {
+      "IsEnabled": true,
+      "IsVisible": true,
+      "IsRequired": true,
+      "Name": "CoefficientSellingRate",
+      "Caption": "نرخ فروش با ضریب",
+      "ControlType": 3,
+      "Container": null,
+      "Order": -1,
+      "ColumnSpan": -1
+    },
+    {
+      "IsEnabled": true,
+      "IsVisible": true,
+      "IsRequired": true,
+      "Name": "CoefficientBuyingRate",
+      "Caption": "نرخ خريد با ضریب",
+      "ControlType": 3,
+      "Container": null,
+      "Order": -1,
+      "ColumnSpan": -1
+    },
+    {
+      "IsEnabled": true,
+      "IsVisible": true,
+      "IsRequired": true,
+      "Name": "RegDate",
+      "Caption": "تاريخ ثبت",
+      "ControlType": 8,
+      "Container": null,
+      "Order": -1,
+      "ColumnSpan": -1
+    },
+    {
+      "IsEnabled": true,
+      "IsVisible": true,
+      "IsRequired": true,
+      "Name": "OperativeDate",
+      "Caption": "تاريخ موثر",
+      "ControlType": 1,
+      "Container": null,
+      "Order": -1,
+      "ColumnSpan": -1
+    },
+    {
+      "IsEnabled": true,
+      "IsVisible": true,
+      "IsRequired": false,
+      "Name": "Description",
+      "Caption": "توضيحات",
+      "ControlType": 1,
+      "Container": null,
+      "Order": -1,
+      "ColumnSpan": -1
+    },
+    {
+      "IsEnabled": true,
+      "IsVisible": true,
+      "IsRequired": false,
+      "Name": "ConfirmationStatus",
+      "Caption": "وضعیت تایید",
+      "ControlType": 1,
+      "Container": null,
+      "Order": -1,
+      "ColumnSpan": -1
+    }
+  ],
+  "Model": {
+    "Code": null,
+    "Currency": null,
+    "SwiftCode": "",
+    "Coefficient": 1,
+    "CurrencyRateType": null,
+    "Nature": "",
+    "CoefficientConversionRate": 0.0,
+    "CoefficientSellingRate": 0.0,
+    "CoefficientBuyingRate": 0.0,
+    "SellingRate": 0.0,
+    "BuyingRate": 0.0,
+    "ConversionRate": 0.0,
+    "RegDate": "2020-04-22T00:00:00+04:30",
+    "OperativeDate": "0001-01-01T00:00:00",
+    "Description": null,
+    "Branch": null,
+    "User": null,
+    "ConfirmationDate": "0001-01-01T00:00:00",
+    "ConfirmationStatus": 0,
+    "Row": 0,
+    "Descriptor": null,
+    "ID": 0,
+    "Version": 0,
+    "CreationDate": "2020-04-22T06:06:13.0257065+04:30",
+    "LastChange": "2020-04-22T06:06:13.0257065+04:30",
+    "Creator": "",
+    "LastUpdater": ""
+  },
+  "UICommands": [
+    {
+      "Title": "",
+      "WebExecuter": false,
+      "Name": "CloneCommand",
+      "Description": "",
+      "Image": null
+    },
+    {
+      "Title": "Save",
+      "WebExecuter": false,
+      "Name": "SaveCommand",
+      "Description": "Save object",
+      "Image": null
+    },
+    {
+      "Title": "Save & New",
+      "WebExecuter": false,
+      "Name": "SaveAndNewCommand",
+      "Description": "Save object and Create a new instance of object",
+      "Image": null
+    },
+    {
+      "Title": "Close",
+      "WebExecuter": false,
+      "Name": "CloseCommand",
+      "Description": "Close current view",
+      "Image": null
+    },
+    {
+      "Title": "Save & Close",
+      "WebExecuter": false,
+      "Name": "SaveAndCloseCommand",
+      "Description": "Save object and Close current view",
+      "Image": null
+    }
+  ],
+  "SmartCommands": []
+}

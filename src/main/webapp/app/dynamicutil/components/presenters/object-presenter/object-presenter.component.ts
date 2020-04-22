@@ -102,14 +102,14 @@ export class ObjectPresenterComponent implements OnInit {
           let field: Field;
 
           // HOMEDIFF
-          // const cis: ControlItem[] = c.ControlItems;
-          const cis: ControlItem[] = c[0].ControlItems;
+          const cis: ControlItem[] = c.ControlItems;
+          // const cis: ControlItem[] = c[0].ControlItems;
 
           for (let i = 0; i < cis.length; i++) {
 
             const ci: ControlItem = cis[i];
 
-            if (i % 2 === 0) {
+            if (i % 3 === 0) {
               field = {fieldGroupClassName: 'row', fieldGroup: []};
               tab.fields.push(field);
             }

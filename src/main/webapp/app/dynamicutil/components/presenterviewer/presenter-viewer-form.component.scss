@@ -2,16 +2,19 @@
 ::ng-deep .mat-tab-list .mat-tab-labels .mat-tab-label-active {
   color:yellow;
   background-color: #17a2b8;
+  font-family: Tahoma;
+  font-weight: bolder;
 }
 
 ::ng-deep .mat-tab-list .mat-tab-labels {
   color:blue;
   background-color: white;
+  font-family: Tahoma;
 }
 
 .close-img {
-  height: 20px;
-  width: 20px;
+  height: 15px;
+  width: 15px;
   display: inline-block;
   vertical-align: middle;
   background: url('../../../../content/images/close.png') no-repeat center center;

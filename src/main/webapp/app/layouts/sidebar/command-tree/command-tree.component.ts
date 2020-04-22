@@ -20,6 +20,7 @@ interface FlatNode {
   expandable: boolean;
   name: string;
   level: number;
+  title: string;
 }
 
 @Component({
@@ -34,6 +35,7 @@ export class CommandTreeComponent {
       expandable: !!node.children && node.children.length > 0,
       name: node.name,
       level: level,
+      title: node.title
     };
   }
 
@@ -46,6 +48,7 @@ export class CommandTreeComponent {
   dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
 
   constructor(private dynamicService: DynamicService, private storeService: StoreService) {
+
   }
 
   hasChild = (_: number, node: FlatNode) => node.expandable;
@@ -66,32 +69,26 @@ export class CommandTreeComponent {
             const commandNodeArray: CommandNode[] = [];
 
             for (let i = 0; i < c.length; i++) {
-
-              if (isNull(c[i].CommandDefinition)) {
-                const cnParent: CommandNode = {code: c[i].ID, name: c[i].Name, title: c[i].Title , qualifiedName: '', children: []};
-                commandNodeArray.push(cnParent);
-                for (let j = 0; j < c[i].CommandLinkHierarchies.length; j++) {
-                  const clh = c[i].CommandLinkHierarchies[j];
-                  if (!isNull(clh.CommandDefinition)) {
-                    const cnChild: CommandNode = {
-                      code: clh.CommandDefinition.Code,
-                      name: clh.CommandDefinition.Name,
-                      title: clh.CommandDefinition.Title,
-                      qualifiedName: clh.CommandDefinition.QualifiedName,
-                      children: []
-                    };
-                    cnParent.children.push(cnChild);
-                  }
+              const cnParent: CommandNode = {
+                code: c[i].ID,
+                name: c[i].Name,
+                title: c[i].Title,
+                qualifiedName: '',
+                children: []
+              };
+              commandNodeArray.push(cnParent);
+              for (let j = 0; j < c[i].CommandLinkHierarchies.length; j++) {
+                const clh = c[i].CommandLinkHierarchies[j];
+                if (!isNull(clh.CommandDefinition)) {
+                  const cnChild: CommandNode = {
+                    code: clh.CommandDefinition.Code,
+                    name: clh.CommandDefinition.Name,
+                    title: clh.Title,
+                    qualifiedName: clh.CommandDefinition.QualifiedName,
+                    children: []
+                  };
+                  cnParent.children.push(cnChild);
                 }
-              } else {
-                const cn: CommandNode = {
-                  code: c[i].CommandDefinition.Code,
-                  name: c[i].CommandDefinition.Name,
-                  title: c[i].CommandDefinition.Title,
-                  qualifiedName: c[i].CommandDefinition.QualifiedName,
-                  children: []
-                };
-                commandNodeArray.push(cn);
               }
             }
 
@@ -106,8 +103,9 @@ export class CommandTreeComponent {
   }
 
   executeCommand(node: any): void {
+    debugger;
     const cn: CommandNode = this.findCommand(node.name, this.dataSource.data);
-    this.storeService.addPresenter(cn.name);
+    this.storeService.addPresenter(cn.title);
   }
 
   findCommand(commandName: string, nodeArray: CommandNode[]): CommandNode {

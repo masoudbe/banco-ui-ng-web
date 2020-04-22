@@ -41,6 +41,7 @@ export class SidebarComponent implements OnInit {
           // const c = data;
           const c = JSON.parse(data);
           console.log("SUBSYSTEMSUBSYSTEMSUBSYSTEMSUBSYSTEM22", c);
+
           return c.map((element: { [x: string]: any; }) => {
             const sc: SystemData = {"ID": element["ID"], "Name": element["Name"], "Title": element["Title"]}
             return sc;
@@ -49,6 +50,7 @@ export class SidebarComponent implements OnInit {
       )
       .subscribe(val => {
         this.systemDataArray = val;
+        console.log("SYSTEMSYSTEMSYSTEMSYSTEMSYSTEMSYSTEMSYSTEM", val);
         this.loadSubSystems = true;
       }, err => console.log(err), noop);
 
