@@ -59,7 +59,7 @@
       },
       "error": {
         "dontmatch": "The password and its confirmation do not match!",
-        "presentersavedata": "شما برنده یک میلیون دلار شدید!"
+        "presentersavedata": "اطلاعات شما با موفقیت ذیره شد"
       },
       "validate": {
         "newpassword": {

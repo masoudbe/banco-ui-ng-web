@@ -87,4 +87,10 @@ export class MainComponent implements OnInit {
       this.findLanguageFromKeyPipe.isRTL(this.translateService.currentLang) ? 'rtl' : 'ltr'
     );
   }
+
+  hideSideBar(): void {
+    if(this.sidenav.opened){
+      this.storeService.toggleSideBar();
+    }
+  }
 }

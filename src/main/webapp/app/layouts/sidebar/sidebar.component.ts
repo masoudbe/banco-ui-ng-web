@@ -21,7 +21,7 @@ export interface SystemData {
 export class SidebarComponent implements OnInit {
 
   loadSubSystems = false;
-  step = 0;
+  step = -1;
   systemDataArray: SystemData[] = [];
 
   @ViewChild('commandTree') commandTree: CommandTreeComponent;
@@ -38,8 +38,8 @@ export class SidebarComponent implements OnInit {
 
           console.log("SUBSYSTEMSUBSYSTEMSUBSYSTEMSUBSYSTEM", data);
           // HOMEDIFF
-          const c = data;
-          // const c = JSON.parse(data);
+          // const c = data;
+          const c = JSON.parse(data);
           console.log("SUBSYSTEMSUBSYSTEMSUBSYSTEMSUBSYSTEM22", c);
           return c.map((element: { [x: string]: any; }) => {
             const sc: SystemData = {"ID": element["ID"], "Name": element["Name"], "Title": element["Title"]}
@@ -79,7 +79,9 @@ export class SidebarComponent implements OnInit {
     this.commandTree.subSystemSelected(systemId);
   }
 
-  addPresenterByCommand(commandTxt: HTMLInputElement): void {
-    this.addPresenter(commandTxt.value);
+  addPresenterByCommand(commandTxt: HTMLInputElement, $event: any): void {
+    if ($event.key === 'Enter') {
+      this.addPresenter(commandTxt.value);
+    }
   }
 }

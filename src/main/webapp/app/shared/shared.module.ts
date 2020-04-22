@@ -26,6 +26,7 @@ import {TextFilterComponent} from "app/dynamicutil/components/controls/dynatable
 import {MatDialogModule} from "@angular/material/dialog";
 import {DateFilterComponent} from "app/dynamicutil/components/controls/dynatable/filters/date-filter/date-filter.component";
 import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatStepperModule} from "@angular/material/stepper";
 
 export function minValidationMessage(err: any, field: FormlyFieldConfig): string {
   return `please enter vlaue bigger than ${err.min} you enter ${err.actual}`;
@@ -66,7 +67,8 @@ export function minValidationMessage(err: any, field: FormlyFieldConfig): string
     MatIconModule,
     DynamicTableModule,
     MatDialogModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatStepperModule
   ],
   declarations: [
     FindLanguageFromKeyPipe,

@@ -2,8 +2,8 @@
     <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
         <mat-button-toggle (click)="submit()" *ngFor="let cmd of commands" value="{{cmd.Name}}">{{cmd.Title}}</mat-button-toggle>
     </mat-button-toggle-group>
-    <mat-tab-group selectedIndex="3">
-        <mat-tab *ngFor="let tab of tabs;let index = index;"
+    <mat-vertical-stepper *ngIf="tabs.length > 1">
+        <mat-step *ngFor="let tab of tabs;let index = index;"
                  [label]="tab.label">
             <formly-form
                 [form]="formArray.at(index)"
@@ -11,8 +11,16 @@
                 [fields]="tab.fields"
                 [options]="options[index]">
             </formly-form>
-        </mat-tab>
-    </mat-tab-group>
+        </mat-step>
+    </mat-vertical-stepper>
+    <ng-container *ngIf="tabs.length == 1">
+        <formly-form
+            [form]="formArray.at(0)"
+            [model]="model"
+            [fields]="tabs[0].fields"
+            [options]="options[0]">
+        </formly-form>
+    </ng-container>
 </form>
 
 <bng-alert></bng-alert>

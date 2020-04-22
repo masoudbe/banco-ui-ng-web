@@ -7,7 +7,7 @@ import {FormControl} from "@angular/forms";
   templateUrl: './presenter-viewer-form.component.html',
   styleUrls: ['./presenter-viewer-form.component.scss']
 })
-export class PresenterViewerForm implements OnInit {
+export class PresenterViewerForm {
 
   tabs: string[] = [];
   selected = new FormControl(0);
@@ -42,9 +42,4 @@ export class PresenterViewerForm implements OnInit {
       }
     }
   }
-
-  ngOnInit(): void {
-
-  }
-
 }

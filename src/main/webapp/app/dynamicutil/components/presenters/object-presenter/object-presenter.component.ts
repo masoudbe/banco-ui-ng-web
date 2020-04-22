@@ -94,16 +94,16 @@ export class ObjectPresenterComponent implements OnInit {
           console.log("GETPRESENTERGETPRESENTERGETPRESENTER", data);
 
           // HOMEDIFF
-          const c = data;
-          // const c = JSON.parse(data);
+          // const c = data;
+          const c = JSON.parse(data);
           console.log("GETPRESENTERGETPRESENTERGETPRESENTER22", c);
           const tab: Tab = {label: '', fields: []}
 
           let field: Field;
 
           // HOMEDIFF
-          const cis: ControlItem[] = c.ControlItems;
           // const cis: ControlItem[] = c.ControlItems;
+          const cis: ControlItem[] = c[0].ControlItems;
 
           for (let i = 0; i < cis.length; i++) {
 

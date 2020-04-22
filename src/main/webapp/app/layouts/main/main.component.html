@@ -2,11 +2,11 @@
     <router-outlet name="navbar"></router-outlet>
 </div>
 <div style="flex: 1 1;background-color: #f0f0f0">
-    <mat-sidenav-container style="position: absolute;top: 50px;bottom: 20px;left: 0;right: 0;background-color:#fcfcfc;">
+    <mat-sidenav-container (click)="hideSideBar()" style="position: absolute;top: 50px;bottom: 20px;left: 0;right: 0;background-color:#fcfcfc;">
         <mat-sidenav #sidenav mode="side">
             <router-outlet name="sidebar"></router-outlet>
         </mat-sidenav>
-        <mat-sidenav-content>
+        <mat-sidenav-content (click)="hideSideBar()">
             <bng-presenterviewer></bng-presenterviewer>
         </mat-sidenav-content>
     </mat-sidenav-container>

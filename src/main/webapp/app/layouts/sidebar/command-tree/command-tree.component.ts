@@ -10,6 +10,7 @@ import {StoreService} from "app/dynamicutil/services/store.service";
 
 interface CommandNode {
   name: string;
+  title: string;
   code: string;
   qualifiedName: string;
   children?: CommandNode[];
@@ -56,8 +57,10 @@ export class CommandTreeComponent {
         map(data => {
             console.log("SYSTEMIDSYSTEMIDSYSTEMIDSYSTEMIDSYSTEMID", systemId);
             console.log("COMMANDSCOMMANDSCOMMANDSCOMMANDSCOMMANDS", data);
-            const c = data;
-            // const c = JSON.parse(data);
+
+            // HOMEDIFF
+            // const c = data;
+            const c = JSON.parse(data);
             console.log("COMMANDSCOMMANDSCOMMANDSCOMMANDSCOMMANDS22", c);
 
             const commandNodeArray: CommandNode[] = [];
@@ -65,7 +68,7 @@ export class CommandTreeComponent {
             for (let i = 0; i < c.length; i++) {
 
               if (isNull(c[i].CommandDefinition)) {
-                const cnParent: CommandNode = {code: c[i].ID, name: c[i].Name, qualifiedName: '', children: []};
+                const cnParent: CommandNode = {code: c[i].ID, name: c[i].Name, title: c[i].Title , qualifiedName: '', children: []};
                 commandNodeArray.push(cnParent);
                 for (let j = 0; j < c[i].CommandLinkHierarchies.length; j++) {
                   const clh = c[i].CommandLinkHierarchies[j];
@@ -73,6 +76,7 @@ export class CommandTreeComponent {
                     const cnChild: CommandNode = {
                       code: clh.CommandDefinition.Code,
                       name: clh.CommandDefinition.Name,
+                      title: clh.CommandDefinition.Title,
                       qualifiedName: clh.CommandDefinition.QualifiedName,
                       children: []
                     };
@@ -83,6 +87,7 @@ export class CommandTreeComponent {
                 const cn: CommandNode = {
                   code: c[i].CommandDefinition.Code,
                   name: c[i].CommandDefinition.Name,
+                  title: c[i].CommandDefinition.Title,
                   qualifiedName: c[i].CommandDefinition.QualifiedName,
                   children: []
                 };
@@ -102,7 +107,7 @@ export class CommandTreeComponent {
 
   executeCommand(node: any): void {
     const cn: CommandNode = this.findCommand(node.name, this.dataSource.data);
-    this.storeService.addPresenter(cn.code);
+    this.storeService.addPresenter(cn.name);
   }
 
   findCommand(commandName: string, nodeArray: CommandNode[]): CommandNode {

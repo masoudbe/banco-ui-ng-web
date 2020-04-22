@@ -16,16 +16,16 @@ export class StoreService {
 
   }
 
-  toggleSideBar(): void {
-    this.sidebarToggleSubject.next();
-  }
-
   addPresenter(commandCode: string): void {
     const prs = this.presentersSubject.getValue();
     const newPrs = prs.slice(0);
     newPrs.push(commandCode);
 
     this.presentersSubject.next(newPrs);
+  }
+
+  toggleSideBar(): void {
+    this.sidebarToggleSubject.next();
   }
 
   removePresenter(presenterName: string): void {

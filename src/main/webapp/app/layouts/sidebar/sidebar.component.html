@@ -1,8 +1,8 @@
-<input matInput #commandTxt placeholder="کد کامند" style="width: 100%" (mouseleave)="addPresenterByCommand(commandTxt)" />
-<mat-accordion style="font-family: Tahoma;cursor: pointer" class="example-headers-align">
+<input matInput #commandTxt placeholder="کد کامند" style="width: 100%" (click)="$event.stopPropagation()" (keydown)="addPresenterByCommand(commandTxt, $event)" />
+<mat-accordion class="example-headers-align" (click)="$event.stopPropagation()">
     <mat-expansion-panel *ngFor="let sys of systemDataArray;let i = index"
                          [expanded]="step === i" (opened)="setStep(i)" hideToggle (afterExpand)="subSystemSelected(sys.ID, i)">
-        <mat-expansion-panel-header class="disable_ripple" *ngIf="sys.Title !== '' && sys.Title !== null && sys.Title !== undefined">
+        <mat-expansion-panel-header class="panel_header" *ngIf="sys.Title !== '' && sys.Title !== null && sys.Title !== undefined">
             <mat-panel-description>
                 {{sys.Title}}
             </mat-panel-description>
@@ -11,5 +11,5 @@
     </mat-expansion-panel>
 </mat-accordion>
 
-<mat-spinner style="width: 40px;height: 40px" *ngIf="!loadSubSystems"></mat-spinner>
+<mat-spinner *ngIf="!loadSubSystems"></mat-spinner>
 

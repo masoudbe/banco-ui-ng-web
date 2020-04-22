@@ -1,9 +1,13 @@
-.example-input-label,
-.example-add-tab-button,
-.example-delete-tab-button {
-  margin: 8px;
+/** No CSS for this example */
+::ng-deep .mat-tab-list .mat-tab-labels .mat-tab-label-active {
+  color:yellow;
+  background-color: #17a2b8;
 }
 
+::ng-deep .mat-tab-list .mat-tab-labels {
+  color:blue;
+  background-color: white;
+}
 
 .close-img {
   height: 20px;
