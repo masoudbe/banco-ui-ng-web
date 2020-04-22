@@ -1,34 +1,27 @@
 .example-headers-align .mat-expansion-panel-header-title,
 .example-headers-align .mat-expansion-panel-header-description {
   flex-basis: 0;
-  height: 20px;
-  width: 300px;
-  max-width: 300px;
+  width: 180px;
 }
 
 .example-headers-align .mat-expansion-panel-header-description {
   justify-content: space-between;
   align-items: center;
-  font-family: Tahoma;
-  font-size: 14px;
-  font-weight: bold;
-  height: 20px;
-}
-
-.example-headers-align .mat-form-field + .mat-form-field {
-  margin-left: 8px;
-  height: 20px;
+  font-family: Segoe UI;
 }
 
 .panel_header {
-  background-color: #b0d2fe;
-  border-top-style: outset;
-  height: 20px;
+  background-color: #f3f2f1;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  border-left-style: solid;
+  border-left-color: blueviolet;
+  border-left-width: 5px;
+  margin-bottom: 2px;
 }
 
 .panel_header:hover {
-  background: #ffd971 !important;
-  font-weight: bolder;
-  height: 20px;
+  background: #c7e0f4 !important;
 }
 

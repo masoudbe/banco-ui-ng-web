@@ -86,7 +86,7 @@ export class ObjectPresenterComponent implements OnInit {
       this.commandCode = "10118";
     } else if (this.commandCode === "10009") {
       this.commandCode = "10119";
-    } else if (this.commandCode === "30754") {
+    } else if (this.commandCode.includes('بیمه') || this.commandCode.includes('ارز')) {
       this.commandCode = "30064";
     }
 

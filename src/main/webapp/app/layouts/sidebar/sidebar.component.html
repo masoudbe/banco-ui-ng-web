@@ -3,7 +3,7 @@
     <mat-expansion-panel *ngFor="let sys of systemDataArray;let i = index"
                          [expanded]="step === i" (opened)="setStep(i)" hideToggle (afterExpand)="subSystemSelected(sys.ID, i)">
         <mat-expansion-panel-header class="panel_header" *ngIf="sys.Title !== '' && sys.Title !== null && sys.Title !== undefined">
-            <mat-panel-description>
+            <mat-panel-description style="font: inherit">
                 {{sys.Title}}
             </mat-panel-description>
         </mat-expansion-panel-header>

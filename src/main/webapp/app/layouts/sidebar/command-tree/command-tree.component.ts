@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {FlatTreeControl} from "@angular/cdk/tree";
-import {MatTreeFlatDataSource, MatTreeFlattener} from "@angular/material/tree";
+import {MatTreeFlatDataSource, MatTreeFlattener, MatTreeNode} from "@angular/material/tree";
 import * as CS from "app/dynamicutil/models/Constants";
 import {map} from "rxjs/operators";
 import {isNull} from "app/shared/util/common-util";
@@ -103,7 +103,6 @@ export class CommandTreeComponent {
   }
 
   executeCommand(node: any): void {
-    debugger;
     const cn: CommandNode = this.findCommand(node.name, this.dataSource.data);
     this.storeService.addPresenter(cn.title);
   }
