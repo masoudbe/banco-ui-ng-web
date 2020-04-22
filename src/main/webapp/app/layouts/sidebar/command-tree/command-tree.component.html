@@ -1,6 +1,6 @@
 <mat-tree class="tree_parent" [dataSource]="dataSource" [treeControl]="treeControl">
     <!-- This is the tree node template for leaf nodes -->
-    <mat-tree-node (dblclick)="executeCommand(node)" *matTreeNodeDef="let node" matTreeNodePadding>
+    <mat-tree-node style="cursor: default" (dblclick)="executeCommand(node)" *matTreeNodeDef="let node" matTreeNodePadding>
         <!-- use a disabled button to provide padding for tree leaf -->
         <button mat-icon-button disabled></button>
         {{node.title}}

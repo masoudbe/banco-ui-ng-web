@@ -1,10 +1,28 @@
-<form [formGroup]="formArray" (ngSubmit)="submit()">
-    <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-        <mat-button-toggle (click)="submit()" *ngFor="let cmd of commands" value="{{cmd.Name}}">{{cmd.Title}}</mat-button-toggle>
-    </mat-button-toggle-group>
+<form [formGroup]="formArray">
+
+    <mat-toolbar color="primary">
+        <span class="fill-remaining-space">
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+              <mat-icon>menu</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" [overlapTrigger]="false">
+                <ng-container *ngFor="let cmd of commands">
+                    <button style="font-family: Tahoma" *ngIf="cmd.Title !== ''" mat-menu-item (click)="save(cmd.Name)">
+                        <span>{{getCommandTitle(cmd.Name)}}</span>
+                    </button>
+                 </ng-container>
+            </mat-menu>
+        </span>
+        <span class="fill-remaining-space">{{commandCode}}</span>
+    </mat-toolbar>
+
+    <!--    <mat-button-toggle-group name="fontStyle" aria-label="Font Style">-->
+    <!--        <mat-button-toggle (click)="submit()" *ngFor="let cmd of commands"-->
+    <!--                           value="{{cmd.Name}}">{{cmd.Title}}</mat-button-toggle>-->
+    <!--    </mat-button-toggle-group>-->
     <mat-vertical-stepper *ngIf="tabs.length > 1">
         <mat-step *ngFor="let tab of tabs;let index = index;"
-                 [label]="tab.label">
+                  [label]="tab.label">
             <formly-form
                 [form]="formArray.at(index)"
                 [model]="model"

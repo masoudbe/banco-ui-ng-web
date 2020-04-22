@@ -59,7 +59,7 @@
       },
       "error": {
         "dontmatch": "The password and its confirmation do not match!",
-        "presentersavedata": "اطلاعات شما با موفقیت ذیره شد"
+        "presentersavedata": "اطلاعات شما با موفقیت ذخیره شد"
       },
       "validate": {
         "newpassword": {

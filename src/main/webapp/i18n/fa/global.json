@@ -59,7 +59,7 @@
       },
       "error": {
         "dontmatch": "رمزعبور و تصدیق رمزعبور یکی نیستند!",
-        "presentersavedata": "اطلاعات شما با موفقیت ذیره شد"
+        "presentersavedata": "اطلاعات شما با موفقیت ذخیره شد"
       },
       "validate": {
         "newpassword": {

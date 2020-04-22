@@ -16,6 +16,7 @@ import {
 } from "app/dynamicutil/models/BancoUIModels";
 import * as CS from "app/dynamicutil/models/Constants";
 import {JhiAlertService} from "ng-jhipster";
+import {StoreService} from "app/dynamicutil/services/store.service";
 
 @Component({
   selector: 'bng-object-presenter',
@@ -41,17 +42,40 @@ export class ObjectPresenterComponent implements OnInit {
     return op;
   });
 
-  constructor(private httpClient: HttpClient, private dynamicService: DynamicService, private alertService: JhiAlertService) {
+  constructor(private httpClient: HttpClient, private dynamicService: DynamicService
+    , private storeService: StoreService, private alertService: JhiAlertService) {
 
   }
 
-  submit(): void {
+  getCommandTitle(name: string): string {
+    if (name === "SaveCommand") {
+      return "ذخیره";
+    }
+    if (name === "SaveAndNewCommand") {
+      return "ذخیره و جدید";
+    }
+    if (name === "CloseCommand") {
+      return "بستن";
+    }
+    if (name === "SaveAndCloseCommand") {
+      return "ذخیره و بستن";
+    }
+
+    return "";
+  }
+
+  save(commandName: string): void {
     console.log(this.model);
-    const v = this.alertService.addAlert({
-      type: 'danger',
-      msg: 'global.messages.error.presentersavedata',
-      timeout: 4000
-    }, []);
+
+    if (commandName === "SaveCommand" || commandName === "SaveAndNewCommand") {
+      const v = this.alertService.addAlert({
+        type: 'success',
+        msg: 'global.messages.error.presentersavedata',
+        timeout: 4000
+      }, []);
+    } else {
+      this.storeService.removePresenter(this.commandCode);
+    }
   }
 
   ngOnInit(): void {

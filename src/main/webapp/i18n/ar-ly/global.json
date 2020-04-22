@@ -59,7 +59,7 @@
       },
       "error": {
         "dontmatch": "كلمة السر وتأكيدها لا تتطابق!",
-        "presentersavedata": "اطلاعات شما با موفقیت ذیره شد"
+        "presentersavedata": "اطلاعات شما با موفقیت ذخیره شد"
       },
       "validate": {
         "newpassword": {
