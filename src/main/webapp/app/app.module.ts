@@ -29,6 +29,8 @@ import {MatExpansionModule} from "@angular/material/expansion";
 import { CommandTreeComponent } from './layouts/sidebar/command-tree/command-tree.component';
 import {MatTreeModule} from "@angular/material/tree";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import { ToolbarComponent } from './layouts/toolbar/toolbar.component';
 
 @NgModule({
   imports: [
@@ -52,7 +54,8 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
     DynamicTableModule,
     MatExpansionModule,
     MatTreeModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatToolbarModule
   ],
   declarations: [
     MainComponent,
@@ -62,7 +65,8 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
     ActiveMenuDirective,
     FooterComponent,
     SidebarComponent,
-    CommandTreeComponent],
+    CommandTreeComponent,
+    ToolbarComponent],
 
   bootstrap: [MainComponent]
 })

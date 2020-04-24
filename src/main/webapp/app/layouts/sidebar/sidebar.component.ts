@@ -6,11 +6,13 @@ import * as CS from "app/dynamicutil/models/Constants";
 import {StoreService} from "app/dynamicutil/services/store.service";
 import {JhiAlertService} from "ng-jhipster";
 import {CommandTreeComponent} from "app/layouts/sidebar/command-tree/command-tree.component";
+import {CommandInfo} from "app/dynamicutil/models/CommandInfo";
 
 export interface SystemData {
   ID: string;
   Name: string;
   Title: string;
+  Image: string
 }
 
 @Component({
@@ -43,22 +45,28 @@ export class SidebarComponent implements OnInit {
           console.log("SUBSYSTEMSUBSYSTEMSUBSYSTEMSUBSYSTEM22", c);
 
           return c.map((element: { [x: string]: any; }) => {
-            const sc: SystemData = {"ID": element["ID"], "Name": element["Name"], "Title": element["Title"]}
+            const sc: SystemData = {
+              "ID": element["ID"],
+              Image: ''/*'data:image/png;base64,' + element["LinkGroupImage"]*/,
+              "Name": element["Name"],
+              "Title": element["Title"]
+            }
             return sc;
           });
         })
       )
       .subscribe(val => {
         this.systemDataArray = val;
-        console.log("SYSTEMSYSTEMSYSTEMSYSTEMSYSTEMSYSTEMSYSTEM", val);
+        console.log("111111111111111111111111111111SYSTEMSYSTEMSYSTEMSYSTEMSYSTEMSYSTEMSYSTEM", val);
         this.loadSubSystems = true;
       }, err => console.log(err), noop);
 
     this.storeService.toggleSideBar$.subscribe()
   }
 
-  addPresenter(commandCode: string): void {
-    this.storeService.addPresenter(commandCode);
+  private addPresenter(commandCode: string): void {
+    const ci: CommandInfo = {title: commandCode, code: commandCode, name: commandCode, qualifiedName: '', children: []};
+    this.storeService.addPresenter(ci);
   }
 
   setStep(index: number): void {

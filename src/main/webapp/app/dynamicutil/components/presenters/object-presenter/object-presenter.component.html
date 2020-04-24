@@ -1,19 +1,19 @@
 <form [formGroup]="formArray">
 
-    <mat-toolbar color="primary">
+    <mat-toolbar color="primary" *ngIf="commands.length != 0">
         <span class="fill-remaining-space">
-            <button mat-icon-button [matMenuTriggerFor]="menu">
+            <button mat-icon-button [matMenuTriggerFor]="menu" (click)="$event.stopPropagation()">
               <mat-icon>menu</mat-icon>
             </button>
             <mat-menu #menu="matMenu" [overlapTrigger]="false">
                 <ng-container *ngFor="let cmd of commands">
-                    <button style="font-family: Tahoma" *ngIf="cmd.Title !== ''" mat-menu-item (click)="save(cmd.Name)">
+                    <button style="font-family: Tahoma" *ngIf="cmd.Title !== ''" mat-menu-item (click)="save(cmd.Name, $event)">
                         <span>{{getCommandTitle(cmd.Name)}}</span>
                     </button>
                  </ng-container>
             </mat-menu>
         </span>
-        <span class="fill-remaining-space">{{commandCode}}</span>
+        <span class="fill-remaining-space">{{commandInfo.title}}</span>
     </mat-toolbar>
 
     <!--    <mat-button-toggle-group name="fontStyle" aria-label="Font Style">-->

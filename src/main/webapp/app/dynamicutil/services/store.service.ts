@@ -1,12 +1,13 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject} from "rxjs";
+import {CommandInfo} from "app/dynamicutil/models/CommandInfo";
 
 @Injectable({
   providedIn: 'root'
 })
 export class StoreService {
 
-  private presentersSubject = new BehaviorSubject<string[]>([]);
+  private presentersSubject = new BehaviorSubject<CommandInfo[]>([]);
   presenters$ = this.presentersSubject.asObservable();
 
   private sidebarToggleSubject = new BehaviorSubject<void>(undefined);
@@ -16,22 +17,22 @@ export class StoreService {
 
   }
 
-  addPresenter(commandCode: string): void {
-    const prs = this.presentersSubject.getValue();
-    const newPrs = prs.slice(0);
-    newPrs.push(commandCode);
+  addPresenter(ci: CommandInfo): void {
+    const cis = this.presentersSubject.getValue();
+    const newCis = cis.slice(0);
+    newCis.push(ci);
 
-    this.presentersSubject.next(newPrs);
+    this.presentersSubject.next(newCis);
   }
 
   toggleSideBar(): void {
     this.sidebarToggleSubject.next();
   }
 
-  removePresenter(presenterName: string): void {
+  removePresenter(ci: CommandInfo): void {
     const prs = this.presentersSubject.getValue();
     const newPrs = prs.slice(0);
-    const index = newPrs.indexOf(presenterName, 0);
+    const index = newPrs.indexOf(ci, 0);
     if (index > -1) {
       newPrs.splice(index, 1);
     }

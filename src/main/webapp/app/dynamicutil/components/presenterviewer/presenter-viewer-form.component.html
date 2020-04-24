@@ -3,14 +3,14 @@
     <mat-tab *ngFor="let tab of tabs; let index = index" [label]="tab">
         <ng-template mat-tab-label>
             <div>
-                {{tab}}
+                {{tab.title}}
                 <a (click)="removeTab(index)">
                     <span class="close-img"></span>
                 </a>
             </div>
         </ng-template>
 
-        <bng-object-presenter [commandCode]="tab"></bng-object-presenter>
+        <bng-object-presenter [commandInfo]="tab"></bng-object-presenter>
         <!--        <bng-list-presenter></bng-list-presenter>-->
 
     </mat-tab>

@@ -3,8 +3,11 @@
     <mat-expansion-panel *ngFor="let sys of systemDataArray;let i = index"
                          [expanded]="step === i" (opened)="setStep(i)" hideToggle (afterExpand)="subSystemSelected(sys.ID, i)">
         <mat-expansion-panel-header class="panel_header" *ngIf="sys.Title !== '' && sys.Title !== null && sys.Title !== undefined">
-            <mat-panel-description style="font: inherit">
-                {{sys.Title}}
+
+            <mat-panel-description style="font: inherit;justify-content: flex-start">
+                <img [src]="sys.Image" />
+                <button mat-icon-button disabled></button>
+                <span>{{sys.Title}}</span>
             </mat-panel-description>
         </mat-expansion-panel-header>
         <bng-command-tree #commandTree *ngIf="step === i"></bng-command-tree>

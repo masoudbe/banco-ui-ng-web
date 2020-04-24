@@ -17,6 +17,7 @@ import {
 import * as CS from "app/dynamicutil/models/Constants";
 import {JhiAlertService} from "ng-jhipster";
 import {StoreService} from "app/dynamicutil/services/store.service";
+import {CommandInfo} from "app/dynamicutil/models/CommandInfo";
 
 @Component({
   selector: 'bng-object-presenter',
@@ -31,7 +32,7 @@ export class ObjectPresenterComponent implements OnInit {
   // fields: FormlyFieldConfig[] = [];
 
   @Input()
-  commandCode = "";
+  commandInfo: CommandInfo = undefined;
 
   tabs: Tab[] = [];
   commands: UICommand[] = [];
@@ -44,7 +45,6 @@ export class ObjectPresenterComponent implements OnInit {
 
   constructor(private httpClient: HttpClient, private dynamicService: DynamicService
     , private storeService: StoreService, private alertService: JhiAlertService) {
-
   }
 
   getCommandTitle(name: string): string {
@@ -64,7 +64,7 @@ export class ObjectPresenterComponent implements OnInit {
     return "";
   }
 
-  save(commandName: string): void {
+  save(commandName: string, $event: MouseEvent): void {
     console.log(this.model);
 
     if (commandName === "SaveCommand" || commandName === "SaveAndNewCommand") {
@@ -74,23 +74,23 @@ export class ObjectPresenterComponent implements OnInit {
         timeout: 4000
       }, []);
     } else {
-      this.storeService.removePresenter(this.commandCode);
+      this.storeService.removePresenter(this.commandInfo);
     }
+
+    $event.stopPropagation();
   }
 
   ngOnInit(): void {
 
     this.formArray.valueChanges.subscribe(console.log);
 
-    if (this.commandCode === "10129") {
-      this.commandCode = "10118";
-    } else if (this.commandCode === "10009") {
-      this.commandCode = "10119";
-    } else if (this.commandCode.includes('بیمه') || this.commandCode.includes('ارز')) {
-      this.commandCode = "30064";
+    if (this.commandInfo.code === "10129") {
+      this.commandInfo.code = "10118";
+    } else if (this.commandInfo.code === "10009") {
+      this.commandInfo.code = "10119";
     }
 
-    if (this.commandCode === "117751") {
+    if (this.commandInfo.code === "117751") {
       const lcImportJson = "assets/lcimportop.json";
       this.httpClient.get<Tab[]>(lcImportJson).subscribe(data => {
         this.tabs = data;
@@ -111,8 +111,8 @@ export class ObjectPresenterComponent implements OnInit {
           }
         }
       }, err => console.log(err), noop);
-    } else if (this.commandCode !== "10118" && this.commandCode !== "10119") {
-      this.dynamicService.execute<any>(CS.GETPRESENTER, "?commandCode=" + this.commandCode).subscribe(
+    } else if (this.commandInfo.code !== "10118" && this.commandInfo.code !== "10119") {
+      this.dynamicService.execute<any>(CS.GETPRESENTER, "?commandCode=" + this.commandInfo).subscribe(
         data => {
 
           console.log("GETPRESENTERGETPRESENTERGETPRESENTER", data);
@@ -154,7 +154,7 @@ export class ObjectPresenterComponent implements OnInit {
       );
     } else {
       let customerJson = "assets/customerop.json";
-      if (this.commandCode === "10118") {
+      if (this.commandInfo.code === "10118") {
         customerJson = "assets/customerop2.json";
       }
       this.httpClient.get<Tab[]>(customerJson).subscribe(data => {
@@ -258,7 +258,6 @@ export class ObjectPresenterComponent implements OnInit {
       },
       noop, noop)
   }
-
 }
 
 

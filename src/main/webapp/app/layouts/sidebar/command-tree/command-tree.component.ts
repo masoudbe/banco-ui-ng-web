@@ -7,14 +7,7 @@ import {isNull} from "app/shared/util/common-util";
 import {noop} from "rxjs";
 import {DynamicService} from "app/dynamicutil/services/dynamic.service";
 import {StoreService} from "app/dynamicutil/services/store.service";
-
-interface CommandNode {
-  name: string;
-  title: string;
-  code: string;
-  qualifiedName: string;
-  children?: CommandNode[];
-}
+import {CommandInfo} from "app/dynamicutil/models/CommandInfo";
 
 interface FlatNode {
   expandable: boolean;
@@ -30,7 +23,7 @@ interface FlatNode {
 })
 export class CommandTreeComponent {
 
-  private _transformer = (node: CommandNode, level: number) => {
+  private _transformer = (node: CommandInfo, level: number) => {
     return {
       expandable: !!node.children && node.children.length > 0,
       name: node.name,
@@ -66,10 +59,10 @@ export class CommandTreeComponent {
             const c = JSON.parse(data);
             console.log("COMMANDSCOMMANDSCOMMANDSCOMMANDSCOMMANDS22", c);
 
-            const commandNodeArray: CommandNode[] = [];
+            const commandNodeArray: CommandInfo[] = [];
 
             for (let i = 0; i < c.length; i++) {
-              const cnParent: CommandNode = {
+              const cnParent: CommandInfo = {
                 code: c[i].ID,
                 name: c[i].Name,
                 title: c[i].Title,
@@ -80,7 +73,7 @@ export class CommandTreeComponent {
               for (let j = 0; j < c[i].CommandLinkHierarchies.length; j++) {
                 const clh = c[i].CommandLinkHierarchies[j];
                 if (!isNull(clh.CommandDefinition)) {
-                  const cnChild: CommandNode = {
+                  const cnChild: CommandInfo = {
                     code: clh.CommandDefinition.Code,
                     name: clh.CommandDefinition.Name,
                     title: clh.Title,
@@ -103,14 +96,14 @@ export class CommandTreeComponent {
   }
 
   executeCommand(node: any): void {
-    const cn: CommandNode = this.findCommand(node.name, this.dataSource.data);
-    this.storeService.addPresenter(cn.title);
+    const cn: CommandInfo = this.findCommand(node.name, this.dataSource.data);
+    this.storeService.addPresenter(cn);
   }
 
-  findCommand(commandName: string, nodeArray: CommandNode[]): CommandNode {
-    let result: CommandNode = undefined;
+  findCommand(commandName: string, nodeArray: CommandInfo[]): CommandInfo {
+    let result: CommandInfo = undefined;
     for (let i = 0; i < nodeArray.length; i++) {
-      const cn: CommandNode = nodeArray[i];
+      const cn: CommandInfo = nodeArray[i];
       if (cn.children.length === 0 && cn.name === commandName) {
         result = cn;
         return result;

@@ -8,8 +8,9 @@ import { Authority } from 'app/shared/constants/authority.constants';
 import { UserRouteAccessService } from 'app/core/auth/user-route-access-service';
 import {PresenterViewerForm} from "app/dynamicutil/components/presenterviewer/presenter-viewer-form.component";
 import {sidebarRoute} from "app/layouts/sidebar/sidebar.route";
+import {toolbarRoute} from "app/layouts/toolbar/toolbar.route";
 
-const LAYOUT_ROUTES = [navbarRoute, sidebarRoute, ...errorRoute];
+const LAYOUT_ROUTES = [navbarRoute, toolbarRoute, sidebarRoute, ...errorRoute];
 
 @NgModule({
   imports: [

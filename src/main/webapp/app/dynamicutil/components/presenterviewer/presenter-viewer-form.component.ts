@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {StoreService} from "app/dynamicutil/services/store.service";
 import {FormControl} from "@angular/forms";
+import {CommandInfo} from "app/dynamicutil/models/CommandInfo";
+import {isNull} from "app/shared/util/common-util";
 
 @Component({
   selector: 'bng-presenterviewer',
@@ -9,7 +11,7 @@ import {FormControl} from "@angular/forms";
 })
 export class PresenterViewerForm {
 
-  tabs: string[] = [];
+  tabs: CommandInfo[] = [];
   selected = new FormControl(0);
 
   constructor(private storeService: StoreService) {
@@ -17,8 +19,8 @@ export class PresenterViewerForm {
       .subscribe(val => this.addRemoveTab(val));
   }
 
-  addTab(tabName: string): void {
-    this.tabs.push(tabName);
+  private addTab(ci: CommandInfo): void {
+    this.tabs.push(ci);
     this.selected.setValue(this.tabs.length - 1);
   }
 
@@ -26,19 +28,19 @@ export class PresenterViewerForm {
     this.tabs.splice(index, 1);
   }
 
-  private addRemoveTab(prsList: string[]): void {
-    if (this.tabs.length < prsList.length) {
-      this.addTab(prsList[prsList.length - 1]);
+  private addRemoveTab(commandInfoList: CommandInfo[]): void {
+    if (this.tabs.length < commandInfoList.length) {
+      this.addTab(commandInfoList[commandInfoList.length - 1]);
     } else {
-      let rmTab = "";
-      this.tabs.forEach(tab => {
-        if (!prsList.includes(tab)) {
-          rmTab = tab;
+      let rmCi: CommandInfo = undefined;
+      this.tabs.forEach(ci => {
+        if (!commandInfoList.includes(ci)) {
+          rmCi = ci;
         }
       })
 
-      if (rmTab !== "") {
-        this.removeTab(this.tabs.indexOf(rmTab));
+      if (!isNull(rmCi)) {
+        this.removeTab(this.tabs.indexOf(rmCi));
       }
     }
   }
