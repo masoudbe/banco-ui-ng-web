@@ -1,4 +1,4 @@
-<input matInput #commandTxt placeholder="کد کامند" style="width: 100%" (click)="$event.stopPropagation()" (keydown)="addPresenterByCommand(commandTxt, $event)" />
+<input class="rcorners" matInput #commandTxt placeholder="کد کامند" style="width: 100%" (click)="$event.stopPropagation()" (keydown)="addPresenterByCommand(commandTxt, $event)" />
 <mat-accordion class="example-headers-align" (click)="$event.stopPropagation()">
     <mat-expansion-panel *ngFor="let sys of systemDataArray;let i = index"
                          [expanded]="step === i" (opened)="setStep(i)" hideToggle (afterExpand)="subSystemSelected(sys.ID, i)">

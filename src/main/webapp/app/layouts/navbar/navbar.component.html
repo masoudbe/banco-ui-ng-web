@@ -1,4 +1,4 @@
-<nav class="navbar navbar-dark navbar-expand-md" style="background-color: #4278d4 !important;">
+<nav class="navbar navbar-dark navbar-expand-md nav-blue">
     <a class="navbar-brand" style="margin-right: 10px" (click)="showHideSideBar()">
         <span class="list-img"></span>
     </a>
@@ -11,7 +11,6 @@
        aria-label="Toggle navigation" (click)="toggleNavbar()">
         <fa-icon icon="bars"></fa-icon>
     </a>
-
     <div class="navbar-collapse collapse" id="navbarResponsive" [ngbCollapse]="isNavbarCollapsed"
          [ngSwitch]="isAuthenticated()">
         <ul class="navbar-nav ml-auto">
@@ -69,4 +68,5 @@
             </li>
         </ul>
     </div>
+    <input matInput placeholder="جستجو" class="rcorners" />
 </nav>
