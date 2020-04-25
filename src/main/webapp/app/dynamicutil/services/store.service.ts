@@ -7,8 +7,8 @@ import {CommandInfo} from "app/dynamicutil/models/CommandInfo";
 })
 export class StoreService {
 
-  private presentersSubject = new BehaviorSubject<CommandInfo[]>([]);
-  presenters$ = this.presentersSubject.asObservable();
+  private commandsSubject = new BehaviorSubject<CommandInfo[]>([]);
+  commands$ = this.commandsSubject.asObservable();
 
   private sidebarToggleSubject = new BehaviorSubject<void>(undefined);
   toggleSideBar$ = this.sidebarToggleSubject.asObservable();
@@ -18,11 +18,11 @@ export class StoreService {
   }
 
   addPresenter(ci: CommandInfo): void {
-    const cis = this.presentersSubject.getValue();
+    const cis = this.commandsSubject.getValue();
     const newCis = cis.slice(0);
     newCis.push(ci);
 
-    this.presentersSubject.next(newCis);
+    this.commandsSubject.next(newCis);
   }
 
   toggleSideBar(): void {
@@ -30,13 +30,13 @@ export class StoreService {
   }
 
   removePresenter(ci: CommandInfo): void {
-    const prs = this.presentersSubject.getValue();
+    const prs = this.commandsSubject.getValue();
     const newPrs = prs.slice(0);
     const index = newPrs.indexOf(ci, 0);
     if (index > -1) {
       newPrs.splice(index, 1);
     }
 
-    this.presentersSubject.next(newPrs);
+    this.commandsSubject.next(newPrs);
   }
 }

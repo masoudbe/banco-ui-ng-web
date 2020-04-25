@@ -15,7 +15,7 @@ export class PresenterViewerForm {
   selected = new FormControl(0);
 
   constructor(private storeService: StoreService) {
-    this.storeService.presenters$
+    this.storeService.commands$
       .subscribe(val => this.addRemoveTab(val));
   }
 

@@ -1,14 +1,15 @@
 <form [formGroup]="formArray">
 
-    <mat-toolbar color="primary" *ngIf="commands.length != 0">
+    <mat-toolbar class="toolbar" color="primary">
         <span class="fill-remaining-space">
             <button mat-icon-button [matMenuTriggerFor]="menu" (click)="$event.stopPropagation()">
               <mat-icon>menu</mat-icon>
             </button>
             <mat-menu #menu="matMenu" [overlapTrigger]="false">
                 <ng-container *ngFor="let cmd of commands">
-                    <button style="font-family: Tahoma" *ngIf="cmd.Title !== ''" mat-menu-item (click)="save(cmd.Name, $event)">
-                        <span>{{getCommandTitle(cmd.Name)}}</span>
+                    <button style="font-family: inherit" *ngIf="cmd.Title !== ''" mat-menu-item
+                            (click)="save(cmd.Name, $event)">
+                        <span style="font-family: inherit">{{getCommandTitle(cmd.Name)}}</span>
                     </button>
                  </ng-container>
             </mat-menu>
@@ -23,16 +24,16 @@
     <mat-vertical-stepper *ngIf="tabs.length > 1">
         <mat-step *ngFor="let tab of tabs;let index = index;"
                   [label]="tab.label">
-            <formly-form
-                [form]="formArray.at(index)"
-                [model]="model"
-                [fields]="tab.fields"
-                [options]="options[index]">
+            <formly-form class="formly"
+                         [form]="formArray.at(index)"
+                         [model]="model"
+                         [fields]="tab.fields"
+                         [options]="options[index]">
             </formly-form>
         </mat-step>
     </mat-vertical-stepper>
     <ng-container *ngIf="tabs.length == 1">
-        <formly-form
+        <formly-form class="formly"
             [form]="formArray.at(0)"
             [model]="model"
             [fields]="tabs[0].fields"

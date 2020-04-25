@@ -1,15 +1,21 @@
 /** No CSS for this example */
-::ng-deep .mat-tab-list .mat-tab-labels .mat-tab-label-active {
-  color:yellow;
-  background-color: #17a2b8;
-  font-family: Tahoma;
-  font-weight: bolder;
+::ng-deep .mat-tab-list .mat-tab-labels {
+  font-family: Segoe UI;
+  font-size: 14px;
+  font-weight: 600;
+  height: 28px;
+  color: darkblue;
+  margin-bottom: 10px;
 }
 
-::ng-deep .mat-tab-list .mat-tab-labels {
-  color:blue;
-  background-color: white;
-  font-family: Tahoma;
+::ng-deep .mat-tab-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: darkblue;
+}
+
+::ng-deep .mat-tab-label-active {
+  background-color: #d7e8ff;
 }
 
 .close-img {
